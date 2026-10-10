@@ -1,1 +1,24 @@
-{"name":"dermaclick","private":true,"version":"1.0.0","type":"module","scripts":{"dev":"vite","build":"vite build","preview":"vite preview"},"dependencies":{"react":"^18.3.1","react-dom":"^18.3.1","react-router-dom":"^6.26.0"},"devDependencies":{"@vitejs/plugin-react":"^4.3.1","vite":"^5.4.0"}}
+{
+  "name": "dermaclick",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "prebuild": "node scripts/audit-catalogue.mjs --quiet",
+    "build": "vite build",
+    "preview": "vite preview",
+    "test": "node --test \"tests/*.test.mjs\"",
+    "catalogue:audit": "node scripts/audit-catalogue.mjs",
+    "catalogue:promote": "node scripts/promote-catalogue.mjs"
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.26.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.3.1",
+    "vite": "^5.4.0"
+  }
+}

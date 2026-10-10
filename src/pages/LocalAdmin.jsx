@@ -1,8 +1,13 @@
-// LOCAL-ONLY product manager (dev server only). Data -> localStorage, read by src/data/products.js
+// LOCAL-ONLY product manager (dev server only; excluded from production builds by App.jsx).
+// Data -> this browser's localStorage (per origin/port/profile!). Publish via `npm run catalogue:promote` (docs/CATALOGUE_WORKFLOW.md).
 import { useState, useRef, useEffect } from 'react';
-import { STORAGE_KEY, defaultProducts } from '../data/products';
+import { STORAGE_KEY, committedProducts } from '../data/products';
+import { resolveCatalogue, saveCatalogue, buildExport, parseCatalogueText, planImport, hasDuplicateIds, makeIdsUnique, isPlaceholder } from '../data/catalogue';
 
-const load = () => { try { const a = JSON.parse(localStorage.getItem(STORAGE_KEY)); if (Array.isArray(a) && a.length) return a; } catch {} return defaultProducts; };
+// Same priority as the site: non-empty browser copy, else the committed src/data/products.json, else empty.
+const readRaw = () => { try { return localStorage.getItem(STORAGE_KEY); } catch { return null; } };
+const load = () => resolveCatalogue({ storageRaw: readRaw(), fileValue: committedProducts, useStorage: true }).raw;
+const download = (b) => { const url = URL.createObjectURL(new Blob([b.text], { type: 'application/json' })); const a = document.createElement('a'); a.href = url; a.download = b.filename; document.body.appendChild(a); a.click(); a.remove(); setTimeout(() => URL.revokeObjectURL(url), 1000); };
 const renumber = (a) => [...a].sort((x, y) => (x.order ?? 9999) - (y.order ?? 9999)).map((p, i) => ({ ...p, order: i + 1 }));
 const slugify = (s) => s.toLowerCase().trim().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
 const lines = (s) => s.split('\n').map((x) => x.trim()).filter(Boolean);
@@ -22,19 +27,29 @@ export default function LocalAdmin() {
   const [msg, setMsg] = useState('');
   const [keywordDraft, setKeywordDraft] = useState('');
   const [keywordEditing, setKeywordEditing] = useState(null);
+  const [err, setErr] = useState('');
+  const [plan, setPlan] = useState(null); // pending import: {fileName, parsed, mode, confirmed}
+  const [exportInfo, setExportInfo] = useState(null);
   const nameRef = useRef(), formRef = useRef();
   const keywordRef = useRef();
   const set = (k, v) => setF((o) => ({ ...o, [k]: v }));
   const categories = [...new Set(items.map((p) => p.category).filter(Boolean))];
+  const dupIds = hasDuplicateIds(items);
+  const hidden = items.filter(isPlaceholder).length;
+  const ip = plan && planImport(items, plan.parsed.products, plan.mode, plan.parsed);
+  const committedDiffers = committedProducts && (committedProducts.length !== items.length || committedProducts.map((p) => p?.id).join() !== items.map((p) => p.id).join());
 
   const persist = (next) => {
     const n = renumber(next);
-    try { localStorage.setItem(STORAGE_KEY, JSON.stringify(n)); } catch { alert('localStorage is full. Use smaller images or an image path instead.'); return false; }
-    setItems(n); return true;
+    let r; try { r = saveCatalogue(localStorage, n, STORAGE_KEY); } catch (e) { r = { ok: false, error: `Browser storage is unavailable: ${e.message}` }; }
+    if (!r.ok) { setErr(r.error); return false; } // previous data is untouched; nothing is reported as saved
+    setErr(''); setItems(n); return true;
   };
   const flash = (t) => { setMsg(t); setTimeout(() => setMsg(''), 2000); };
 
+  const dupBlock = () => { if (dupIds) { setErr('Several products share the same id. Use "Make IDs unique" first so edits cannot affect the wrong product.'); return true; } return false; };
   const save = (next) => {
+    if (dupBlock()) return;
     if (!f.name.trim() || !f.category.trim()) return alert('Name and category are required.');
     const slug = f.slug.trim() || slugify(f.name);
     if (items.some((p) => p.slug === slug && p.id !== editing)) return alert(`Slug "${slug}" already exists.`);
@@ -56,9 +71,9 @@ export default function LocalAdmin() {
   };
   const edit = (p) => { setEditing(p.id); setF(toForm(p)); setSlugTouched(true); setKeywordDraft(''); setKeywordEditing(null); formRef.current?.scrollIntoView({ behavior: 'smooth' }); setTimeout(() => nameRef.current?.focus(), 0); };
   const fresh = () => { setEditing(null); setF(blank(f.category)); setSlugTouched(false); setKeywordDraft(''); setKeywordEditing(null); nameRef.current?.focus(); };
-  const del = (p) => { if (confirm(`Delete "${p.name}"?`)) { const n = items.filter((x) => x.id !== p.id); if (n.length) persist(n); else { localStorage.removeItem(STORAGE_KEY); setItems(defaultProducts); } if (editing === p.id) fresh(); } };
+  const del = (p) => { if (dupBlock()) return; if (confirm(`Delete "${p.name}"?\nTip: use Export JSON first if you have no backup.`)) { const n = items.filter((x) => x.id !== p.id); if (n.length) persist(n); else { try { localStorage.removeItem(STORAGE_KEY); } catch {} setItems(load()); } if (editing === p.id) fresh(); } };
   const move = (i, d) => { const a = [...items], j = i + d; if (j < 0 || j >= a.length) return; [a[i], a[j]] = [a[j], a[i]]; persist(a.map((p, k) => ({ ...p, order: k + 1 }))); };
-  const feature = (p) => persist(items.map((x) => (x.id === p.id ? { ...x, featured: !x.featured } : x)));
+  const feature = (p) => !dupBlock() && persist(items.map((x) => (x.id === p.id ? { ...x, featured: !x.featured } : x)));
   const pickImage = async (file) => { if (file) try { set('image', await compress(file)); } catch { alert('Could not read image.'); } };
   const setIng = (i, k, v) => setF((o) => ({ ...o, ingredients: o.ingredients.map((g, x) => (x === i ? { ...g, [k]: v } : g)) }));
   const addIng = () => setF((o) => ({ ...o, ingredients: [...o.ingredients, { name: '', description: '' }] }));
@@ -81,25 +96,69 @@ export default function LocalAdmin() {
     if (keywordEditing === index) { setKeywordDraft(''); setKeywordEditing(null); }
     else if (keywordEditing !== null && keywordEditing > index) setKeywordEditing(keywordEditing - 1);
   };
-  const exportJson = () => { const a = document.createElement('a'); a.href = URL.createObjectURL(new Blob([JSON.stringify(items, null, 2)], { type: 'application/json' })); a.download = 'products.json'; a.click(); };
-  const importJson = async (file) => { try { const a = JSON.parse(await file.text()); if (!Array.isArray(a)) throw 0; persist(a); } catch { alert('Invalid products.json'); } };
-  const reset = () => { if (confirm('Clear all local product data?')) { localStorage.removeItem(STORAGE_KEY); setItems(defaultProducts); fresh(); } };
+  const backupNow = () => { if (!items.length) return true; const b = buildExport(items); if (!b.roundTripOk) throw new Error('backup self-check failed'); download(b); return true; };
+  const exportJson = () => {
+    try {
+      const b = buildExport(items); // reads current state only; never mutates the catalogue
+      if (!b.roundTripOk) throw new Error('the exported file failed its own re-read check');
+      download(b); setErr(''); setExportInfo({ ...b.summary, filename: b.filename }); flash(`Exported ${b.summary.total} products`);
+    } catch (e) { setErr(`Export failed: ${e.message}. Nothing was changed.`); }
+  };
+  const startImport = async (file, fileName = file?.name) => {
+    let text; try { text = await file.text(); } catch (e) { setErr(`Could not read "${fileName}": ${e.message}. Nothing was changed.`); return; }
+    const parsed = parseCatalogueText(text);
+    if (!parsed.ok) { setErr(`Import blocked - ${parsed.error} Nothing was changed.`); return; }
+    setErr(''); setPlan({ fileName, parsed, mode: 'replace', confirmed: false });
+  };
+  const loadCommitted = () => setPlan({ fileName: 'src/data/products.json (committed)', parsed: { products: committedProducts }, mode: 'replace', confirmed: false });
+  const applyImport = () => {
+    if (!ip?.ok || !plan.confirmed) return;
+    try { if (plan.mode === 'replace') backupNow(); } catch (e) { setErr(`Could not create the safety backup (${e.message}). Import cancelled; nothing was changed.`); return; }
+    if (persist(ip.next)) { flash(`Imported: ${ip.summary.resulting} products now in the editor`); setPlan(null); fresh(); }
+  };
+  const reset = () => {
+    if (!confirm('Clear the product data stored in THIS browser?\n\nA backup file will be downloaded first. The editor will then show the committed src/data/products.json (or be empty if there is none).')) return;
+    try { backupNow(); } catch (e) { setErr(`Could not create the safety backup (${e.message}). Reset cancelled.`); return; }
+    try { localStorage.removeItem(STORAGE_KEY); } catch (e) { setErr(`Could not clear storage: ${e.message}`); return; }
+    setItems(load()); fresh();
+  };
   useEffect(() => { nameRef.current?.focus(); }, []);
 
   const onKey = (e) => { if ((e.ctrlKey || e.metaKey) && e.key === 'Enter') { e.preventDefault(); save(true); } };
   return (
     <main className="la" onKeyDown={onKey}>
       <style>{CSS}</style>
-      <header className="la-top"><h1>Local Product Manager <small>({items.length} products · stored in this browser only)</small></h1>
+      <header className="la-top"><h1>Local Product Manager <small>({items.length} products{hidden ? ` · ${hidden} hidden placeholder${hidden > 1 ? 's' : ''}` : ''} · stored in this browser only)</small></h1>
         <div className="la-bar"><a className="b" href="/" target="_blank" rel="noreferrer">View site ↗</a><button className="b" onClick={exportJson}>Export JSON</button>
-          <label className="b">Import JSON<input type="file" accept="application/json" hidden onChange={(e) => e.target.files[0] && importJson(e.target.files[0])} /></label><button className="b danger" onClick={reset}>Reset</button></div></header>
+          <label className="b">Import JSON<input type="file" accept="application/json,.json" hidden onChange={(e) => { const file = e.target.files[0]; e.target.value = ''; file && startImport(file); }} /></label><button className="b danger" onClick={reset}>Reset</button></div></header>
+      <section className="la-note" aria-label="Catalogue status">
+        <span>Browser copy: <b>{items.length}</b> · Committed <code>src/data/products.json</code>: <b>{committedProducts ? committedProducts.length : 'not found'}</b> · Origin: <code>{typeof location !== 'undefined' ? location.host : ''}</code> (each port/browser keeps its own copy)</span>
+        {committedDiffers && <button className="b" onClick={loadCommitted}>Compare / load committed catalogue…</button>}
+      </section>
+      {err && <p className="la-err" role="alert">{err} <button className="b" onClick={() => setErr('')}>Dismiss</button></p>}
+      {dupIds && <p className="la-err" role="alert">Duplicate product ids detected. Editing and deleting are paused. <button className="b" onClick={() => persist(makeIdsUnique(items))}>Make IDs unique</button></p>}
+      {exportInfo && <section className="la-panel" aria-live="polite"><strong>Exported {exportInfo.total} products to {exportInfo.filename}</strong>
+        <div>{exportInfo.incomplete} need review (missing id/name/category/slug) · {exportInfo.placeholders} placeholders · {exportInfo.duplicateIds + exportInfo.duplicateSlugs} duplicate id/slug · {exportInfo.dataUrlImages} embedded images · {(exportInfo.bytes / 1024).toFixed(0)} KB</div>
+        {exportInfo.flagged.length > 0 && <ul>{exportInfo.flagged.slice(0, 20).map((x, i) => <li key={i}>{x.name || x.id || `Record ${i + 1}`}: {x.issues.join('; ')}</li>)}</ul>}
+        <button className="b" onClick={() => setExportInfo(null)}>Close</button></section>}
+      {plan && ip && <section className="la-panel" aria-label="Import preview">
+        <strong>Import preview: {plan.fileName}</strong>
+        <div>File: <b>{ip.summary.incoming ?? 0}</b> products · Currently in editor: <b>{ip.summary.current ?? 0}</b> · {plan.parsed.format ? `format: ${plan.parsed.format}${plan.parsed.version ? ' v' + plan.parsed.version : ''}` : ''}</div>
+        <div className="la-bar"><label><input type="radio" name="imode" checked={plan.mode === 'replace'} onChange={() => setPlan({ ...plan, mode: 'replace', confirmed: false })} /> Replace the catalogue</label>
+          <label><input type="radio" name="imode" checked={plan.mode === 'merge'} onChange={() => setPlan({ ...plan, mode: 'merge', confirmed: false })} /> Merge: add only new products (existing ones are never changed)</label></div>
+        <div>Result: <b>{ip.summary.resulting ?? 0}</b> products{plan.mode === 'merge' ? ` (${ip.summary.added} added, ${ip.summary.skipped} skipped as conflicts)` : ip.summary.removed ? ` - the ${ip.summary.removed} current products would be replaced` : ''} · placeholders in file: {ip.summary.placeholders ?? 0} · records needing review: {ip.summary.incomplete ?? 0}</div>
+        {ip.summary.shrinks && plan.mode === 'replace' && <p className="la-err">Warning: this leaves FEWER products ({ip.summary.resulting}) than you have now ({ip.summary.current}).</p>}
+        {ip.errors.length > 0 && <div className="la-err" role="alert"><b>Blocked - fix the file and try again:</b><ul>{ip.errors.slice(0, 20).map((m, i) => <li key={i}>{m}</li>)}</ul></div>}
+        {ip.warnings.length > 0 && <details><summary>{ip.warnings.length} warning(s) - records are kept, but need review</summary><ul>{ip.warnings.slice(0, 50).map((m, i) => <li key={i}>{m}</li>)}</ul></details>}
+        <label className="chk"><input type="checkbox" checked={plan.confirmed} disabled={!ip.ok} onChange={(e) => setPlan({ ...plan, confirmed: e.target.checked })} /> {plan.mode === 'replace' ? `I understand this replaces the ${ip.summary.current ?? 0} products in this editor (a backup file is downloaded first).` : 'I want to add the new products listed above.'}</label>
+        <div className="la-bar"><button className="b primary" disabled={!ip.ok || !plan.confirmed} onClick={applyImport}>Apply import</button><button className="b" onClick={() => setPlan(null)}>Cancel (nothing changes)</button></div></section>}
       <div className="la-grid">
         <section className="la-list">
           {items.map((p, i) => (
             <div key={p.id} className={`la-row${editing === p.id ? ' on' : ''}`}>
               <span className="n">{p.order}</span>
               {p.image ? <img src={p.image} alt="" /> : <span className="th" />}
-              <div className="t"><strong>{p.name}</strong><small>{p.category} · /{p.slug}</small></div>
+              <div className="t"><strong>{p.name}</strong><small>{p.category} · /{p.slug}{isPlaceholder(p) ? ' · placeholder (hidden on site)' : ''}</small></div>
               <button title="Featured" aria-label={p.featured ? `Remove ${p.name} from featured products` : `Feature ${p.name}`} className={`star${p.featured ? ' on' : ''}`} onClick={() => feature(p)}>★</button>
               <button title="Up" aria-label={`Move ${p.name} up`} onClick={() => move(i, -1)} disabled={i === 0}>↑</button><button title="Down" aria-label={`Move ${p.name} down`} onClick={() => move(i, 1)} disabled={i === items.length - 1}>↓</button>
               <button onClick={() => edit(p)}>Edit</button><button className="danger" aria-label={`Delete ${p.name}`} onClick={() => del(p)}>✕</button>
@@ -155,6 +214,9 @@ export default function LocalAdmin() {
 }
 
 const CSS = `
+.la-note{display:flex;gap:.6rem;align-items:center;justify-content:space-between;flex-wrap:wrap;font-size:.82rem;background:#fff;border:1px solid #ddd;padding:.5rem .7rem;margin-bottom:.8rem}.la-note code{background:#f1e6dd;padding:0 .25rem}
+.la-err{background:#fdecec;border:1px solid #a22;color:#701;padding:.5rem .7rem;margin:0 0 .8rem}.la-err ul{margin:.3rem 0 0 1.1rem;padding:0}
+.la-panel{background:#fff;border:2px solid #B8913A;padding:.7rem;margin-bottom:.8rem;display:grid;gap:.5rem;font-size:.85rem}.la-panel ul{margin:0 0 0 1.1rem;padding:0;max-height:10rem;overflow:auto}
 .la{font:15px/1.4 system-ui,sans-serif;color:#231F20;background:#FAF7F2;min-height:100vh;padding:1rem}
 .la *{box-sizing:border-box}.la h1{font:600 1.4rem system-ui;margin:0}.la h1 small{font-weight:400;color:#6b6460;font-size:.8rem}.la h2{font:600 1.1rem system-ui;margin:0 0 .5rem}
 .la-top{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.5rem;margin-bottom:1rem}.la-bar{display:flex;gap:.4rem}
