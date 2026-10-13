@@ -1,7 +1,7 @@
 // Pure-logic tests: export, import validation, storage safety, loader priority, placeholder rules.
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { STORAGE_KEY, buildExport, parseCatalogueText, planImport, saveCatalogue, resolveCatalogue, auditCatalogue, publicProducts, isPlaceholder, makeIdsUnique, hasDuplicateIds, backupFilename } from '../src/data/catalogue.js';
+import { STORAGE_KEY, buildExport, buildSelectedExport, productSelection, toggleProductSelection, resolveProductSelection, parseCatalogueText, planImport, saveCatalogue, resolveCatalogue, auditCatalogue, publicProducts, isPlaceholder, makeIdsUnique, hasDuplicateIds, backupFilename } from '../src/data/catalogue.js';
 import { catalogue, product, placeholder, memStorage, PNG_DATA_URL } from './helpers.mjs';
 
 test('1. export contains every product, valid formatted JSON, meaningful filename, summary', () => {
@@ -33,6 +33,68 @@ test('2b. previously exported plain-array files (legacy format) are still accept
   assert.equal(r.ok, true); assert.equal(r.format, 'array'); assert.equal(r.products.length, 4);
   const env = parseCatalogueText(buildExport(catalogue()).text);
   assert.equal(env.ok, true); assert.equal(env.format, 'envelope');
+});
+
+test('selective export: individual, all, none, and configured selection retain exact product records', () => {
+  const list = [...catalogue(), placeholder(), null, product({ id: '', name: 'Incomplete', slug: '' })];
+  assert.deepEqual([...productSelection(list, 'all')], ['DC-01', 'DC-02', 'DC-03', 'DC-04', 'DC-09']);
+  assert.deepEqual([...productSelection(list, 'none')], []);
+  assert.deepEqual([...productSelection(list, 'configured')], ['DC-01', 'DC-02', 'DC-03', 'DC-04']);
+
+  const individual = toggleProductSelection(new Set(), 'DC-02');
+  assert.deepEqual([...individual], ['DC-02']);
+  assert.deepEqual([...toggleProductSelection(individual, 'DC-02')], []);
+
+  const resolved = resolveProductSelection(list, new Set(['DC-02', 'DC-01']));
+  assert.equal(resolved.ok, true);
+  const selected = resolved.products;
+  const result = buildSelectedExport(selected);
+  const parsed = JSON.parse(result.text);
+  assert.equal(result.filename, 'dermaclick-products-export.json');
+  assert.equal(result.roundTripOk, true);
+  assert.equal(parsed.count, 2);
+  assert.deepEqual(parsed.products, selected);
+  assert.equal(parsed.products[0].image, PNG_DATA_URL);
+  assert.deepEqual(parsed.products[0].extraUnknownField, { keep: 'me' });
+});
+
+test('selecting eight configured products from an 18-card catalogue exports exactly eight JSON records', () => {
+  const configured = Array.from({ length: 8 }, (_, index) => product({
+    id: `DC-${String(index + 1).padStart(2, '0')}`,
+    slug: `test-product-${index + 1}`,
+    name: `Test Product ${index + 1}`,
+    order: index + 1,
+    image: index === 0 ? PNG_DATA_URL : `/products/test-${index + 1}.webp`,
+    extraExportField: { index },
+  }));
+  const incomplete = Array.from({ length: 10 }, (_, index) => placeholder({
+    id: `DC-${String(index + 9).padStart(2, '0')}`,
+    slug: `placeholder-${index + 1}`,
+  }));
+  const list = [...configured, ...incomplete];
+  const ids = productSelection(list, 'configured');
+  assert.equal(list.length, 18);
+  assert.equal(ids.size, 8);
+  const selection = resolveProductSelection(list, ids);
+  assert.equal(selection.ok, true);
+  assert.equal(selection.products.length, 8);
+
+  const result = buildSelectedExport(selection.products);
+  const file = JSON.parse(result.text);
+  assert.equal(result.roundTripOk, true);
+  assert.equal(file.count, 8);
+  assert.equal(file.products.length, 8);
+  assert.deepEqual(file.products.map((entry) => entry.id), [...ids]);
+  assert.equal(file.products[0].image, PNG_DATA_URL);
+  assert.deepEqual(file.products[7].extraExportField, { index: 7 });
+});
+
+test('selection validation blocks empty, duplicate-ID, and unresolved selections', () => {
+  assert.equal(resolveProductSelection(catalogue(), new Set()).ok, false);
+  const duplicateIds = [product(), product({ name: 'Duplicate', slug: 'duplicate' })];
+  assert.equal(productSelection(duplicateIds, 'all').size, 0);
+  assert.equal(resolveProductSelection(duplicateIds, new Set(['DC-01'])).ok, false);
+  assert.equal(resolveProductSelection(catalogue(), new Set(['not-stored'])).ok, false);
 });
 
 test('3. malformed JSON is rejected with a specific message and stored data is untouched', () => {

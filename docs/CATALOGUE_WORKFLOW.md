@@ -13,9 +13,9 @@ Local storage is per port: `localhost:5173` and `localhost:5174` (or `127.0.0.1`
 ## Everyday steps
 1. `npm install` then `npm run dev`; open the URL it prints, then `/local-admin`. Always use the same URL/port when editing.
 2. Edit products. Saving writes to browser storage only after the write is verified; a failure shows a red message and keeps the previous data.
-3. **Export JSON** (top bar). A panel shows how many products were exported and which need review. Filename: `dermaclick-products-backup-YYYY-MM-DD-HHMM.json`. Keep the file (it is your backup).
-4. Check what would change (nothing is written): `npm run catalogue:promote -- ~/Downloads/<file>.json --dry-run`
-5. Promote for real: `npm run catalogue:promote -- ~/Downloads/<file>.json`
+3. Use **Export JSON** (top bar) for a full backup. To publish only some records, choose **Export Products to JSON**, select products (or use Select All / Deselect All / Select Configured Products), then press **Export Selected as JSON**. The selection is downloaded as `dermaclick-products-export.json`; the panel reports the exported count. Both files retain the versioned Dermaclick envelope and all selected product fields and image data.
+4. Check what would change (nothing is written): `npm run catalogue:promote -- ~/Downloads/<file>.json --dry-run`. A selected subset may be smaller than the committed catalogue, so add `--allow-shrink` to the dry run only when you intentionally want the published catalogue to contain just that subset.
+5. Promote for real only after reviewing the dry-run result: `npm run catalogue:promote -- ~/Downloads/<file>.json` (add `--allow-shrink` here too if the chosen subset intentionally removes products). This is the step that updates `src/data/products.json`; exporting alone never changes the committed catalogue.
    - validates everything first; refuses empty/malformed/duplicate/missing-image data
    - refuses to replace a larger committed catalogue with a smaller file (`--allow-shrink` to override deliberately)
    - extracts embedded base64 images into `public/products/<slug>-<hash>.<ext>` and rewrites `image` to `/products/...`

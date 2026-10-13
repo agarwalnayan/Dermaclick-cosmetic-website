@@ -5,7 +5,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { spawnSync } from 'node:child_process';
 import { PROJECT, tempProject, catalogue, product, placeholder, PNG_DATA_URL } from './helpers.mjs';
-import { buildExport } from '../src/data/catalogue.js';
+import { buildExport, buildSelectedExport } from '../src/data/catalogue.js';
 
 const run = (script, args, cwd = PROJECT) => spawnSync(process.execPath, [path.join(PROJECT, 'scripts', script), ...args], { cwd, encoding: 'utf8' });
 const writeExport = (dir, list, envelope = true) => { const f = path.join(dir, 'export.json'); fs.writeFileSync(f, envelope ? buildExport(list).text : JSON.stringify(list)); return f; };
@@ -34,6 +34,31 @@ test('promote: --dry-run writes nothing', () => {
     assert.equal(r.status, 0);
     assert.equal(fs.existsSync(path.join(t.dir, 'src/data/products.json')), false);
     assert.equal(fs.existsSync(path.join(t.dir, 'public/products/moisturizer-' )), false);
+  } finally { t.cleanup(); }
+});
+
+test('promote: accepts a selective export and requires explicit shrink approval for a subset', () => {
+  const full = catalogue().map((p) => ({ ...p, image: p.image?.startsWith('data:') ? null : p.image }));
+  const t = tempProject({ products: full, images });
+  const target = path.join(t.dir, 'src/data/products.json');
+  const selected = [catalogue()[1], catalogue()[0]];
+  const file = path.join(t.dir, 'dermaclick-products-export.json');
+  fs.writeFileSync(file, buildSelectedExport(selected).text);
+  try {
+    const refused = run('promote-catalogue.mjs', [file, '--root', t.dir]);
+    assert.equal(refused.status, 1);
+    assert.match(refused.stderr, /incomplete export/);
+    const before = fs.readFileSync(target, 'utf8');
+    const dry = run('promote-catalogue.mjs', [file, '--dry-run', '--allow-shrink', '--root', t.dir]);
+    assert.equal(dry.status, 0, dry.stderr + dry.stdout);
+    assert.equal(fs.readFileSync(target, 'utf8'), before);
+
+    const promoted = run('promote-catalogue.mjs', [file, '--allow-shrink', '--root', t.dir]);
+    assert.equal(promoted.status, 0, promoted.stderr + promoted.stdout);
+    const output = JSON.parse(fs.readFileSync(target, 'utf8'));
+    assert.deepEqual(output.map((p) => p.id), selected.map((p) => p.id));
+    assert.deepEqual(output[0].extraUnknownField, { keep: 'me' });
+    assert.match(output[0].image, /^\/products\/moisturizer-[0-9a-f]{8}\.png$/);
   } finally { t.cleanup(); }
 });
 

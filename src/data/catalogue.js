@@ -144,6 +144,54 @@ export function buildExport(products, now = new Date()) {
     },
   };
 }
+export function buildSelectedExport(products, now = new Date()) {
+  return { ...buildExport(products, now), filename: 'dermaclick-products-export.json' };
+}
+export const isConfiguredProduct = (product) => {
+  const issues = auditProduct(product);
+  return isObj(product) && !isPlaceholder(product) && !issues.some((issue) => issue.level === 'structure' || issue.level === 'essential');
+};
+const productId = (product) => isObj(product) && isStr(product.id) && product.id.trim() ? product.id : null;
+export const productSelection = (products, mode) => {
+  const list = Array.isArray(products) ? products : [];
+  const idCounts = new Map();
+  list.forEach((product) => {
+    const id = productId(product);
+    if (id) idCounts.set(id, (idCounts.get(id) || 0) + 1);
+  });
+  const selectable = list.filter((product) => {
+    const id = productId(product);
+    return id && idCounts.get(id) === 1;
+  });
+  if (mode === 'all') return new Set(selectable.map((product) => productId(product)));
+  if (mode === 'configured') return new Set(selectable.filter(isConfiguredProduct).map((product) => productId(product)));
+  return new Set();
+};
+export const toggleProductSelection = (selection, id) => {
+  const next = new Set(selection);
+  if (next.has(id)) next.delete(id);
+  else next.add(id);
+  return next;
+};
+export function resolveProductSelection(products, selectedIds) {
+  const list = Array.isArray(products) ? products : [];
+  if (!(selectedIds instanceof Set) || selectedIds.size === 0) return { ok: false, error: 'Select at least one product to export.' };
+
+  const byId = new Map();
+  list.forEach((product) => {
+    const id = productId(product);
+    if (id) byId.set(id, [...(byId.get(id) || []), product]);
+  });
+  const selected = [];
+  for (const id of selectedIds) {
+    const matches = byId.get(id);
+    if (!matches || matches.length !== 1) {
+      return { ok: false, error: `Product id "${id}" resolves to ${matches?.length || 0} records; fix missing or duplicate ids before exporting. No file was downloaded.` };
+    }
+    selected.push(matches[0]);
+  }
+  return { ok: true, products: selected };
+}
 
 /* ---------- import planning (never writes anything) ---------- */
 export function planImport(current, incoming, mode = 'replace', meta = {}) {
