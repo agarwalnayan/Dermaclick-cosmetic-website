@@ -378,5 +378,353 @@
       "Dermaclick Face Serum"
     ],
     "order": 9
+  },
+  {
+    "id": "DC-07",
+    "slug": "dermaclick-keratin-botox-argan-hair-mask",
+    "name": "Dermaclick Keratin Botox Argan Hair Mask",
+    "category": "Hair Care",
+    "image": "/products/dermaclick-keratin-botox-argan-hair-mask-08f1b6a2.webp",
+    "price": null,
+    "featured": false,
+    "order": 9,
+    "description": "Give your hair a salon-inspired conditioning experience with Dermaclick Keratin Botox Argan Hair Mask. Featuring keratin and argan in its hair-care positioning, this deep-conditioning mask is designed for dry, rough and frizz-prone hair. It helps leave hair feeling softer, smoother and more manageable while enhancing its glossy appearance. With UV protection, it complements your hair-care routine, especially when your hair is regularly exposed to sunlight.",
+    "shortDescription": "Deep-conditioning keratin and argan hair mask with UV protection, designed to help improve the appearance of dry, rough and frizzy hair for a smoother, softer and glossier-looking finish.",
+    "tagline": "Deep Condition. Smooth. Shine.",
+    "size": "500 ml",
+    "suitableFor": [
+      "Dry Hair",
+      "Rough Hair",
+      "Frizzy Hair",
+      "Dull-Looking Hair"
+    ],
+    "benefits": [
+      "Deep Conditioning — Designed to provide intensive conditioning for dry, rough-feeling hair.",
+      "Smoother Hair Feel — Helps leave hair feeling softer and smoother.",
+      "Frizz Control — Helps improve the appearance of frizzy hair.",
+      "Glossy Finish — Helps enhance the appearance of smooth, glossy-looking hair.",
+      "Keratin Hair Care — Keratin is used in hair-care formulations as a conditioning ingredient.",
+      "Argan Hair Care — Argan is associated with conditioning and improving the feel of the hair fibre.",
+      "UV Protection — Formulated with UV protection as stated on the product label."
+    ],
+    "ingredients": [
+      {
+        "name": "Keratin",
+        "description": "A hair-conditioning ingredient commonly used in hair-care formulations"
+      },
+      {
+        "name": "Argan",
+        "description": "Used in hair-care products to support conditioning and improve hair feel."
+      }
+    ],
+    "seoTitle": "Dermaclick Keratin Botox Argan Hair Mask 500ml | Hair Care",
+    "seoDescription": "Discover Dermaclick Keratin Botox Argan Hair Mask 500ml with keratin, argan and UV protection. Designed to condition dry, rough and frizzy hair for a smoother, softer and glossier-looking finish.",
+    "seoKeywords": [
+      "Dermaclick Keratin Botox Argan Hair Mask",
+      "keratin hair mask",
+      "argan hair mask",
+      "keratin hair treatment",
+      "deep conditioning hair mask",
+      "hair mask for dry hair",
+      "hair mask for frizzy hair",
+      "hair smoothing mask",
+      "hair shine treatment",
+      "anti-frizz hair care",
+      "UV protection hair mask",
+      "professional hair care"
+    ]
+  },
+  {
+    "id": "DC-08",
+    "slug": "dermaclick-keratin-argan-shampoo",
+    "name": "Dermaclick Keratin Argan Shampoo",
+    "category": "Hair Care",
+    "image": "/products/dermaclick-keratin-argan-shampoo-71b08732.webp",
+    "price": null,
+    "featured": true,
+    "order": 10,
+    "description": "Care for dry, damaged and colour-treated hair with Dermaclick Keratin Argan Shampoo. Formulated with a keratin protein-infused hair-care concept and argan care, it is designed to cleanse while supporting a silky, smooth hair feel. Its colour-protection positioning makes it a suitable addition to a hair-care routine for coloured hair. The bottle states that the formula is sulfate-free and paraben-free and suitable for daily use.",
+    "shortDescription": "Keratin protein-infused shampoo with argan care, designed to cleanse while helping damaged hair feel softer, smoother and more manageable. Features colour protection and a sulfate-free, paraben-free formula.",
+    "tagline": "Cleanse. Smooth. Protect Colour.",
+    "size": "500 ml",
+    "suitableFor": [
+      "Damaged Hair",
+      "Dry Hair",
+      "Frizzy Hair",
+      "Colour-Treated Hair"
+    ],
+    "benefits": [
+      "Gentle Cleansing — Designed to cleanse hair as part of a regular hair-care routine.",
+      "Keratin Protein Infused — Keratin-based hair care supports a smoother-feeling hair surface.",
+      "Argan Care — Helps support softness and manageability.",
+      "Silky & Smooth Finish — Designed to leave hair feeling smoother and more manageable.",
+      "Colour Protection — Positioned for colour-treated hair care.",
+      "Sulfate & Paraben Free — As stated on the product packaging.",
+      "Daily Use — The packaging states that it is suitable for daily use."
+    ],
+    "ingredients": [
+      {
+        "name": "Keratin Protein",
+        "description": "Commonly used as a conditioning ingredient in hair-care products."
+      },
+      {
+        "name": "Argan",
+        "description": "Used in hair-care formulations to support softness and manageability."
+      }
+    ],
+    "seoTitle": "Dermaclick Keratin Argan Shampoo 500ml | Colour Protection",
+    "seoDescription": "Shop Dermaclick Keratin Argan Shampoo 500ml, featuring keratin protein-infused hair care, argan care and colour protection. Sulfate-free and paraben-free, with a silky, smooth finish.",
+    "seoKeywords": [
+      "Dermaclick Keratin Argan Shampoo",
+      "keratin shampoo",
+      "argan shampoo",
+      "shampoo for damaged hair",
+      "shampoo for dry hair",
+      "shampoo for frizzy hair",
+      "colour protection shampoo",
+      "shampoo for coloured hair",
+      "sulfate-free shampoo",
+      "paraben-free shampoo",
+      "smoothing shampoo",
+      "daily use shampoo",
+      "500ml shampoo"
+    ]
+  },
+  {
+    "id": "DC-10",
+    "slug": "dermaclick-keratin-botox-argan-shampoo",
+    "name": "Dermaclick Keratin Botox Argan Shampoo",
+    "category": "Hair Care",
+    "image": "/products/dermaclick-keratin-botox-argan-shampoo-339b4861.webp",
+    "price": null,
+    "featured": false,
+    "order": 12,
+    "description": "Give your hair a smooth, glossy finish with Dermaclick Keratin Botox Argan Shampoo. Featuring keratin and argan hair-care positioning, this shampoo is designed for dry, damaged and frizzy hair. It combines cleansing with conditioning-focused care to help improve softness, manageability and shine. UV protection and colour-fixation positioning make it a useful addition to a hair-care routine for colour-treated hair. The packaging states that the formula contains 0% sulphate, salt and paraben.",
+    "shortDescription": "Keratin and argan shampoo with UV protection, designed for dry, damaged and frizzy hair. Helps improve smoothness and shine while supporting colour protection.",
+    "tagline": "Cleanse. Smooth. Protect.",
+    "size": "500 ml",
+    "suitableFor": [
+      "Dry Hair",
+      "Damaged Hair",
+      "Frizzy Hair",
+      "Colour-Treated Hair"
+    ],
+    "benefits": [
+      "Smoothness & Shine — Helps hair look smoother and glossier.",
+      "Conditioning Care — Keratin and argan support the product's conditioning-focused positioning.",
+      "UV Protection — Designed for hair exposed to sunlight.",
+      "Colour Protection — Supports hair-care routines for colour-treated hair.",
+      "Reduced Frizz Appearance — Helps improve the appearance of frizzy hair.",
+      "Hair Fall Control — Listed as a product benefit on the packaging.",
+      "0% Sulphate, Salt & Paraben — As stated on the product label."
+    ],
+    "ingredients": [
+      {
+        "name": "Keratin",
+        "description": "Commonly used in hair-care formulations for conditioning and smoothing."
+      },
+      {
+        "name": "Argan",
+        "description": "Commonly used to support hair softness and shine."
+      }
+    ],
+    "seoTitle": "Dermaclick Keratin Botox Argan Shampoo 500ml | UV Protection",
+    "seoDescription": "Discover Dermaclick Keratin Botox Argan Shampoo 500ml with keratin, argan and UV protection. Designed for dry, damaged and frizzy hair, with smoothness, shine and colour-protection positioning.",
+    "seoKeywords": [
+      "Dermaclick Keratin Botox Argan Shampoo",
+      "keratin argan shampoo",
+      "argan shampoo",
+      "shampoo for damaged hair",
+      "glossy hair shampoo",
+      "colour protection shampoo",
+      "salt-free shampoo",
+      "paraben-free shampoo"
+    ]
+  },
+  {
+    "id": "DC-09",
+    "slug": "dermaclick-keratin-botox-argan-shampoo-300ml",
+    "name": "Dermaclick Keratin Botox Argan Shampoo",
+    "category": "Hair Care",
+    "image": "/products/dermaclick-keratin-botox-argan-shampoo-300ml-d3405214.webp",
+    "price": null,
+    "featured": false,
+    "order": 11,
+    "description": "Give your hair a smooth, glossy look with Dermaclick Keratin Botox Argan Shampoo. Featuring keratin and argan hair-care positioning, this shampoo is designed for dry, damaged and frizzy hair. It helps cleanse the hair while supporting softness, manageability and a smoother-looking finish. With UV protection, colour-fixation positioning and a formula labelled 0% sulphate, salt and paraben, it complements your regular hair-care routine.",
+    "shortDescription": "Keratin Botox Argan Shampoo with UV protection, designed to help improve the appearance of dry, damaged and frizzy hair while supporting a smooth, glossy finish. Features hair fall control, colour protection and a formula labelled 0% sulphate, salt and paraben.",
+    "tagline": "Smooth. Nourish. Protect.",
+    "size": "300 ml",
+    "suitableFor": [
+      "Dry Hair",
+      "Damaged Hair",
+      "Frizzy Hair",
+      "Colour-Treated Hair"
+    ],
+    "benefits": [
+      "Hair Fall Control — A benefit stated on the product packaging.",
+      "Damaged Hair Care — Designed for dry, damaged and frizzy hair.",
+      "Smooth & Glossy Finish — Helps improve the appearance of smooth, glossy hair.",
+      "Colour Protection — Supports a hair-care routine for colour-treated hair.",
+      "UV Protection — As stated on the product label.",
+      "0% Sulphate, Salt & Paraben — As stated on the product packaging."
+    ],
+    "ingredients": [
+      {
+        "name": "Keratin",
+        "description": "Commonly used as a conditioning ingredient in hair-care formulations."
+      },
+      {
+        "name": "Argan",
+        "description": "Used in hair-care products to support softness and manageability."
+      }
+    ],
+    "seoTitle": "Dermaclick Keratin Botox Argan Shampoo 300ml | UV Protection",
+    "seoDescription": "Discover Dermaclick Keratin Botox Argan Shampoo 300ml with keratin, argan and UV protection. Designed for dry, damaged and frizzy hair, with smoothness and colour-protection positioning.",
+    "seoKeywords": [
+      "Dermaclick Keratin Botox Argan Shampoo",
+      "keratin shampoo",
+      "argan shampoo",
+      "keratin botox shampoo",
+      "shampoo for damaged hair",
+      "shampoo for frizzy hair",
+      "shampoo for dry hair"
+    ]
+  },
+  {
+    "price": null,
+    "id": "DC-22",
+    "slug": "dermaclick-keratin-argan-hair-spa-mask",
+    "name": "Dermaclick Keratin Argan Hair Spa / Mask",
+    "category": "Hair Care",
+    "image": "/products/dermaclick-keratin-argan-hair-spa-mask-640c4ec2.webp",
+    "shortDescription": "Keratin and argan hair spa treatment designed to condition dry, damaged and colour-treated hair, helping improve softness, smoothness and manageability.",
+    "description": "Give your hair an intensive conditioning experience with Dermaclick Keratin Argan Hair Spa / Mask. Featuring keratin protein and argan hair-care positioning, this treatment is designed to improve the feel and appearance of dry, damaged and frizzy hair. It helps leave hair feeling softer, smoother and easier to manage while supporting a glossy finish. With colour-protection positioning, the formula is suitable for a hair-care routine focused on maintaining the appearance of colour-treated hair. The packaging states that it is sulfate-free and paraben-free and suitable for daily use.",
+    "tagline": "Deep Condition. Smooth. Shine.",
+    "size": "500 ml",
+    "suitableFor": [
+      "Dry Hair",
+      "Damaged Hair",
+      "Frizzy Hair",
+      "Colour-Treated Hair"
+    ],
+    "benefits": [
+      "Intensive Conditioning — Provides conditioning-focused care for dry, damaged hair.",
+      "Smoothness & Manageability — Helps hair feel softer and easier to manage.",
+      "Enhanced Shine — Supports a smooth, glossy-looking finish.",
+      "Colour Protection — Designed for colour-treated hair-care routines.",
+      "Keratin & Argan Care — Combines two highlighted hair-care features.",
+      "Sulfate & Paraben Free — As stated on the product packaging."
+    ],
+    "featured": false,
+    "ingredients": [
+      {
+        "name": "Keratin Protein",
+        "description": "Commonly used in hair-care formulations for conditioning."
+      },
+      {
+        "name": "Argan",
+        "description": "Commonly used to support softness and improve hair feel."
+      }
+    ],
+    "seoTitle": "Dermaclick Keratin Argan Hair Spa Mask 500ml",
+    "seoDescription": "Discover Dermaclick Keratin Argan Hair Spa Mask 500ml for conditioning dry, damaged and frizzy hair. Supports softness, smoothness, shine and colour-care routines.",
+    "seoKeywords": [
+      "Dermaclick Keratin Argan Hair Spa",
+      "Dermaclick hair mask",
+      "keratin hair spa",
+      "keratin hair treatment",
+      "deep conditioning hair mask",
+      "hair spa for damaged hair",
+      "hair mask for frizzy hair",
+      "colour protection hair treatment",
+      "smoothing hair mask"
+    ],
+    "order": 13
+  },
+  {
+    "price": null,
+    "id": "DC-23",
+    "slug": "dermaclick-ultra-gentle-cleanser",
+    "name": "Dermaclick Ultra Gentle Cleanser",
+    "category": "Face Care",
+    "image": "/products/dermaclick-ultra-gentle-cleanser-6beaaf8d.webp",
+    "shortDescription": "An ultra-gentle facial cleanser designed to remove makeup and impurities while leaving skin feeling soft and hydrated, without disrupting the skin barrier.",
+    "description": "Keep your skincare routine simple and gentle with Dermaclick Ultra Gentle Cleanser. Formulated for all skin types, this cleanser is designed to remove makeup and everyday impurities while helping maintain the skin’s comfortable, hydrated feel. Its gentle-cleansing positioning focuses on cleansing without disrupting the skin barrier. The packaging states that the formula is paraben-free and sulphate-free.",
+    "tagline": "Ultra Gentle Cleansing. Clean Skin, Comfortable Barrier.",
+    "size": "100 ml",
+    "suitableFor": [
+      "All Skin Types"
+    ],
+    "benefits": [
+      "Gentle Cleansing — Cleanses without disrupting the skin barrier, as stated on the packaging.",
+      "Soft, Hydrated Feel — Leaves skin feeling soft and hydrated.",
+      "Makeup & Impurity Removal — Helps remove makeup and everyday impurities.",
+      "Paraben & Sulphate Free — As stated on the product packaging.",
+      "Everyday Skincare — A convenient 100ml size for a regular cleansing routine."
+    ],
+    "featured": true,
+    "ingredients": [],
+    "seoTitle": "Dermaclick Ultra Gentle Cleanser 100ml for All Skin Types",
+    "seoDescription": "Discover Dermaclick Ultra Gentle Cleanser 100ml. Designed to remove makeup and impurities while leaving skin feeling soft and hydrated. Paraben-free and sulphate-free.",
+    "seoKeywords": [
+      "Dermaclick Ultra Gentle Cleanser",
+      "Dermaclick skin cleanser",
+      "gentle face cleanser",
+      "ultra gentle cleanser",
+      "facial cleanser for all skin types",
+      "cleanser for sensitive-feeling skin",
+      "impurity removing face wash",
+      "hydrating face cleanser"
+    ],
+    "order": 14
+  },
+  {
+    "id": "DC-11",
+    "slug": "dermaclick-tinted-sunscreen-lotion-spf-50-pa",
+    "name": "Dermaclick Tinted Sunscreen Lotion SPF 50 PA+++",
+    "category": "Sun Care",
+    "image": "/products/dermaclick-tinted-sunscreen-lotion-spf-50-pa-a7a386f9.webp",
+    "price": null,
+    "featured": false,
+    "order": 15,
+    "description": "Protect your skin with Dermaclick Tinted Sunscreen Lotion SPF 50 PA+++. Formulated with zinc oxide and titanium dioxide, this tinted sunscreen provides broad-spectrum UVA and UVB protection. Its tinted formula and matte finish are designed for a more even-looking finish without the overly shiny feel of some sunscreens. The packaging states that it is water-resistant, non-comedogenic, paraben-free and sulphate-free, making it a practical addition to your daily skincare routine.",
+    "shortDescription": "Tinted broad-spectrum sunscreen lotion with SPF 50 PA+++, zinc oxide and titanium dioxide. Features a matte finish and water-resistant formulation for everyday sun protection.",
+    "tagline": "Tinted Mineral Protection. Smooth Matte Finish.",
+    "size": "60 ml",
+    "suitableFor": [
+      "All Skin Types, as stated on the packaging"
+    ],
+    "benefits": [
+      "Broad-Spectrum Protection — SPF 50 PA+++ with UVA/UVB protection stated on the label.",
+      "Mineral UV Filters — Contains zinc oxide and titanium dioxide, as highlighted on the packaging.",
+      "Tinted Finish — Helps reduce the visible white cast associated with some mineral sunscreens.",
+      "Matte Finish — Designed for a less shiny-looking finish.",
+      "Water Resistant — As stated on the packaging; reapplication is still important after swimming, sweating and during prolonged outdoor exposure.",
+      "Non-Comedogenic — As stated on the packaging.",
+      "Paraben & Sulphate Free — As stated on the packaging."
+    ],
+    "ingredients": [
+      {
+        "name": "Zinc Oxide",
+        "description": "Mineral UV filter."
+      },
+      {
+        "name": "Titanium Dioxide",
+        "description": "Mineral UV filter."
+      }
+    ],
+    "seoTitle": "Dermaclick Tinted Sunscreen SPF 50 PA+++ 60ml",
+    "seoDescription": "Shop Dermaclick Tinted Sunscreen Lotion SPF 50 PA+++ 60ml with zinc oxide, titanium dioxide, broad-spectrum UVA/UVB protection and a matte finish.",
+    "seoKeywords": [
+      "Dermaclick tinted sunscreen",
+      "Dermaclick sunscreen SPF 50",
+      "tinted sunscreen lotion",
+      "tinted sunscreen SPF 50 PA+++",
+      "mineral sunscreen",
+      "zinc oxide sunscreen",
+      "broad-spectrum sunscreen",
+      "UVA UVB protection",
+      "matte finish sunscreen"
+    ]
   }
 ]
