@@ -62,6 +62,73 @@ test('promote: accepts a selective export and requires explicit shrink approval 
   } finally { t.cleanup(); }
 });
 
+test('promote: --merge dry-run reports three adds and promotion retains all five current products', () => {
+  const existing = [...catalogue(), product({ id: 'DC-05', slug: 'existing-five', name: 'Existing Five', order: 5 })]
+    .map((p, index) => ({ ...p, image: index % 2 ? '/products/sunscreen.webp' : '/products/face-wash.webp' }));
+  const t = tempProject({ products: existing, images });
+  const target = path.join(t.dir, 'src/data/products.json');
+  const imported = [
+    product({ id: 'DC-21', slug: 'dermaclick-rice-toner', name: 'Dermaclick Rice Toner', category: 'Toners', image: PNG_DATA_URL }),
+    product({ id: 'DC-22', slug: 'dermaclick-na-serum', name: 'Dermaclick NA Serum', category: 'Serums', image: PNG_DATA_URL }),
+    product({ id: 'DC-23', slug: 'dermaclick-kojic-acid-serum', name: 'Dermaclick Kojic Acid Serum', category: 'Serums', image: PNG_DATA_URL }),
+  ];
+  const file = path.join(t.dir, 'dermaclick-products-export.json');
+  fs.writeFileSync(file, buildSelectedExport(imported).text);
+  try {
+    const before = fs.readFileSync(target, 'utf8');
+    const dry = run('promote-catalogue.mjs', [file, '--dry-run', '--merge', '--root', t.dir]);
+    assert.equal(dry.status, 0, dry.stderr + dry.stdout);
+    assert.match(dry.stdout, /Merge: 3 to add \| 0 to update \| 0 unchanged\/skipped/);
+    assert.equal(fs.readFileSync(target, 'utf8'), before);
+    assert.equal(fs.existsSync(path.join(t.dir, 'public/products/dermaclick-rice-toner-')), false);
+
+    const promoted = run('promote-catalogue.mjs', [file, '--merge', '--root', t.dir]);
+    assert.equal(promoted.status, 0, promoted.stderr + promoted.stdout);
+    const output = JSON.parse(fs.readFileSync(target, 'utf8'));
+    assert.equal(output.length, 8);
+    assert.deepEqual(output.slice(0, 5), existing);
+    assert.deepEqual(output.slice(5).map((p) => p.name), imported.map((p) => p.name));
+    assert.equal(new Set(output.map((p) => p.id)).size, 8);
+    assert.equal(new Set(output.map((p) => p.slug)).size, 8);
+    output.slice(5).forEach((p) => {
+      assert.match(p.image, /^\/products\/.+-[0-9a-f]{8}\.png$/);
+      assert.ok(fs.existsSync(path.join(t.dir, 'public', p.image)));
+    });
+    assert.ok(fs.existsSync(path.join(t.dir, 'public/products/face-wash.webp')));
+    assert.ok(fs.existsSync(path.join(t.dir, 'public/products/sunscreen.webp')));
+  } finally { t.cleanup(); }
+});
+
+test('promote: --merge updates by id or slug, preserves existing images, and counts unchanged records as skipped', () => {
+  const existing = [...catalogue(), product({ id: 'DC-05', slug: 'existing-five', name: 'Existing Five', order: 5 })]
+    .map((p, index) => ({ ...p, image: index % 2 ? '/products/sunscreen.webp' : '/products/face-wash.webp' }));
+  const t = tempProject({ products: existing, images });
+  const file = path.join(t.dir, 'updates.json');
+  const imported = [
+    { ...existing[0], tagline: 'Updated by id', image: null },
+    { ...existing[1], id: 'DC-22', tagline: 'Updated by slug', image: '' },
+    existing[2],
+  ];
+  fs.writeFileSync(file, buildSelectedExport(imported).text);
+  try {
+    const dry = run('promote-catalogue.mjs', [file, '--dry-run', '--merge', '--root', t.dir]);
+    assert.equal(dry.status, 0, dry.stderr + dry.stdout);
+    assert.match(dry.stdout, /Merge: 0 to add \| 2 to update \| 1 unchanged\/skipped/);
+    const promoted = run('promote-catalogue.mjs', [file, '--merge', '--root', t.dir]);
+    assert.equal(promoted.status, 0, promoted.stderr + promoted.stdout);
+    const output = JSON.parse(fs.readFileSync(path.join(t.dir, 'src/data/products.json'), 'utf8'));
+    assert.equal(output.length, 5);
+    assert.equal(output[0].tagline, 'Updated by id');
+    assert.equal(output[0].image, existing[0].image);
+    assert.equal(output[1].id, 'DC-22');
+    assert.equal(output[1].tagline, 'Updated by slug');
+    assert.equal(output[1].image, existing[1].image);
+    assert.deepEqual(output[2], existing[2]);
+    assert.equal(new Set(output.map((p) => p.id)).size, output.length);
+    assert.equal(new Set(output.map((p) => p.slug)).size, output.length);
+  } finally { t.cleanup(); }
+});
+
 test('promote: refuses an incomplete (smaller) export over a larger committed catalogue, leaves files intact; backs up on real replace', () => {
   const full = catalogue().map((p) => ({ ...p, image: p.image && p.image.startsWith('data:') ? null : p.image }));
   const t = tempProject({ products: full, images });

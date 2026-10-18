@@ -2,8 +2,8 @@
 export const site = {
   name: 'Dermaclick',
   url: '',
-  whatsapp: '',
-  phone: '',
+  whatsapp: '918653562768',
+  phone: '+918653562768',
   email: '',
   address: '',
   socials: { instagram: '', facebook: '' },

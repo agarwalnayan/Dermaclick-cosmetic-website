@@ -11,6 +11,7 @@ import { Routes, Route } from 'react-router-dom';
 import React from 'react';
 import { tempProject, catalogue, product, placeholder, memStorage } from './helpers.mjs';
 import { STORAGE_KEY } from '../src/data/catalogue.js';
+import { site, waLink, telLink } from '../src/config/site.js';
 
 async function withSite({ products, storage }, fn) {
   const t = tempProject({ products });
@@ -43,6 +44,11 @@ test('10. committed products.json is loaded when browser storage is absent; coll
     assert.ok(!t.includes('Product 09') && !/Category A/.test(t), 'no placeholders on the public page');
     for (const s of ['face-wash', 'moisturizer', 'sunscreen', 'vitamin-c-serum']) assert.ok(html.includes(`href="/products/${s}"`), 'card link ' + s);
     for (const c of ['Cleansers', 'Moisturisers', 'Sun Care', 'Serums']) assert.ok(html.includes(`>${c}</button>`), 'category chip ' + c);
+    assert.ok(html.includes('href="#category-cleansers"'), 'category discovery links to its matching live filter');
+    assert.ok(html.includes('id="category-cleansers"'), 'filter has the category discovery anchor target');
+    assert.ok(t.includes('Explore by category'));
+    assert.ok(html.includes('https://wa.me/918653562768?text='), 'homepage contact CTA uses the configured WhatsApp number');
+    assert.ok(html.includes('href="tel:+918653562768"'), 'phone action uses an international telephone link');
   });
 });
 
@@ -58,7 +64,15 @@ test('10b. every valid product has a working detail route using the same record 
       if (p.image) assert.ok(html.includes(`src="${p.image}"`), p.slug + ' image src');
       assert.ok(!t.includes('Product not found'));
     }
+    assert.ok(text(await page(`/products/${catalogue()[0].slug}`)).includes('More from Dermaclick'), 'product details include related product discovery');
     assert.match(text(await page('/products/does-not-exist')), /Product not found/);
+  });
+
+  test('contact configuration uses the verified international WhatsApp and phone numbers', () => {
+    assert.equal(site.whatsapp, '918653562768');
+    assert.equal(site.phone, '+918653562768');
+    assert.equal(waLink('Enquiry for Rice Toner & Serum'), 'https://wa.me/918653562768?text=Enquiry%20for%20Rice%20Toner%20%26%20Serum');
+    assert.equal(telLink(), 'tel:+918653562768');
   });
 });
 

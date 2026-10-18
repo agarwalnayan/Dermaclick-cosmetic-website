@@ -1,0 +1,382 @@
+[
+  {
+    "price": null,
+    "id": "DC-17",
+    "slug": "dermaclick-face-wash",
+    "name": "Dermaclick Face Wash",
+    "category": "Face Care",
+    "image": "/products/dermaclick-face-wash-7195924c.webp",
+    "shortDescription": "Brightening-focused daily cleansing with Kojic Acid, Alpha Arbutin & Niacinamide.",
+    "description": "More than a face wash — a brightening cleanse powered by Kojic Acid, Alpha Arbutin & Niacinamide. Designed as a daily cleansing step with brightening-support ingredients for a fresher, more even-looking complexion.",
+    "tagline": "Cleanse. Brighten. Refresh. Repeat.",
+    "size": "75 ml",
+    "suitableFor": [
+      "All Skin Types"
+    ],
+    "benefits": [
+      "Daily cleansing",
+      "Brightening-support formulation",
+      "Supports a more even-looking complexion",
+      "Suitable for all skin types"
+    ],
+    "featured": true,
+    "ingredients": [
+      {
+        "name": "2% Kojic Acid",
+        "description": "A well-known brightening-support ingredient used in pigmentation-focused skincare."
+      },
+      {
+        "name": "1% Alpha Arbutin",
+        "description": "A pigmentation-focused active commonly used in brightening skincare formulations."
+      },
+      {
+        "name": "Niacinamide",
+        "description": "A versatile skincare ingredient that supports a brighter, more even-looking appearance."
+      }
+    ],
+    "seoTitle": "Dermaclick Face Wash | Kojic Acid, Alpha Arbutin & Niacinamide",
+    "seoDescription": "Dermaclick Face Wash with 2% Kojic Acid, 1% Alpha Arbutin and Niacinamide for a brightening-focused daily cleansing routine. Suitable for all skin types.",
+    "order": 1
+  },
+  {
+    "price": null,
+    "id": "DC-18",
+    "slug": "dermaclick-moisturizer",
+    "name": "Dermaclick Moisturizer",
+    "category": "Face Care",
+    "image": "/products/dermaclick-moisturizer-1853e4e2.webp",
+    "shortDescription": "Long-lasting hydration with Vitamin B3 and Vitamin E, formulated to protect skin from dryness and support comfortable, moisturized skin.",
+    "description": "Give your skin everyday hydration with Dermaclick Moisturizer, a lightweight daily moisturizing formula designed to help protect skin from dryness and provide long-lasting hydration.\nEnriched with Vitamin B3 and Vitamin E, the formula is designed for everyday skincare and is suitable for all skin types. Its paraffin-free, paraben-free and non-comedogenic formulation makes it a versatile addition to your daily skincare routine.",
+    "tagline": "Hydrate. Nourish. Protect. Every Day.",
+    "size": "75 ml",
+    "suitableFor": [
+      "All Skin Types"
+    ],
+    "benefits": [
+      "💧 Long-Lasting Hydration — Helps keep skin moisturized and comfortable.",
+      "🛡️ Helps Protect From Dryness — Designed for everyday hydration and dry-skin protection.",
+      "✨ Vitamin-Enriched Formula — Formulated with Vitamin B3 and Vitamin E.",
+      "🌿 Non-Comedogenic — A pore-friendly formulation designed not to clog pores.",
+      "🚫 Paraffin & Paraben Free — Made without paraffin and parabens.",
+      "👨‍👩‍👧 For All Skin Types — Suitable for everyday use across skin types."
+    ],
+    "featured": true,
+    "ingredients": [
+      {
+        "name": "Vitamin B3",
+        "description": "A versatile skincare ingredient commonly used in moisturising and skin-conditioning formulations."
+      },
+      {
+        "name": "Vitamin E",
+        "description": "An antioxidant commonly used in skincare formulations to support skin conditioning and moisturisation."
+      }
+    ],
+    "seoTitle": "Dermaclick Moisturizer | Long-Lasting Hydration with Vitamin B3 & E",
+    "seoDescription": "Dermaclick Moisturizer provides long-lasting hydration with Vitamin B3 and Vitamin E. Paraffin-free, paraben-free and non-comedogenic. Suitable for all skin types.",
+    "order": 2
+  },
+  {
+    "id": "DC-03",
+    "slug": "dermaclick-sunscreen-cream",
+    "name": "Dermaclick Sunscreen Cream",
+    "category": "Sun Care",
+    "image": "/products/dermaclick-sunscreen-cream-b1daefb6.webp",
+    "price": null,
+    "featured": true,
+    "order": 3,
+    "description": "Dermaclick Sunscreen Cream combines SPF 50 PA+++ broad-spectrum UV protection with hydration-focused skincare ingredients for everyday use.\nFormulated with 1% Hyaluronic Acid and Vitamin E, it is designed to provide protection against UVA and UVB rays while supporting moisturized, comfortable-looking skin.\nThe formula is water resistant and suitable for all skin types, making it a practical addition to your daily skincare routine.",
+    "shortDescription": "Broad-spectrum SPF 50 PA+++ sunscreen with 1% Hyaluronic Acid and Vitamin E, designed to provide daily UV protection while supporting hydrated, comfortable-looking skin.",
+    "tagline": "Protect. Hydrate. Every Day.",
+    "size": "75 ml",
+    "suitableFor": [
+      "All Skin Types"
+    ],
+    "benefits": [
+      "SPF 50 PA+++ protection",
+      "Broad-spectrum UVA + UVB protection",
+      "1% Hyaluronic Acid",
+      "Vitamin E enriched",
+      "Water resistant",
+      "Supports hydrated-looking skin",
+      "Suitable for all skin types",
+      "Designed for everyday sun-protection use"
+    ],
+    "ingredients": [
+      {
+        "name": "1% Hyaluronic Acid",
+        "description": "A hydration-focused skincare ingredient that helps support skin moisture and hydrated, comfortable-looking skin."
+      },
+      {
+        "name": "Vitamin E",
+        "description": "An antioxidant ingredient commonly used in skincare formulations to support skin conditioning."
+      }
+    ],
+    "seoTitle": "Dermaclick Sunscreen Cream | SPF 50 PA+++ with Hyaluronic Acid",
+    "seoDescription": "Dermaclick Sunscreen Cream with SPF 50 PA+++, broad-spectrum UVA/UVB protection, 1% Hyaluronic Acid and Vitamin E. Water resistant and suitable for all skin types."
+  },
+  {
+    "id": "DC-04",
+    "slug": "dermaclick-sa-serum",
+    "name": "Dermaclick SA Serum",
+    "category": "Serum",
+    "image": "/products/dermaclick-sa-serum-0267ec6d.webp",
+    "price": null,
+    "featured": false,
+    "order": 4,
+    "description": "Dermaclick SA Serum combines 10% Niacinamide, Zinc PCA, Hyaluronic Acid, Rice Water and Vitamin E in a multi-benefit skincare formula designed to address several everyday skin concerns.\n10% Niacinamide helps support the skin barrier and is commonly used in skincare aimed at excess oil and uneven-looking tone. Zinc PCA complements the formula with an oil-control-focused approach, while Hyaluronic Acid supports skin hydration.\nEnriched with Rice Water and Vitamin E, the formula also provides a skin-conditioning and hydration-focused element, making it more than a basic single-ingredient niacinamide serum.",
+    "shortDescription": "A multi-benefit serum with 10% Niacinamide, Zinc PCA, Hyaluronic Acid, Rice Water and Vitamin E for oil-control, hydration and skin-barrier support.",
+    "tagline": "Balance. Hydrate. Strengthen.",
+    "size": "30 ml",
+    "suitableFor": [
+      "Best suited for oily/combination skin and oil-control-focused skincare routines."
+    ],
+    "benefits": [
+      "10% Niacinamide",
+      "Supports skin-barrier health",
+      "Helps with excess oil",
+      "Supports more even-looking skin tone",
+      "Oil-control-focused formulation",
+      "Hydration support",
+      "Helps attract and retain moisture",
+      "With Rice Water",
+      "With Vitamin E",
+      "Multi-ingredient skincare formula"
+    ],
+    "ingredients": [
+      {
+        "name": "10% Niacinamide",
+        "description": "Helps support the skin barrier and is commonly used to address excess oil and uneven-looking tone."
+      },
+      {
+        "name": "Zinc PCA",
+        "description": "An ingredient commonly included in skincare formulations designed for oily skin and oil-control-focused routines."
+      },
+      {
+        "name": "Hyaluronic Acid",
+        "description": "A hydration-focused ingredient that helps attract and retain moisture."
+      },
+      {
+        "name": "Rice Water",
+        "description": "Provides a hydration and skin-conditioning focus to the formulation."
+      },
+      {
+        "name": "Vitamin E",
+        "description": "An antioxidant and skin-conditioning ingredient commonly used in skincare formulations."
+      }
+    ],
+    "seoTitle": "DermaclickSA Serum | 10% Niacinamide, Zinc PCA & Hyaluronic Acid",
+    "seoDescription": "Dermaclick SA Serum combines 10% Niacinamide, Zinc PCA, Hyaluronic Acid, Rice Water and Vitamin E for oil-control, hydration and skin-barrier support."
+  },
+  {
+    "price": null,
+    "id": "DC-19",
+    "slug": "dermaclick-vitamin-c-serum",
+    "name": "Dermaclick Vitamin C Serum",
+    "category": "Serum",
+    "image": "/products/dermaclick-vitamin-c-serum-7647c73d.webp",
+    "shortDescription": "10% Vitamin C serum with antioxidant and brightening-focused benefits, designed to improve uneven-looking tone and support smoother, more refined-looking skin.",
+    "description": "Dermaclick Vitamin C Serum is formulated with 10% Vitamin C and designed to support a brighter, more even-looking complexion.\nVitamin C provides antioxidant support against environmental oxidative stress while helping address the appearance of uneven skin tone and pigmentation concerns. The formula is also positioned to help reduce the appearance of fine lines and wrinkles, smooth the appearance of crow's feet, and refine the appearance of pores.\nA focused addition to your daily skincare routine, this serum is suitable for all skin types.",
+    "tagline": "Brighten. Smooth. Refine.",
+    "size": "30 ml",
+    "suitableFor": [
+      "All Skin Types"
+    ],
+    "benefits": [
+      "10% Vitamin C",
+      "Antioxidant Support — Helps support skin against oxidative stress from environmental exposure.",
+      "Brightening Support — Helps promote a brighter, more even-looking complexion.",
+      "Uneven Tone — Designed to improve the appearance of uneven skin tone.",
+      "Fine Lines & Wrinkles — Helps reduce their appearance.",
+      "Crow's Feet — Helps smooth their appearance.",
+      "Pore Refining — Helps refine the appearance of pores.",
+      "All Skin Types — Suitable for all skin types."
+    ],
+    "featured": false,
+    "ingredients": [
+      {
+        "name": "10% Vitamin C",
+        "description": "A concentrated Vitamin C formulation that provides antioxidant support and is commonly used in skincare focused on brighter, more even-looking skin."
+      }
+    ],
+    "seoTitle": "Dermaclick Vitamin C Serum | 10% Vitamin C",
+    "seoDescription": "Dermaclick Vitamin C Serum with 10% Vitamin C for antioxidant and brightening support. Helps improve uneven-looking tone and the appearance of fine lines, wrinkles and pores.",
+    "order": 5
+  },
+  {
+    "price": null,
+    "id": "DC-20",
+    "slug": "dermaclick-rice-toner",
+    "name": "Dermaclick Rice Toner",
+    "category": "Face Care",
+    "image": "/products/dermaclick-rice-toner-f690787a.webp",
+    "shortDescription": "A lightweight moisturizing toner formulated with Rice Water, 5 Ceramides, Hyaluronic Acid, Niacinamide and Lactic Acid to hydrate skin and support the skin barrier.",
+    "description": "Meet Dermaclick Rice Toner, a lightweight moisturizing toner combining Rice Water with 5 Ceramides, Hyaluronic Acid, Niacinamide and Lactic Acid.\n\nDesigned to complement your skincare routine, its ingredient blend focuses on hydration, skin-barrier support and a refreshed, radiant-looking complexion.",
+    "tagline": "Hydrate, replenish and support your skin barrier.",
+    "size": "75 ml",
+    "suitableFor": [
+      "Skin hydration",
+      "Skin barrier support",
+      "Dehydrated skin"
+    ],
+    "benefits": [
+      "Helps hydrate the skin",
+      "Supports the skin barrier",
+      "Helps reduce moisture loss",
+      "Helps maintain a refreshed, radiant-looking complexion",
+      "Provides gentle exfoliation with lactic acid"
+    ],
+    "featured": false,
+    "ingredients": [
+      {
+        "name": "Rice Water",
+        "description": "Helps condition the skin and complements the hydrating formula."
+      },
+      {
+        "name": "5 Ceramides",
+        "description": "Support the skin barrier and help reduce moisture loss."
+      },
+      {
+        "name": "Hyaluronic Acid",
+        "description": "Helps hydrate the skin by holding moisture."
+      },
+      {
+        "name": "Niacinamide",
+        "description": "Supports skin-barrier function and helps improve the appearance of skin."
+      },
+      {
+        "name": "Lactic Acid",
+        "description": "An alpha hydroxy acid (AHA) that can provide gentle exfoliation."
+      }
+    ],
+    "seoTitle": "Dermaclick Rice Toner 75ml | Rice Water & Ceramides",
+    "seoDescription": "Discover Dermaclick Rice Toner with Rice Water, 5 Ceramides, Hyaluronic Acid, Niacinamide and Lactic Acid for skin hydration and barrier support.",
+    "seoKeywords": [
+      "Dermaclick Rice Toner",
+      "Rice Water Toner",
+      "Ceramide Toner",
+      "Hydrating Face Toner",
+      "Rice Toner 75ml",
+      "Hyaluronic Acid Toner",
+      "Niacinamide Toner",
+      "Skin Barrier Toner"
+    ],
+    "order": 6
+  },
+  {
+    "id": "DC-06",
+    "slug": "dermaclick-na-serum",
+    "name": "Dermaclick NA Serum",
+    "category": "Face Care",
+    "image": "/products/dermaclick-na-serum-f9015966.webp",
+    "price": null,
+    "featured": false,
+    "order": 7,
+    "description": "Dermaclick NA Serum combines 10% Niacinamide with Zinc PCA, Hyaluronic Acid, Rice Water and Vitamin E to address multiple skincare concerns in one formula.\n\nDesigned for a comprehensive skincare routine, this ingredient blend focuses on excess oil, hydration, skin-barrier support and a more even-looking complexion.\n\nKey Features:\n\n10% Niacinamide to support the skin barrier and improve the appearance of uneven skin tone.\nZinc PCA, commonly used in skincare formulations targeting excess oil.\nHyaluronic Acid to help attract and retain moisture.\nRice Water for skin conditioning and hydration.\nVitamin E for antioxidant and skin-conditioning benefits.",
+    "shortDescription": "A targeted facial serum combining 10% Niacinamide with Rice Water, Zinc PCA, Hyaluronic Acid and Vitamin E to help manage excess oil, hydrate skin and support the skin barrier.",
+    "tagline": "Oil control, hydration and barrier support in one serum.",
+    "size": "30 ml",
+    "suitableFor": [
+      "Oily skin",
+      "Uneven-looking skin tone",
+      "Excess oil",
+      "Dehydrated skin"
+    ],
+    "benefits": [
+      "Helps manage excess oil",
+      "Helps reduce the appearance of hyperpigmentation",
+      "Supports a more even-looking skin tone",
+      "Helps hydrate the skin",
+      "Supports the skin barrier",
+      "Helps improve the appearance of skin plumpness",
+      "Provides antioxidant skin-conditioning benefits"
+    ],
+    "ingredients": [
+      {
+        "name": "Niacinamide (10%)",
+        "description": "Supports skin-barrier function and helps improve the appearance of uneven skin tone and excess oil."
+      },
+      {
+        "name": "Zinc PCA",
+        "description": "A skincare ingredient commonly included in formulations targeting excess oil."
+      },
+      {
+        "name": "Hyaluronic Acid",
+        "description": "Helps attract and retain moisture for hydrated-looking skin."
+      },
+      {
+        "name": "Rice Water",
+        "description": "Provides a skin-conditioning and hydrating component to the formula."
+      },
+      {
+        "name": "Vitamin E",
+        "description": "An antioxidant and skin-conditioning ingredient."
+      }
+    ],
+    "seoTitle": "Dermaclick NA Serum 30ml | 10% Niacinamide",
+    "seoDescription": "Discover Dermaclick NA Serum with 10% Niacinamide, Rice Water, Zinc PCA, Hyaluronic Acid and Vitamin E for hydration, oil control and skin-barrier support.",
+    "seoKeywords": [
+      "Dermaclick NA Serum",
+      "10% Niacinamide Serum",
+      "Rice Water Serum",
+      "Niacinamide Serum",
+      "Zinc PCA Serum",
+      "Hydrating Face Serum",
+      "Serum for Excess Oil",
+      "Dermaclick Face Serum"
+    ]
+  },
+  {
+    "price": null,
+    "id": "DC-21",
+    "slug": "dermaclick-kojic-acid-serum",
+    "name": "Dermaclick Kojic Acid Serum",
+    "category": "Face Care",
+    "image": "/products/dermaclick-kojic-acid-serum-0352e4d2.webp",
+    "shortDescription": "A targeted brightening serum formulated with 2% Kojic Acid, 1% Alpha Arbutin and Niacinamide to help reduce the appearance of dark spots, pigmentation and uneven skin tone.",
+    "description": "Dermaclick Kojic Acid Serum combines 2% Kojic Acid, 1% Alpha Arbutin and Niacinamide in a targeted formula designed for skin concerned with dark spots, pigmentation and uneven-looking skin tone.\n\nKey Features:\n-2% Kojic Acid: Helps improve the appearance of dark spots and pigmentation.\n-1% Alpha Arbutin: Helps improve the appearance of uneven skin tone.\n- Niacinamide: Supports the skin barrier and provides skin-conditioning benefits.\n\nWhy Choose This Serum?\nThe combination of three pigment-focused ingredients makes this serum a targeted addition to a skincare routine focused on a more even-looking complexion.\n\nProduct Details:\n- Net Quantity: 30 ml\n- Suitable for: All skin types, as stated on the packaging\n- Product Type: Facial Serum\n\n2% Kojic Acid + 1% Alpha Arbutin + Niacinamide — targeted care for dark spots and uneven-looking skin.",
+    "tagline": "Targeted care for dark spots and uneven-looking skin.",
+    "size": "30 ml",
+    "suitableFor": [
+      "Dark spots",
+      "Hyperpigmentation",
+      "Uneven skin tone",
+      "Skin discoloration",
+      "All skin types"
+    ],
+    "benefits": [
+      "Helps reduce the appearance of dark spots",
+      "Helps improve the appearance of pigmentation",
+      "Helps fade the appearance of brown and grey patches",
+      "Supports a more even-looking skin tone",
+      "Provides skin-conditioning benefits"
+    ],
+    "featured": false,
+    "ingredients": [
+      {
+        "name": "Kojic Acid (2%)",
+        "description": "A pigment-focused skincare ingredient that helps improve the appearance of dark spots."
+      },
+      {
+        "name": "Alpha Arbutin (1%)",
+        "description": "Helps improve the appearance of uneven pigmentation."
+      },
+      {
+        "name": "Niacinamide",
+        "description": "Supports the skin barrier and provides skin-conditioning benefits."
+      }
+    ],
+    "seoTitle": "Dermaclick Kojic Acid Serum 30ml | 2% Kojic Acid",
+    "seoDescription": "Explore Dermaclick Kojic Acid Serum with 2% Kojic Acid, 1% Alpha Arbutin and Niacinamide for targeted care of dark spots and uneven-looking skin tone.",
+    "seoKeywords": [
+      "Dermaclick Kojic Acid Serum",
+      "2% Kojic Acid Serum",
+      "1% Alpha Arbutin Serum",
+      "Serum for Dark Spots",
+      "Pigmentation Serum",
+      "Uneven Skin Tone Serum",
+      "Brightening Face Serum",
+      "Dermaclick Face Serum"
+    ],
+    "order": 9
+  }
+]

@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { products } from '../data/products';
+import { products, categories } from '../data/products';
 import { faqs } from '../data/content';
 import { site, waLink } from '../config/site';
 import ProductCard from '../components/ProductCard';
@@ -20,6 +20,23 @@ export const Featured = () => {
   return <R id="featured" cls="sec blush"><p className="eyebrow">Selected from the collection</p><h2>Featured products</h2><p className="lead">A closer look at selected favourites.</p>
     <div className="pgrid three reveal-grid" ref={gridRef}>{featuredProducts.map((p, i) => <ProductCard key={p.id} p={p} index={i} />)}</div></R>;
 };
+export const CategoryDiscovery = () => {
+  if (!categories.length) return null;
+  return <R id="category-discovery" cls="sec category-discovery">
+    <div className="category-discovery-heading"><div><p className="eyebrow">Find your focus</p><h2>Explore by category</h2></div>
+      <p className="lead">Browse the Dermaclick collection by the care you have in mind.</p></div>
+    <div className="category-grid">
+      {categories.map((category) => {
+        const count = products.filter((product) => product.category?.trim() === category).length;
+        const id = `category-${category.toLowerCase().trim().replace(/[^a-z0-9]+/g, '-')}`;
+        return <a key={category} href={`#${id}`} className="category-tile">
+          <span className="category-tile-count">{String(count).padStart(2, '0')} {count === 1 ? 'product' : 'products'}</span>
+          <strong>{category}</strong><span className="category-tile-link">Explore collection <i aria-hidden="true">↗</i></span>
+        </a>;
+      })}
+    </div>
+  </R>;
+};
 export const Faq = () => (
   <R id="faq"><h2>Questions, answered</h2>
     <div className="faq">{faqs.map((f) => <details key={f.q}><summary>{f.q}</summary><p>{f.a}</p></details>)}</div></R>
@@ -29,7 +46,7 @@ export function FinalCta() {
   const submit = (e) => {
     e.preventDefault(); trackFormSubmit();
     const text = `Hello Dermaclick, I'm ${name}. ${msg}`;
-    if (site.whatsapp) window.open(waLink(text), '_blank', 'noopener'); else alert('Contact details are not set yet.');
+    window.open(waLink(text), '_blank', 'noopener,noreferrer');
   };
   return (
     <section id="contact" className="sec dark"><div className="wrap split">

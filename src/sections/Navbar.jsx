@@ -8,13 +8,30 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const buttonRef = useRef(null);
   const navRef = useRef(null);
+  const closeMenu = () => {
+    setOpen(false);
+    buttonRef.current?.focus();
+  };
+  const toggleMenu = () => { if (open) closeMenu(); else setOpen(true); };
   useEffect(() => {
     if (!open) return undefined;
-    navRef.current?.querySelector('a')?.focus();
     const onKeyDown = (event) => {
       if (event.key === 'Escape') {
-        setOpen(false);
-        buttonRef.current?.focus();
+        closeMenu();
+        return;
+      }
+      if (event.key === 'Tab') {
+        if (!navRef.current?.contains(document.activeElement)) return;
+        const focusable = [...(navRef.current?.querySelectorAll('a[href], button:not(:disabled)') || [])];
+        if (!focusable.length) return;
+        const first = focusable[0], last = focusable[focusable.length - 1];
+        if (event.shiftKey && document.activeElement === first) {
+          event.preventDefault();
+          last.focus();
+        } else if (!event.shiftKey && document.activeElement === last) {
+          event.preventDefault();
+          first.focus();
+        }
       }
     };
     document.addEventListener('keydown', onKeyDown);
@@ -29,11 +46,11 @@ export default function Navbar() {
   return (
     <header className={`nav${scrolled ? ' scrolled' : ''}`}><div className="wrap nav-in">
       <Link to="/" aria-label="Dermaclick home" onClick={() => setOpen(false)}><Logo /></Link>
-      <nav ref={navRef} id="menu" className={open ? 'open' : ''} aria-label="Main navigation" onClick={() => setOpen(false)}>
+      <button ref={buttonRef} className="burger" aria-expanded={open} aria-controls="menu" aria-label={open ? 'Close navigation' : 'Open navigation'} onClick={toggleMenu}><span /><span /></button>
+      <nav ref={navRef} id="menu" className={open ? 'open' : ''} aria-label="Main navigation" onClick={() => { if (open) closeMenu(); }}>
         {links.map(([l, h]) => <a key={l} href={h}>{l}</a>)}
         <WhatsAppCta location="navbar" variant="solid sm">WhatsApp</WhatsAppCta>
       </nav>
-      <button ref={buttonRef} className="burger" aria-expanded={open} aria-controls="menu" aria-label={open ? 'Close navigation' : 'Open navigation'} onClick={() => setOpen(!open)}><span /><span /></button>
     </div></header>
   );
 }
