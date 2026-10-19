@@ -377,7 +377,7 @@
       "Brightening Face Serum",
       "Dermaclick Face Serum"
     ],
-    "order": 9
+    "order": 8
   },
   {
     "id": "DC-07",
@@ -387,7 +387,7 @@
     "image": "/products/dermaclick-keratin-botox-argan-hair-mask-08f1b6a2.webp",
     "price": null,
     "featured": false,
-    "order": 8,
+    "order": 9,
     "description": "Give your hair a salon-inspired conditioning experience with Dermaclick Keratin Botox Argan Hair Mask. Featuring keratin and argan in its hair-care positioning, this deep-conditioning mask is designed for dry, rough and frizz-prone hair. It helps leave hair feeling softer, smoother and more manageable while enhancing its glossy appearance. With UV protection, it complements your hair-care routine, especially when your hair is regularly exposed to sunlight.",
     "shortDescription": "Deep-conditioning keratin and argan hair mask with UV protection, designed to leave dry, rough and frizzy hair looking smoother, softer and glossier.",
     "tagline": "Deep Condition. Smooth. Shine.",
@@ -498,7 +498,7 @@
     "image": "/products/dermaclick-keratin-botox-argan-shampoo-339b4861.webp",
     "price": null,
     "featured": false,
-    "order": 12,
+    "order": 11,
     "description": "Give your hair a smooth, glossy finish with Dermaclick Keratin Botox Argan Shampoo. Featuring keratin and argan hair-care positioning, this shampoo is designed for dry, damaged and frizzy hair. It combines cleansing with conditioning-focused care to help improve softness, manageability and shine. UV protection and colour-fixation positioning make it a useful addition to a hair-care routine for colour-treated hair. The packaging states that the formula contains 0% sulphate, salt and paraben.",
     "shortDescription": "Keratin and argan shampoo with UV protection, designed for dry, damaged and frizzy hair. Helps improve smoothness and shine while supporting colour protection.",
     "tagline": "Cleanse. Smooth. Protect.",
@@ -549,7 +549,7 @@
     "image": "/products/dermaclick-keratin-botox-argan-shampoo-300ml-d3405214.webp",
     "price": null,
     "featured": false,
-    "order": 11,
+    "order": 12,
     "description": "Give your hair a smooth, glossy look with Dermaclick Keratin Botox Argan Shampoo. Featuring keratin and argan hair-care positioning, this shampoo is designed for dry, damaged and frizzy hair. It helps cleanse the hair while supporting softness, manageability and a smoother-looking finish. With UV protection, colour-fixation positioning and a formula labelled 0% sulphate, salt and paraben, it complements your regular hair-care routine.",
     "shortDescription": "Keratin Botox Argan Shampoo with UV protection, hair fall control and colour protection, labelled 0% sulphate, salt and paraben, for dry, damaged and frizzy hair.",
     "tagline": "Smooth. Nourish. Protect.",
