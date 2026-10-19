@@ -41,16 +41,30 @@ export default function ProductDetail() {
   useSeo({
     title: p ? (p.seoTitle || `${p.name} | Dermaclick`) : 'Product not found | Dermaclick',
     description: p ? (p.seoDescription || `${p.name} from Dermaclick. ${p.description}`) : 'This product could not be found.',
+    keywords: p?.seoKeywords?.length ? p.seoKeywords.join(', ') : undefined,
     path: `/products/${slug}`,
     schema: p && {
       '@context': 'https://schema.org',
       '@type': 'Product',
       name: p.name,
       category: p.category,
-      brand: { '@type': 'Brand', name: 'Dermaclick' },
+      brand: { '@type': 'Brand', name: 'Dermaclick', url: siteOrigin },
       description: p.description,
       keywords: p.seoKeywords?.length ? p.seoKeywords : undefined,
       url: `${siteOrigin}/products/${p.slug}`,
+      image: p.image ? `${siteOrigin}${p.image}` : undefined,
+      offers: {
+        '@type': 'Offer',
+        price: '0',
+        priceCurrency: 'INR',
+        availability: 'https://schema.org/InStock',
+        url: `${siteOrigin}/products/${p.slug}`,
+        seller: { '@type': 'Organization', name: 'Dermaclick' }
+      },
+      additionalProperty: [
+        ...(p.size ? [{ '@type': 'PropertyValue', name: 'Size', value: p.size }] : []),
+        ...(p.suitableFor?.length ? [{ '@type': 'PropertyValue', name: 'Suitable For', value: p.suitableFor.join(', ') }] : [])
+      ]
     },
   });
   if (!p) {

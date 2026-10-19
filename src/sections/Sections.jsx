@@ -11,7 +11,7 @@ const R = ({ id, cls = 'sec', children }) => { const r = useReveal(); return <se
 export const About = () => (
   <R id="about" cls="sec story-section"><div className="split">
     <div className="story-heading"><p className="eyebrow">The Dermaclick approach</p><h2>A brand built on trust and care</h2></div>
-    <div className="story-copy"><p className="lead">Dermaclick brings together beauty and personal care products under one trusted name.</p></div></div></R>
+    <div className="story-copy"><p className="lead">Dermaclick brings together premium skincare and haircare products under one trusted name. Our products are formulated with scientifically-backed active ingredients like Niacinamide, Vitamin C, Keratin, Argan, and Hyaluronic Acid to address various skin and hair concerns. All our formulas are paraben-free and sulphate-free, designed for all skin types.</p></div></div></R>
 );
 export const Featured = () => {
   const gridRef = useReveal();

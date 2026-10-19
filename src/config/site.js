@@ -1,7 +1,7 @@
 // Public client details are kept in one place; optional links stay hidden when unset.
 export const site = {
   name: 'Dermaclick',
-  url: '',
+  url: 'https://dermaclick.com',
   whatsapp: '918653562768',
   phone: '+918653562768',
   email: '',
