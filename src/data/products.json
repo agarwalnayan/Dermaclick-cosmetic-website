@@ -270,7 +270,7 @@
     "image": "/products/dermaclick-na-serum-f9015966.webp",
     "price": null,
     "featured": false,
-    "order": 7,
+    "order": 12,
     "description": "Dermaclick NA Serum combines 10% Niacinamide with Zinc PCA, Hyaluronic Acid, Rice Water and Vitamin E to address multiple skincare concerns in one formula.\n\nDesigned for a comprehensive skincare routine, this ingredient blend focuses on excess oil, hydration, skin-barrier support and a more even-looking complexion.\n\nKey Features:\n\n10% Niacinamide to support the skin barrier and improve the appearance of uneven skin tone.\nZinc PCA, commonly used in skincare formulations targeting excess oil.\nHyaluronic Acid to help attract and retain moisture.\nRice Water for skin conditioning and hydration.\nVitamin E for antioxidant and skin-conditioning benefits.",
     "shortDescription": "Facial serum with 10% Niacinamide, Rice Water, Zinc PCA, Hyaluronic Acid and Vitamin E to help manage excess oil, hydrate skin and support the skin barrier.",
     "tagline": "Oil control, hydration and barrier support in one serum.",
@@ -442,7 +442,7 @@
     "image": "/products/dermaclick-keratin-argan-shampoo-71b08732.webp",
     "price": null,
     "featured": true,
-    "order": 10,
+    "order": 13,
     "description": "Care for dry, damaged and colour-treated hair with Dermaclick Keratin Argan Shampoo. Formulated with a keratin protein-infused hair-care concept and argan care, it is designed to cleanse while supporting a silky, smooth hair feel. Its colour-protection positioning makes it a suitable addition to a hair-care routine for coloured hair. The bottle states that the formula is sulfate-free and paraben-free and suitable for daily use.",
     "shortDescription": "Keratin protein-infused shampoo with argan care, colour protection and a sulfate-free, paraben-free formula, designed to help damaged hair feel softer and smoother.",
     "tagline": "Cleanse. Smooth. Protect Colour.",
@@ -549,7 +549,7 @@
     "image": "/products/dermaclick-keratin-botox-argan-shampoo-300ml-d3405214.webp",
     "price": null,
     "featured": false,
-    "order": 12,
+    "order": 14,
     "description": "Give your hair a smooth, glossy look with Dermaclick Keratin Botox Argan Shampoo. Featuring keratin and argan hair-care positioning, this shampoo is designed for dry, damaged and frizzy hair. It helps cleanse the hair while supporting softness, manageability and a smoother-looking finish. With UV protection, colour-fixation positioning and a formula labelled 0% sulphate, salt and paraben, it complements your regular hair-care routine.",
     "shortDescription": "Keratin Botox Argan Shampoo with UV protection, hair fall control and colour protection, labelled 0% sulphate, salt and paraben, for dry, damaged and frizzy hair.",
     "tagline": "Smooth. Nourish. Protect.",
@@ -639,7 +639,7 @@
       "colour protection hair treatment",
       "smoothing hair mask"
     ],
-    "order": 13
+    "order": 10
   },
   {
     "price": null,
@@ -676,7 +676,7 @@
       "impurity removing face wash",
       "hydrating face cleanser"
     ],
-    "order": 14
+    "order": 15
   },
   {
     "id": "DC-11",
@@ -686,7 +686,7 @@
     "image": "/products/dermaclick-tinted-sunscreen-lotion-spf-50-pa-a7a386f9.webp",
     "price": null,
     "featured": false,
-    "order": 15,
+    "order": 7,
     "description": "Protect your skin with Dermaclick Tinted Sunscreen Lotion SPF 50 PA+++. Formulated with zinc oxide and titanium dioxide, this tinted sunscreen provides broad-spectrum UVA and UVB protection. Its tinted formula and matte finish are designed for a more even-looking finish without the overly shiny feel of some sunscreens. The packaging states that it is water-resistant, non-comedogenic, paraben-free and sulphate-free, making it a practical addition to your daily skincare routine.",
     "shortDescription": "Tinted broad-spectrum sunscreen lotion with SPF 50 PA+++, zinc oxide and titanium dioxide. Features a matte finish and water-resistant formulation for everyday sun protection.",
     "tagline": "Tinted Mineral Protection. Smooth Matte Finish.",
