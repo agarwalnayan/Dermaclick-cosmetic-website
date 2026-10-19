@@ -6,7 +6,7 @@
     "name": "Dermaclick Face Wash",
     "category": "Face Care",
     "image": "/products/dermaclick-face-wash-7195924c.webp",
-    "shortDescription": "Brightening-focused daily cleansing with Kojic Acid, Alpha Arbutin & Niacinamide.",
+    "shortDescription": "Brightening-focused daily cleanser with 2% Kojic Acid, 1% Alpha Arbutin and Niacinamide, designed for a fresher, more even-looking complexion.",
     "description": "More than a face wash — a brightening cleanse powered by Kojic Acid, Alpha Arbutin & Niacinamide. Designed as a daily cleansing step with brightening-support ingredients for a fresher, more even-looking complexion.",
     "tagline": "Cleanse. Brighten. Refresh. Repeat.",
     "size": "75 ml",
@@ -272,7 +272,7 @@
     "featured": false,
     "order": 7,
     "description": "Dermaclick NA Serum combines 10% Niacinamide with Zinc PCA, Hyaluronic Acid, Rice Water and Vitamin E to address multiple skincare concerns in one formula.\n\nDesigned for a comprehensive skincare routine, this ingredient blend focuses on excess oil, hydration, skin-barrier support and a more even-looking complexion.\n\nKey Features:\n\n10% Niacinamide to support the skin barrier and improve the appearance of uneven skin tone.\nZinc PCA, commonly used in skincare formulations targeting excess oil.\nHyaluronic Acid to help attract and retain moisture.\nRice Water for skin conditioning and hydration.\nVitamin E for antioxidant and skin-conditioning benefits.",
-    "shortDescription": "A targeted facial serum combining 10% Niacinamide with Rice Water, Zinc PCA, Hyaluronic Acid and Vitamin E to help manage excess oil, hydrate skin and support the skin barrier.",
+    "shortDescription": "Facial serum with 10% Niacinamide, Rice Water, Zinc PCA, Hyaluronic Acid and Vitamin E to help manage excess oil, hydrate skin and support the skin barrier.",
     "tagline": "Oil control, hydration and barrier support in one serum.",
     "size": "30 ml",
     "suitableFor": [
@@ -389,7 +389,7 @@
     "featured": false,
     "order": 9,
     "description": "Give your hair a salon-inspired conditioning experience with Dermaclick Keratin Botox Argan Hair Mask. Featuring keratin and argan in its hair-care positioning, this deep-conditioning mask is designed for dry, rough and frizz-prone hair. It helps leave hair feeling softer, smoother and more manageable while enhancing its glossy appearance. With UV protection, it complements your hair-care routine, especially when your hair is regularly exposed to sunlight.",
-    "shortDescription": "Deep-conditioning keratin and argan hair mask with UV protection, designed to help improve the appearance of dry, rough and frizzy hair for a smoother, softer and glossier-looking finish.",
+    "shortDescription": "Deep-conditioning keratin and argan hair mask with UV protection, designed to leave dry, rough and frizzy hair looking smoother, softer and glossier.",
     "tagline": "Deep Condition. Smooth. Shine.",
     "size": "500 ml",
     "suitableFor": [
@@ -444,7 +444,7 @@
     "featured": true,
     "order": 10,
     "description": "Care for dry, damaged and colour-treated hair with Dermaclick Keratin Argan Shampoo. Formulated with a keratin protein-infused hair-care concept and argan care, it is designed to cleanse while supporting a silky, smooth hair feel. Its colour-protection positioning makes it a suitable addition to a hair-care routine for coloured hair. The bottle states that the formula is sulfate-free and paraben-free and suitable for daily use.",
-    "shortDescription": "Keratin protein-infused shampoo with argan care, designed to cleanse while helping damaged hair feel softer, smoother and more manageable. Features colour protection and a sulfate-free, paraben-free formula.",
+    "shortDescription": "Keratin protein-infused shampoo with argan care, colour protection and a sulfate-free, paraben-free formula, designed to help damaged hair feel softer and smoother.",
     "tagline": "Cleanse. Smooth. Protect Colour.",
     "size": "500 ml",
     "suitableFor": [
@@ -551,7 +551,7 @@
     "featured": false,
     "order": 11,
     "description": "Give your hair a smooth, glossy look with Dermaclick Keratin Botox Argan Shampoo. Featuring keratin and argan hair-care positioning, this shampoo is designed for dry, damaged and frizzy hair. It helps cleanse the hair while supporting softness, manageability and a smoother-looking finish. With UV protection, colour-fixation positioning and a formula labelled 0% sulphate, salt and paraben, it complements your regular hair-care routine.",
-    "shortDescription": "Keratin Botox Argan Shampoo with UV protection, designed to help improve the appearance of dry, damaged and frizzy hair while supporting a smooth, glossy finish. Features hair fall control, colour protection and a formula labelled 0% sulphate, salt and paraben.",
+    "shortDescription": "Keratin Botox Argan Shampoo with UV protection, hair fall control and colour protection, labelled 0% sulphate, salt and paraben, for dry, damaged and frizzy hair.",
     "tagline": "Smooth. Nourish. Protect.",
     "size": "300 ml",
     "suitableFor": [
