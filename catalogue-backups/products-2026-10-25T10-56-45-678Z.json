@@ -1,0 +1,730 @@
+[
+  {
+    "price": null,
+    "id": "DC-17",
+    "slug": "dermaclick-face-wash",
+    "name": "Dermaclick Face Wash",
+    "category": "Face Care",
+    "image": "/products/dermaclick-face-wash-7195924c.webp?v=20241018",
+    "shortDescription": "Brightening-focused daily cleanser with 2% Kojic Acid, 1% Alpha Arbutin and Niacinamide, designed for a fresher, more even-looking complexion.",
+    "description": "More than a face wash — a brightening cleanse powered by Kojic Acid, Alpha Arbutin & Niacinamide. Designed as a daily cleansing step with brightening-support ingredients for a fresher, more even-looking complexion.",
+    "tagline": "Cleanse. Brighten. Refresh. Repeat.",
+    "size": "75 ml",
+    "suitableFor": [
+      "All Skin Types"
+    ],
+    "benefits": [
+      "Daily cleansing",
+      "Brightening-support formulation",
+      "Supports a more even-looking complexion",
+      "Suitable for all skin types"
+    ],
+    "featured": true,
+    "ingredients": [
+      {
+        "name": "2% Kojic Acid",
+        "description": "A well-known brightening-support ingredient used in pigmentation-focused skincare."
+      },
+      {
+        "name": "1% Alpha Arbutin",
+        "description": "A pigmentation-focused active commonly used in brightening skincare formulations."
+      },
+      {
+        "name": "Niacinamide",
+        "description": "A versatile skincare ingredient that supports a brighter, more even-looking appearance."
+      }
+    ],
+    "seoTitle": "Dermaclick Face Wash | Kojic Acid, Alpha Arbutin & Niacinamide",
+    "seoDescription": "Dermaclick Face Wash with 2% Kojic Acid, 1% Alpha Arbutin and Niacinamide for a brightening-focused daily cleansing routine. Suitable for all skin types.",
+    "order": 1
+  },
+  {
+    "price": null,
+    "id": "DC-18",
+    "slug": "dermaclick-moisturizer",
+    "name": "Dermaclick Moisturizer",
+    "category": "Face Care",
+    "image": "/products/dermaclick-moisturizer-1853e4e2.webp?v=20241018",
+    "shortDescription": "Long-lasting hydration with Vitamin B3 and Vitamin E, formulated to protect skin from dryness and support comfortable, moisturized skin.",
+    "description": "Give your skin everyday hydration with Dermaclick Moisturizer, a lightweight daily moisturizing formula designed to help protect skin from dryness and provide long-lasting hydration.\nEnriched with Vitamin B3 and Vitamin E, the formula is designed for everyday skincare and is suitable for all skin types. Its paraffin-free, paraben-free and non-comedogenic formulation makes it a versatile addition to your daily skincare routine.",
+    "tagline": "Hydrate. Nourish. Protect. Every Day.",
+    "size": "75 ml",
+    "suitableFor": [
+      "All Skin Types"
+    ],
+    "benefits": [
+      "💧 Long-Lasting Hydration — Helps keep skin moisturized and comfortable.",
+      "🛡️ Helps Protect From Dryness — Designed for everyday hydration and dry-skin protection.",
+      "✨ Vitamin-Enriched Formula — Formulated with Vitamin B3 and Vitamin E.",
+      "🌿 Non-Comedogenic — A pore-friendly formulation designed not to clog pores.",
+      "🚫 Paraffin & Paraben Free — Made without paraffin and parabens.",
+      "👨‍👩‍👧 For All Skin Types — Suitable for everyday use across skin types."
+    ],
+    "featured": true,
+    "ingredients": [
+      {
+        "name": "Vitamin B3",
+        "description": "A versatile skincare ingredient commonly used in moisturising and skin-conditioning formulations."
+      },
+      {
+        "name": "Vitamin E",
+        "description": "An antioxidant commonly used in skincare formulations to support skin conditioning and moisturisation."
+      }
+    ],
+    "seoTitle": "Dermaclick Moisturizer | Long-Lasting Hydration with Vitamin B3 & E",
+    "seoDescription": "Dermaclick Moisturizer provides long-lasting hydration with Vitamin B3 and Vitamin E. Paraffin-free, paraben-free and non-comedogenic. Suitable for all skin types.",
+    "order": 2
+  },
+  {
+    "id": "DC-03",
+    "slug": "dermaclick-sunscreen-cream",
+    "name": "Dermaclick Sunscreen Cream",
+    "category": "Sun Care",
+    "image": "/products/dermaclick-sunscreen-cream-b1daefb6.webp?v=20241018",
+    "price": null,
+    "featured": true,
+    "order": 3,
+    "description": "Dermaclick Sunscreen Cream combines SPF 50 PA+++ broad-spectrum UV protection with hydration-focused skincare ingredients for everyday use.\nFormulated with 1% Hyaluronic Acid and Vitamin E, it is designed to provide protection against UVA and UVB rays while supporting moisturized, comfortable-looking skin.\nThe formula is water resistant and suitable for all skin types, making it a practical addition to your daily skincare routine.",
+    "shortDescription": "Broad-spectrum SPF 50 PA+++ sunscreen with 1% Hyaluronic Acid and Vitamin E, designed to provide daily UV protection while supporting hydrated, comfortable-looking skin.",
+    "tagline": "Protect. Hydrate. Every Day.",
+    "size": "75 ml",
+    "suitableFor": [
+      "All Skin Types"
+    ],
+    "benefits": [
+      "SPF 50 PA+++ protection",
+      "Broad-spectrum UVA + UVB protection",
+      "1% Hyaluronic Acid",
+      "Vitamin E enriched",
+      "Water resistant",
+      "Supports hydrated-looking skin",
+      "Suitable for all skin types",
+      "Designed for everyday sun-protection use"
+    ],
+    "ingredients": [
+      {
+        "name": "1% Hyaluronic Acid",
+        "description": "A hydration-focused skincare ingredient that helps support skin moisture and hydrated, comfortable-looking skin."
+      },
+      {
+        "name": "Vitamin E",
+        "description": "An antioxidant ingredient commonly used in skincare formulations to support skin conditioning."
+      }
+    ],
+    "seoTitle": "Dermaclick Sunscreen Cream | SPF 50 PA+++ with Hyaluronic Acid",
+    "seoDescription": "Dermaclick Sunscreen Cream with SPF 50 PA+++, broad-spectrum UVA/UVB protection, 1% Hyaluronic Acid and Vitamin E. Water resistant and suitable for all skin types."
+  },
+  {
+    "id": "DC-04",
+    "slug": "dermaclick-sa-serum",
+    "name": "Dermaclick SA Serum",
+    "category": "Serum",
+    "image": "/products/dermaclick-sa-serum-0267ec6d.webp?v=20241018",
+    "price": null,
+    "featured": false,
+    "order": 4,
+    "description": "Dermaclick SA Serum combines 10% Niacinamide, Zinc PCA, Hyaluronic Acid, Rice Water and Vitamin E in a multi-benefit skincare formula designed to address several everyday skin concerns.\n10% Niacinamide helps support the skin barrier and is commonly used in skincare aimed at excess oil and uneven-looking tone. Zinc PCA complements the formula with an oil-control-focused approach, while Hyaluronic Acid supports skin hydration.\nEnriched with Rice Water and Vitamin E, the formula also provides a skin-conditioning and hydration-focused element, making it more than a basic single-ingredient niacinamide serum.",
+    "shortDescription": "A multi-benefit serum with 10% Niacinamide, Zinc PCA, Hyaluronic Acid, Rice Water and Vitamin E for oil-control, hydration and skin-barrier support.",
+    "tagline": "Balance. Hydrate. Strengthen.",
+    "size": "30 ml",
+    "suitableFor": [
+      "Best suited for oily/combination skin and oil-control-focused skincare routines."
+    ],
+    "benefits": [
+      "10% Niacinamide",
+      "Supports skin-barrier health",
+      "Helps with excess oil",
+      "Supports more even-looking skin tone",
+      "Oil-control-focused formulation",
+      "Hydration support",
+      "Helps attract and retain moisture",
+      "With Rice Water",
+      "With Vitamin E",
+      "Multi-ingredient skincare formula"
+    ],
+    "ingredients": [
+      {
+        "name": "10% Niacinamide",
+        "description": "Helps support the skin barrier and is commonly used to address excess oil and uneven-looking tone."
+      },
+      {
+        "name": "Zinc PCA",
+        "description": "An ingredient commonly included in skincare formulations designed for oily skin and oil-control-focused routines."
+      },
+      {
+        "name": "Hyaluronic Acid",
+        "description": "A hydration-focused ingredient that helps attract and retain moisture."
+      },
+      {
+        "name": "Rice Water",
+        "description": "Provides a hydration and skin-conditioning focus to the formulation."
+      },
+      {
+        "name": "Vitamin E",
+        "description": "An antioxidant and skin-conditioning ingredient commonly used in skincare formulations."
+      }
+    ],
+    "seoTitle": "DermaclickSA Serum | 10% Niacinamide, Zinc PCA & Hyaluronic Acid",
+    "seoDescription": "Dermaclick SA Serum combines 10% Niacinamide, Zinc PCA, Hyaluronic Acid, Rice Water and Vitamin E for oil-control, hydration and skin-barrier support."
+  },
+  {
+    "price": null,
+    "id": "DC-19",
+    "slug": "dermaclick-vitamin-c-serum",
+    "name": "Dermaclick Vitamin C Serum",
+    "category": "Serum",
+    "image": "/products/dermaclick-vitamin-c-serum-7647c73d.webp?v=20241018",
+    "shortDescription": "10% Vitamin C serum with antioxidant and brightening-focused benefits, designed to improve uneven-looking tone and support smoother, more refined-looking skin.",
+    "description": "Dermaclick Vitamin C Serum is formulated with 10% Vitamin C and designed to support a brighter, more even-looking complexion.\nVitamin C provides antioxidant support against environmental oxidative stress while helping address the appearance of uneven skin tone and pigmentation concerns. The formula is also positioned to help reduce the appearance of fine lines and wrinkles, smooth the appearance of crow's feet, and refine the appearance of pores.\nA focused addition to your daily skincare routine, this serum is suitable for all skin types.",
+    "tagline": "Brighten. Smooth. Refine.",
+    "size": "30 ml",
+    "suitableFor": [
+      "All Skin Types"
+    ],
+    "benefits": [
+      "10% Vitamin C",
+      "Antioxidant Support — Helps support skin against oxidative stress from environmental exposure.",
+      "Brightening Support — Helps promote a brighter, more even-looking complexion.",
+      "Uneven Tone — Designed to improve the appearance of uneven skin tone.",
+      "Fine Lines & Wrinkles — Helps reduce their appearance.",
+      "Crow's Feet — Helps smooth their appearance.",
+      "Pore Refining — Helps refine the appearance of pores.",
+      "All Skin Types — Suitable for all skin types."
+    ],
+    "featured": false,
+    "ingredients": [
+      {
+        "name": "10% Vitamin C",
+        "description": "A concentrated Vitamin C formulation that provides antioxidant support and is commonly used in skincare focused on brighter, more even-looking skin."
+      }
+    ],
+    "seoTitle": "Dermaclick Vitamin C Serum | 10% Vitamin C",
+    "seoDescription": "Dermaclick Vitamin C Serum with 10% Vitamin C for antioxidant and brightening support. Helps improve uneven-looking tone and the appearance of fine lines, wrinkles and pores.",
+    "order": 5
+  },
+  {
+    "price": null,
+    "id": "DC-20",
+    "slug": "dermaclick-rice-toner",
+    "name": "Dermaclick Rice Toner",
+    "category": "Face Care",
+    "image": "/products/dermaclick-rice-toner-f690787a.webp?v=20241018",
+    "shortDescription": "A lightweight moisturizing toner formulated with Rice Water, 5 Ceramides, Hyaluronic Acid, Niacinamide and Lactic Acid to hydrate skin and support the skin barrier.",
+    "description": "Meet Dermaclick Rice Toner, a lightweight moisturizing toner combining Rice Water with 5 Ceramides, Hyaluronic Acid, Niacinamide and Lactic Acid.\n\nDesigned to complement your skincare routine, its ingredient blend focuses on hydration, skin-barrier support and a refreshed, radiant-looking complexion.",
+    "tagline": "Hydrate, replenish and support your skin barrier.",
+    "size": "75 ml",
+    "suitableFor": [
+      "Skin hydration",
+      "Skin barrier support",
+      "Dehydrated skin"
+    ],
+    "benefits": [
+      "Helps hydrate the skin",
+      "Supports the skin barrier",
+      "Helps reduce moisture loss",
+      "Helps maintain a refreshed, radiant-looking complexion",
+      "Provides gentle exfoliation with lactic acid"
+    ],
+    "featured": false,
+    "ingredients": [
+      {
+        "name": "Rice Water",
+        "description": "Helps condition the skin and complements the hydrating formula."
+      },
+      {
+        "name": "5 Ceramides",
+        "description": "Support the skin barrier and help reduce moisture loss."
+      },
+      {
+        "name": "Hyaluronic Acid",
+        "description": "Helps hydrate the skin by holding moisture."
+      },
+      {
+        "name": "Niacinamide",
+        "description": "Supports skin-barrier function and helps improve the appearance of skin."
+      },
+      {
+        "name": "Lactic Acid",
+        "description": "An alpha hydroxy acid (AHA) that can provide gentle exfoliation."
+      }
+    ],
+    "seoTitle": "Dermaclick Rice Toner 75ml | Rice Water & Ceramides",
+    "seoDescription": "Discover Dermaclick Rice Toner with Rice Water, 5 Ceramides, Hyaluronic Acid, Niacinamide and Lactic Acid for skin hydration and barrier support.",
+    "seoKeywords": [
+      "Dermaclick Rice Toner",
+      "Rice Water Toner",
+      "Ceramide Toner",
+      "Hydrating Face Toner",
+      "Rice Toner 75ml",
+      "Hyaluronic Acid Toner",
+      "Niacinamide Toner",
+      "Skin Barrier Toner"
+    ],
+    "order": 6
+  },
+  {
+    "id": "DC-06",
+    "slug": "dermaclick-na-serum",
+    "name": "Dermaclick NA Serum",
+    "category": "Face Care",
+    "image": "/products/dermaclick-na-serum-f9015966.webp?v=20261025",
+    "price": null,
+    "featured": false,
+    "order": 12,
+    "description": "Dermaclick NA Serum combines 10% Niacinamide with Zinc PCA, Hyaluronic Acid, Rice Water and Vitamin E to address multiple skincare concerns in one formula.\n\nDesigned for a comprehensive skincare routine, this ingredient blend focuses on excess oil, hydration, skin-barrier support and a more even-looking complexion.\n\nKey Features:\n\n10% Niacinamide to support the skin barrier and improve the appearance of uneven skin tone.\nZinc PCA, commonly used in skincare formulations targeting excess oil.\nHyaluronic Acid to help attract and retain moisture.\nRice Water for skin conditioning and hydration.\nVitamin E for antioxidant and skin-conditioning benefits.",
+    "shortDescription": "Facial serum with 10% Niacinamide, Rice Water, Zinc PCA, Hyaluronic Acid and Vitamin E to help manage excess oil, hydrate skin and support the skin barrier.",
+    "tagline": "Oil control, hydration and barrier support in one serum.",
+    "size": "30 ml",
+    "suitableFor": [
+      "Oily skin",
+      "Uneven-looking skin tone",
+      "Excess oil",
+      "Dehydrated skin"
+    ],
+    "benefits": [
+      "Helps manage excess oil",
+      "Helps reduce the appearance of hyperpigmentation",
+      "Supports a more even-looking skin tone",
+      "Helps hydrate the skin",
+      "Supports the skin barrier",
+      "Helps improve the appearance of skin plumpness",
+      "Provides antioxidant skin-conditioning benefits"
+    ],
+    "ingredients": [
+      {
+        "name": "Niacinamide (10%)",
+        "description": "Supports skin-barrier function and helps improve the appearance of uneven skin tone and excess oil."
+      },
+      {
+        "name": "Zinc PCA",
+        "description": "A skincare ingredient commonly included in formulations targeting excess oil."
+      },
+      {
+        "name": "Hyaluronic Acid",
+        "description": "Helps attract and retain moisture for hydrated-looking skin."
+      },
+      {
+        "name": "Rice Water",
+        "description": "Provides a skin-conditioning and hydrating component to the formula."
+      },
+      {
+        "name": "Vitamin E",
+        "description": "An antioxidant and skin-conditioning ingredient."
+      }
+    ],
+    "seoTitle": "Dermaclick NA Serum 30ml | 10% Niacinamide",
+    "seoDescription": "Discover Dermaclick NA Serum with 10% Niacinamide, Rice Water, Zinc PCA, Hyaluronic Acid and Vitamin E for hydration, oil control and skin-barrier support.",
+    "seoKeywords": [
+      "Dermaclick NA Serum",
+      "10% Niacinamide Serum",
+      "Rice Water Serum",
+      "Niacinamide Serum",
+      "Zinc PCA Serum",
+      "Hydrating Face Serum",
+      "Serum for Excess Oil",
+      "Dermaclick Face Serum"
+    ]
+  },
+  {
+    "price": null,
+    "id": "DC-21",
+    "slug": "dermaclick-kojic-acid-serum",
+    "name": "Dermaclick Kojic Acid Serum",
+    "category": "Face Care",
+    "image": "/products/dermaclick-kojic-acid-serum-0352e4d2.webp",
+    "shortDescription": "A targeted brightening serum formulated with 2% Kojic Acid, 1% Alpha Arbutin and Niacinamide to help reduce the appearance of dark spots, pigmentation and uneven skin tone.",
+    "description": "Dermaclick Kojic Acid Serum combines 2% Kojic Acid, 1% Alpha Arbutin and Niacinamide in a targeted formula designed for skin concerned with dark spots, pigmentation and uneven-looking skin tone.\n\nKey Features:\n-2% Kojic Acid: Helps improve the appearance of dark spots and pigmentation.\n-1% Alpha Arbutin: Helps improve the appearance of uneven skin tone.\n- Niacinamide: Supports the skin barrier and provides skin-conditioning benefits.\n\nWhy Choose This Serum?\nThe combination of three pigment-focused ingredients makes this serum a targeted addition to a skincare routine focused on a more even-looking complexion.\n\nProduct Details:\n- Net Quantity: 30 ml\n- Suitable for: All skin types, as stated on the packaging\n- Product Type: Facial Serum\n\n2% Kojic Acid + 1% Alpha Arbutin + Niacinamide — targeted care for dark spots and uneven-looking skin.",
+    "tagline": "Targeted care for dark spots and uneven-looking skin.",
+    "size": "30 ml",
+    "suitableFor": [
+      "Dark spots",
+      "Hyperpigmentation",
+      "Uneven skin tone",
+      "Skin discoloration",
+      "All skin types"
+    ],
+    "benefits": [
+      "Helps reduce the appearance of dark spots",
+      "Helps improve the appearance of pigmentation",
+      "Helps fade the appearance of brown and grey patches",
+      "Supports a more even-looking skin tone",
+      "Provides skin-conditioning benefits"
+    ],
+    "featured": false,
+    "ingredients": [
+      {
+        "name": "Kojic Acid (2%)",
+        "description": "A pigment-focused skincare ingredient that helps improve the appearance of dark spots."
+      },
+      {
+        "name": "Alpha Arbutin (1%)",
+        "description": "Helps improve the appearance of uneven pigmentation."
+      },
+      {
+        "name": "Niacinamide",
+        "description": "Supports the skin barrier and provides skin-conditioning benefits."
+      }
+    ],
+    "seoTitle": "Dermaclick Kojic Acid Serum 30ml | 2% Kojic Acid",
+    "seoDescription": "Explore Dermaclick Kojic Acid Serum with 2% Kojic Acid, 1% Alpha Arbutin and Niacinamide for targeted care of dark spots and uneven-looking skin tone.",
+    "seoKeywords": [
+      "Dermaclick Kojic Acid Serum",
+      "2% Kojic Acid Serum",
+      "1% Alpha Arbutin Serum",
+      "Serum for Dark Spots",
+      "Pigmentation Serum",
+      "Uneven Skin Tone Serum",
+      "Brightening Face Serum",
+      "Dermaclick Face Serum"
+    ],
+    "order": 8
+  },
+  {
+    "id": "DC-07",
+    "slug": "dermaclick-keratin-botox-argan-hair-mask",
+    "name": "Dermaclick Keratin Botox Argan Hair Mask",
+    "category": "Hair Care",
+    "image": "/products/dermaclick-keratin-botox-argan-hair-mask-08f1b6a2.webp",
+    "price": null,
+    "featured": false,
+    "order": 9,
+    "description": "Give your hair a salon-inspired conditioning experience with Dermaclick Keratin Botox Argan Hair Mask. Featuring keratin and argan in its hair-care positioning, this deep-conditioning mask is designed for dry, rough and frizz-prone hair. It helps leave hair feeling softer, smoother and more manageable while enhancing its glossy appearance. With UV protection, it complements your hair-care routine, especially when your hair is regularly exposed to sunlight.",
+    "shortDescription": "Deep-conditioning keratin and argan hair mask with UV protection, designed to leave dry, rough and frizzy hair looking smoother, softer and glossier.",
+    "tagline": "Deep Condition. Smooth. Shine.",
+    "size": "500 ml",
+    "suitableFor": [
+      "Dry Hair",
+      "Rough Hair",
+      "Frizzy Hair",
+      "Dull-Looking Hair"
+    ],
+    "benefits": [
+      "Deep Conditioning — Designed to provide intensive conditioning for dry, rough-feeling hair.",
+      "Smoother Hair Feel — Helps leave hair feeling softer and smoother.",
+      "Frizz Control — Helps improve the appearance of frizzy hair.",
+      "Glossy Finish — Helps enhance the appearance of smooth, glossy-looking hair.",
+      "Keratin Hair Care — Keratin is used in hair-care formulations as a conditioning ingredient.",
+      "Argan Hair Care — Argan is associated with conditioning and improving the feel of the hair fibre.",
+      "UV Protection — Formulated with UV protection as stated on the product label."
+    ],
+    "ingredients": [
+      {
+        "name": "Keratin",
+        "description": "A hair-conditioning ingredient commonly used in hair-care formulations"
+      },
+      {
+        "name": "Argan",
+        "description": "Used in hair-care products to support conditioning and improve hair feel."
+      }
+    ],
+    "seoTitle": "Dermaclick Keratin Botox Argan Hair Mask 500ml | Hair Care",
+    "seoDescription": "Discover Dermaclick Keratin Botox Argan Hair Mask 500ml with keratin, argan and UV protection. Designed to condition dry, rough and frizzy hair for a smoother, softer and glossier-looking finish.",
+    "seoKeywords": [
+      "Dermaclick Keratin Botox Argan Hair Mask",
+      "keratin hair mask",
+      "argan hair mask",
+      "keratin hair treatment",
+      "deep conditioning hair mask",
+      "hair mask for dry hair",
+      "hair mask for frizzy hair",
+      "hair smoothing mask",
+      "hair shine treatment",
+      "anti-frizz hair care",
+      "UV protection hair mask",
+      "professional hair care"
+    ]
+  },
+  {
+    "id": "DC-08",
+    "slug": "dermaclick-keratin-argan-shampoo",
+    "name": "Dermaclick Keratin Argan Shampoo",
+    "category": "Hair Care",
+    "image": "/products/dermaclick-keratin-argan-shampoo-71b08732.webp?v=20261025",
+    "price": null,
+    "featured": true,
+    "order": 13,
+    "description": "Care for dry, damaged and colour-treated hair with Dermaclick Keratin Argan Shampoo. Formulated with a keratin protein-infused hair-care concept and argan care, it is designed to cleanse while supporting a silky, smooth hair feel. Its colour-protection positioning makes it a suitable addition to a hair-care routine for coloured hair. The bottle states that the formula is sulfate-free and paraben-free and suitable for daily use.",
+    "shortDescription": "Keratin protein-infused shampoo with argan care, colour protection and a sulfate-free, paraben-free formula, designed to help damaged hair feel softer and smoother.",
+    "tagline": "Cleanse. Smooth. Protect Colour.",
+    "size": "500 ml",
+    "suitableFor": [
+      "Damaged Hair",
+      "Dry Hair",
+      "Frizzy Hair",
+      "Colour-Treated Hair"
+    ],
+    "benefits": [
+      "Gentle Cleansing — Designed to cleanse hair as part of a regular hair-care routine.",
+      "Keratin Protein Infused — Keratin-based hair care supports a smoother-feeling hair surface.",
+      "Argan Care — Helps support softness and manageability.",
+      "Silky & Smooth Finish — Designed to leave hair feeling smoother and more manageable.",
+      "Colour Protection — Positioned for colour-treated hair care.",
+      "Sulfate & Paraben Free — As stated on the product packaging.",
+      "Daily Use — The packaging states that it is suitable for daily use."
+    ],
+    "ingredients": [
+      {
+        "name": "Keratin Protein",
+        "description": "Commonly used as a conditioning ingredient in hair-care products."
+      },
+      {
+        "name": "Argan",
+        "description": "Used in hair-care formulations to support softness and manageability."
+      }
+    ],
+    "seoTitle": "Dermaclick Keratin Argan Shampoo 500ml | Colour Protection",
+    "seoDescription": "Shop Dermaclick Keratin Argan Shampoo 500ml, featuring keratin protein-infused hair care, argan care and colour protection. Sulfate-free and paraben-free, with a silky, smooth finish.",
+    "seoKeywords": [
+      "Dermaclick Keratin Argan Shampoo",
+      "keratin shampoo",
+      "argan shampoo",
+      "shampoo for damaged hair",
+      "shampoo for dry hair",
+      "shampoo for frizzy hair",
+      "colour protection shampoo",
+      "shampoo for coloured hair",
+      "sulfate-free shampoo",
+      "paraben-free shampoo",
+      "smoothing shampoo",
+      "daily use shampoo",
+      "500ml shampoo"
+    ]
+  },
+  {
+    "id": "DC-10",
+    "slug": "dermaclick-keratin-botox-argan-shampoo",
+    "name": "Dermaclick Keratin Botox Argan Shampoo",
+    "category": "Hair Care",
+    "image": "/products/dermaclick-keratin-botox-argan-shampoo-339b4861.webp?v=20261025",
+    "price": null,
+    "featured": false,
+    "order": 11,
+    "description": "Give your hair a smooth, glossy finish with Dermaclick Keratin Botox Argan Shampoo. Featuring keratin and argan hair-care positioning, this shampoo is designed for dry, damaged and frizzy hair. It combines cleansing with conditioning-focused care to help improve softness, manageability and shine. UV protection and colour-fixation positioning make it a useful addition to a hair-care routine for colour-treated hair. The packaging states that the formula contains 0% sulphate, salt and paraben.",
+    "shortDescription": "Keratin and argan shampoo with UV protection, designed for dry, damaged and frizzy hair. Helps improve smoothness and shine while supporting colour protection.",
+    "tagline": "Cleanse. Smooth. Protect.",
+    "size": "500 ml",
+    "suitableFor": [
+      "Dry Hair",
+      "Damaged Hair",
+      "Frizzy Hair",
+      "Colour-Treated Hair"
+    ],
+    "benefits": [
+      "Smoothness & Shine — Helps hair look smoother and glossier.",
+      "Conditioning Care — Keratin and argan support the product's conditioning-focused positioning.",
+      "UV Protection — Designed for hair exposed to sunlight.",
+      "Colour Protection — Supports hair-care routines for colour-treated hair.",
+      "Reduced Frizz Appearance — Helps improve the appearance of frizzy hair.",
+      "Hair Fall Control — Listed as a product benefit on the packaging.",
+      "0% Sulphate, Salt & Paraben — As stated on the product label."
+    ],
+    "ingredients": [
+      {
+        "name": "Keratin",
+        "description": "Commonly used in hair-care formulations for conditioning and smoothing."
+      },
+      {
+        "name": "Argan",
+        "description": "Commonly used to support hair softness and shine."
+      }
+    ],
+    "seoTitle": "Dermaclick Keratin Botox Argan Shampoo 500ml | UV Protection",
+    "seoDescription": "Discover Dermaclick Keratin Botox Argan Shampoo 500ml with keratin, argan and UV protection. Designed for dry, damaged and frizzy hair, with smoothness, shine and colour-protection positioning.",
+    "seoKeywords": [
+      "Dermaclick Keratin Botox Argan Shampoo",
+      "keratin argan shampoo",
+      "argan shampoo",
+      "shampoo for damaged hair",
+      "glossy hair shampoo",
+      "colour protection shampoo",
+      "salt-free shampoo",
+      "paraben-free shampoo"
+    ]
+  },
+  {
+    "id": "DC-09",
+    "slug": "dermaclick-keratin-botox-argan-shampoo-300ml",
+    "name": "Dermaclick Keratin Botox Argan Shampoo",
+    "category": "Hair Care",
+    "image": "/products/dermaclick-keratin-botox-argan-shampoo-300ml-d3405214.webp?v=20261025",
+    "price": null,
+    "featured": false,
+    "order": 14,
+    "description": "Give your hair a smooth, glossy look with Dermaclick Keratin Botox Argan Shampoo. Featuring keratin and argan hair-care positioning, this shampoo is designed for dry, damaged and frizzy hair. It helps cleanse the hair while supporting softness, manageability and a smoother-looking finish. With UV protection, colour-fixation positioning and a formula labelled 0% sulphate, salt and paraben, it complements your regular hair-care routine.",
+    "shortDescription": "Keratin Botox Argan Shampoo with UV protection, hair fall control and colour protection, labelled 0% sulphate, salt and paraben, for dry, damaged and frizzy hair.",
+    "tagline": "Smooth. Nourish. Protect.",
+    "size": "300 ml",
+    "suitableFor": [
+      "Dry Hair",
+      "Damaged Hair",
+      "Frizzy Hair",
+      "Colour-Treated Hair"
+    ],
+    "benefits": [
+      "Hair Fall Control — A benefit stated on the product packaging.",
+      "Damaged Hair Care — Designed for dry, damaged and frizzy hair.",
+      "Smooth & Glossy Finish — Helps improve the appearance of smooth, glossy hair.",
+      "Colour Protection — Supports a hair-care routine for colour-treated hair.",
+      "UV Protection — As stated on the product label.",
+      "0% Sulphate, Salt & Paraben — As stated on the product packaging."
+    ],
+    "ingredients": [
+      {
+        "name": "Keratin",
+        "description": "Commonly used as a conditioning ingredient in hair-care formulations."
+      },
+      {
+        "name": "Argan",
+        "description": "Used in hair-care products to support softness and manageability."
+      }
+    ],
+    "seoTitle": "Dermaclick Keratin Botox Argan Shampoo 300ml | UV Protection",
+    "seoDescription": "Discover Dermaclick Keratin Botox Argan Shampoo 300ml with keratin, argan and UV protection. Designed for dry, damaged and frizzy hair, with smoothness and colour-protection positioning.",
+    "seoKeywords": [
+      "Dermaclick Keratin Botox Argan Shampoo",
+      "keratin shampoo",
+      "argan shampoo",
+      "keratin botox shampoo",
+      "shampoo for damaged hair",
+      "shampoo for frizzy hair",
+      "shampoo for dry hair"
+    ]
+  },
+  {
+    "price": null,
+    "id": "DC-22",
+    "slug": "dermaclick-keratin-argan-hair-spa-mask",
+    "name": "Dermaclick Keratin Argan Hair Spa / Mask",
+    "category": "Hair Care",
+    "image": "/products/dermaclick-keratin-argan-hair-spa-mask-640c4ec2.webp",
+    "shortDescription": "Keratin and argan hair spa treatment designed to condition dry, damaged and colour-treated hair, helping improve softness, smoothness and manageability.",
+    "description": "Give your hair an intensive conditioning experience with Dermaclick Keratin Argan Hair Spa / Mask. Featuring keratin protein and argan hair-care positioning, this treatment is designed to improve the feel and appearance of dry, damaged and frizzy hair. It helps leave hair feeling softer, smoother and easier to manage while supporting a glossy finish. With colour-protection positioning, the formula is suitable for a hair-care routine focused on maintaining the appearance of colour-treated hair. The packaging states that it is sulfate-free and paraben-free and suitable for daily use.",
+    "tagline": "Deep Condition. Smooth. Shine.",
+    "size": "500 ml",
+    "suitableFor": [
+      "Dry Hair",
+      "Damaged Hair",
+      "Frizzy Hair",
+      "Colour-Treated Hair"
+    ],
+    "benefits": [
+      "Intensive Conditioning — Provides conditioning-focused care for dry, damaged hair.",
+      "Smoothness & Manageability — Helps hair feel softer and easier to manage.",
+      "Enhanced Shine — Supports a smooth, glossy-looking finish.",
+      "Colour Protection — Designed for colour-treated hair-care routines.",
+      "Keratin & Argan Care — Combines two highlighted hair-care features.",
+      "Sulfate & Paraben Free — As stated on the product packaging."
+    ],
+    "featured": false,
+    "ingredients": [
+      {
+        "name": "Keratin Protein",
+        "description": "Commonly used in hair-care formulations for conditioning."
+      },
+      {
+        "name": "Argan",
+        "description": "Commonly used to support softness and improve hair feel."
+      }
+    ],
+    "seoTitle": "Dermaclick Keratin Argan Hair Spa Mask 500ml",
+    "seoDescription": "Discover Dermaclick Keratin Argan Hair Spa Mask 500ml for conditioning dry, damaged and frizzy hair. Supports softness, smoothness, shine and colour-care routines.",
+    "seoKeywords": [
+      "Dermaclick Keratin Argan Hair Spa",
+      "Dermaclick hair mask",
+      "keratin hair spa",
+      "keratin hair treatment",
+      "deep conditioning hair mask",
+      "hair spa for damaged hair",
+      "hair mask for frizzy hair",
+      "colour protection hair treatment",
+      "smoothing hair mask"
+    ],
+    "order": 10
+  },
+  {
+    "price": null,
+    "id": "DC-23",
+    "slug": "dermaclick-ultra-gentle-cleanser",
+    "name": "Dermaclick Ultra Gentle Cleanser",
+    "category": "Face Care",
+    "image": "/products/dermaclick-ultra-gentle-cleanser-6beaaf8d.webp?v=20261025",
+    "shortDescription": "An ultra-gentle facial cleanser designed to remove makeup and impurities while leaving skin feeling soft and hydrated, without disrupting the skin barrier.",
+    "description": "Keep your skincare routine simple and gentle with Dermaclick Ultra Gentle Cleanser. Formulated for all skin types, this cleanser is designed to remove makeup and everyday impurities while helping maintain the skin’s comfortable, hydrated feel. Its gentle-cleansing positioning focuses on cleansing without disrupting the skin barrier. The packaging states that the formula is paraben-free and sulphate-free.",
+    "tagline": "Ultra Gentle Cleansing. Clean Skin, Comfortable Barrier.",
+    "size": "100 ml",
+    "suitableFor": [
+      "All Skin Types"
+    ],
+    "benefits": [
+      "Gentle Cleansing — Cleanses without disrupting the skin barrier, as stated on the packaging.",
+      "Soft, Hydrated Feel — Leaves skin feeling soft and hydrated.",
+      "Makeup & Impurity Removal — Helps remove makeup and everyday impurities.",
+      "Paraben & Sulphate Free — As stated on the product packaging.",
+      "Everyday Skincare — A convenient 100ml size for a regular cleansing routine."
+    ],
+    "featured": true,
+    "ingredients": [],
+    "seoTitle": "Dermaclick Ultra Gentle Cleanser 100ml for All Skin Types",
+    "seoDescription": "Discover Dermaclick Ultra Gentle Cleanser 100ml. Designed to remove makeup and impurities while leaving skin feeling soft and hydrated. Paraben-free and sulphate-free.",
+    "seoKeywords": [
+      "Dermaclick Ultra Gentle Cleanser",
+      "Dermaclick skin cleanser",
+      "gentle face cleanser",
+      "ultra gentle cleanser",
+      "facial cleanser for all skin types",
+      "cleanser for sensitive-feeling skin",
+      "impurity removing face wash",
+      "hydrating face cleanser"
+    ],
+    "order": 15
+  },
+  {
+    "id": "DC-11",
+    "slug": "dermaclick-tinted-sunscreen-lotion-spf-50-pa",
+    "name": "Dermaclick Tinted Sunscreen Lotion SPF 50 PA+++",
+    "category": "Sun Care",
+    "image": "/products/dermaclick-tinted-sunscreen-lotion-spf-50-pa-a7a386f9.webp",
+    "price": null,
+    "featured": false,
+    "order": 7,
+    "description": "Protect your skin with Dermaclick Tinted Sunscreen Lotion SPF 50 PA+++. Formulated with zinc oxide and titanium dioxide, this tinted sunscreen provides broad-spectrum UVA and UVB protection. Its tinted formula and matte finish are designed for a more even-looking finish without the overly shiny feel of some sunscreens. The packaging states that it is water-resistant, non-comedogenic, paraben-free and sulphate-free, making it a practical addition to your daily skincare routine.",
+    "shortDescription": "Tinted broad-spectrum sunscreen lotion with SPF 50 PA+++, zinc oxide and titanium dioxide. Features a matte finish and water-resistant formulation for everyday sun protection.",
+    "tagline": "Tinted Mineral Protection. Smooth Matte Finish.",
+    "size": "60 ml",
+    "suitableFor": [
+      "All Skin Types, as stated on the packaging"
+    ],
+    "benefits": [
+      "Broad-Spectrum Protection — SPF 50 PA+++ with UVA/UVB protection stated on the label.",
+      "Mineral UV Filters — Contains zinc oxide and titanium dioxide, as highlighted on the packaging.",
+      "Tinted Finish — Helps reduce the visible white cast associated with some mineral sunscreens.",
+      "Matte Finish — Designed for a less shiny-looking finish.",
+      "Water Resistant — As stated on the packaging; reapplication is still important after swimming, sweating and during prolonged outdoor exposure.",
+      "Non-Comedogenic — As stated on the packaging.",
+      "Paraben & Sulphate Free — As stated on the packaging."
+    ],
+    "ingredients": [
+      {
+        "name": "Zinc Oxide",
+        "description": "Mineral UV filter."
+      },
+      {
+        "name": "Titanium Dioxide",
+        "description": "Mineral UV filter."
+      }
+    ],
+    "seoTitle": "Dermaclick Tinted Sunscreen SPF 50 PA+++ 60ml",
+    "seoDescription": "Shop Dermaclick Tinted Sunscreen Lotion SPF 50 PA+++ 60ml with zinc oxide, titanium dioxide, broad-spectrum UVA/UVB protection and a matte finish.",
+    "seoKeywords": [
+      "Dermaclick tinted sunscreen",
+      "Dermaclick sunscreen SPF 50",
+      "tinted sunscreen lotion",
+      "tinted sunscreen SPF 50 PA+++",
+      "mineral sunscreen",
+      "zinc oxide sunscreen",
+      "broad-spectrum sunscreen",
+      "UVA UVB protection",
+      "matte finish sunscreen"
+    ]
+  }
+]

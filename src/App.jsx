@@ -3,10 +3,18 @@ import Navbar from './sections/Navbar'; import Footer from './sections/Footer'; 
 import { WhatsAppCta, CallCta } from './components/Cta';
 import CustomCursor from './components/CustomCursor';
 import ScrollProgress from './components/ScrollProgress';
+import { trackPageView } from './utils/analytics';
 const LocalAdmin = import.meta.env.DEV ? lazy(() => import('./pages/LocalAdmin')) : null; // dev-only, excluded from production build
 export default function App() {
   const { hash, pathname } = useLocation();
   useEffect(() => { if (hash) setTimeout(() => document.querySelector(hash)?.scrollIntoView(), 50); }, [hash, pathname]);
+  useEffect(() => {
+    // Track page view on route changes (exclude LocalAdmin)
+    if (!pathname.startsWith('/local-admin')) {
+      const title = document.title;
+      trackPageView(pathname, title);
+    }
+  }, [pathname]);
   if (LocalAdmin && pathname.startsWith('/local-admin')) return <Suspense fallback={null}><LocalAdmin /></Suspense>;
   return (<>
     <CustomCursor />
