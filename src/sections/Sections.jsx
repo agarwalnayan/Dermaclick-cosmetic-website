@@ -5,6 +5,7 @@ import { site, waLink } from '../config/site';
 import ProductCard from '../components/ProductCard';
 import { WhatsAppCta, CallCta } from '../components/Cta';
 import { useReveal } from '../hooks/useReveal';
+import { useRevealGrid } from '../hooks/useRevealGrid';
 import { trackFormStart, trackFormSubmit } from '../utils/analytics';
 const R = ({ id, cls = 'sec', children }) => { const r = useReveal(); return <section id={id} className={cls}><div className="wrap reveal" ref={r}>{children}</div></section>; };
 
@@ -14,11 +15,11 @@ export const About = () => (
     <div className="story-copy"><p className="lead">Dermaclick brings together premium skincare and haircare products under one trusted name. Our products are formulated with scientifically-backed active ingredients like Niacinamide, Vitamin C, Keratin, Argan, and Hyaluronic Acid to address various skin and hair concerns. All our formulas are paraben-free and sulphate-free, designed for all skin types.</p></div></div></R>
 );
 export const Featured = () => {
-  const gridRef = useReveal();
+  const gridRef = useRevealGrid();
   const featuredProducts = products.filter((p) => p.featured);
   if (featuredProducts.length === 0) return null;
   return <R id="featured" cls="sec blush"><p className="eyebrow">Selected from the collection</p><h2>Featured products</h2><p className="lead">A closer look at selected favourites.</p>
-    <div className="pgrid three reveal-grid" ref={gridRef}>{featuredProducts.map((p, i) => <ProductCard key={p.id} p={p} index={i} />)}</div></R>;
+    <div className="pgrid three reveal-grid" ref={gridRef}>{featuredProducts.map((p) => <ProductCard key={p.id} p={p} />)}</div></R>;
 };
 export const CategoryDiscovery = () => {
   if (!categories.length) return null;

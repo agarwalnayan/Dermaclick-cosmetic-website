@@ -1,10 +1,10 @@
 import { Link } from 'react-router-dom';
 import ProductVisual from './ProductVisual';
 import { trackProductView } from '../utils/analytics';
-export default function ProductCard({ p, index = 0 }) {
+export default function ProductCard({ p }) {
   const description = p.shortDescription || p.description;
   return (
-    <article className="pcard" style={{ '--card-index': index }}>
+    <article className="pcard">
       <Link to={`/products/${p.slug}`} onClick={() => trackProductView(p)} aria-label={`View ${p.name}`}>
         <div className="pimg"><ProductVisual p={p} /></div>
         <div className="pcard-content">

@@ -3,9 +3,10 @@ import { useLocation } from 'react-router-dom';
 import { products, categories } from '../data/products';
 import ProductCard from '../components/ProductCard';
 import { useReveal } from '../hooks/useReveal';
+import { useRevealGrid } from '../hooks/useRevealGrid';
 const categoryId = (category) => `category-${category.toLowerCase().trim().replace(/[^a-z0-9]+/g, '-')}`;
 export default function Collection() {
-  const [cat, setCat] = useState('All'); const ref = useReveal(); const gridRef = useReveal();
+  const [cat, setCat] = useState('All'); const ref = useReveal(); const gridRef = useRevealGrid();
   const { hash } = useLocation();
   useEffect(() => {
     const selected = categories.find((category) => `#${categoryId(category)}` === hash);
@@ -25,7 +26,7 @@ export default function Collection() {
         <span className="collection-count" aria-live="polite">{list.length} {list.length === 1 ? 'product' : 'products'}</span>
       </div>}
       {products.length > 0
-        ? <div className="pgrid reveal-grid" ref={gridRef}>{list.map((p, i) => <ProductCard key={p.id} p={p} index={i} />)}</div>
+        ? <div className="pgrid reveal-grid" ref={gridRef}>{list.map((p) => <ProductCard key={p.id} p={p} />)}</div>
         : <p className="collection-empty">For product information, <a href="#contact">get in touch</a> with the Dermaclick team.</p>}
     </div></section>
   );
