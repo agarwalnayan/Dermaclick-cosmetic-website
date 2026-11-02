@@ -1,46 +1,17 @@
 import { useState } from 'react';
-import { products, categories } from '../data/products';
 import { faqs } from '../data/content';
 import { site, waLink } from '../config/site';
-import ProductCard from '../components/ProductCard';
 import { WhatsAppCta, CallCta } from '../components/Cta';
 import { useReveal } from '../hooks/useReveal';
-import { useRevealGrid } from '../hooks/useRevealGrid';
 import { trackFormStart, trackFormSubmit } from '../utils/analytics';
 const R = ({ id, cls = 'sec', children }) => { const r = useReveal(); return <section id={id} className={cls}><div className="wrap reveal" ref={r}>{children}</div></section>; };
 
-export const About = () => (
-  <R id="about" cls="sec story-section"><div className="split">
-    <div className="story-heading"><p className="eyebrow">The Dermaclick approach</p><h2>A brand built on trust and care</h2></div>
-    <div className="story-copy"><p className="lead">Dermaclick brings together premium skincare and haircare products under one trusted name. Our products are formulated with scientifically-backed active ingredients like Niacinamide, Vitamin C, Keratin, Argan, and Hyaluronic Acid to address various skin and hair concerns. All our formulas are paraben-free and sulphate-free, designed for all skin types.</p></div></div></R>
-);
-export const Featured = () => {
-  const gridRef = useRevealGrid();
-  const featuredProducts = products.filter((p) => p.featured);
-  if (featuredProducts.length === 0) return null;
-  return <R id="featured" cls="sec blush"><p className="eyebrow">Selected from the collection</p><h2>Featured products</h2><p className="lead">A closer look at selected favourites.</p>
-    <div className="pgrid three reveal-grid" ref={gridRef}>{featuredProducts.map((p) => <ProductCard key={p.id} p={p} />)}</div></R>;
-};
-export const CategoryDiscovery = () => {
-  if (!categories.length) return null;
-  return <R id="category-discovery" cls="sec category-discovery">
-    <div className="category-discovery-heading"><div><p className="eyebrow">Find your focus</p><h2>Explore by category</h2></div>
-      <p className="lead">Browse the Dermaclick collection by the care you have in mind.</p></div>
-    <div className="category-grid">
-      {categories.map((category) => {
-        const count = products.filter((product) => product.category?.trim() === category).length;
-        const id = `category-${category.toLowerCase().trim().replace(/[^a-z0-9]+/g, '-')}`;
-        return <a key={category} href={`#${id}`} className="category-tile">
-          <span className="category-tile-count">{String(count).padStart(2, '0')} {count === 1 ? 'product' : 'products'}</span>
-          <strong>{category}</strong><span className="category-tile-link">Explore collection <i aria-hidden="true">↗</i></span>
-        </a>;
-      })}
-    </div>
-  </R>;
-};
 export const Faq = () => (
-  <R id="faq"><h2>Questions, answered</h2>
-    <div className="faq">{faqs.map((f) => <details key={f.q}><summary>{f.q}</summary><p>{f.a}</p></details>)}</div></R>
+  <R id="faq" cls="sec faq-section">
+    <p className="eyebrow">Questions</p>
+    <h2>Frequently asked</h2>
+    <div className="faq">{faqs.map((f) => <details key={f.q}><summary>{f.q}</summary><p>{f.a}</p></details>)}</div>
+  </R>
 );
 export function FinalCta() {
   const [name, setName] = useState(''); const [msg, setMsg] = useState(''); const [started, setStarted] = useState(false);
@@ -48,11 +19,11 @@ export function FinalCta() {
     e.preventDefault(); trackFormSubmit();
     const text = `Hello Dermaclick, I'm ${name}. ${msg}`;
     window.open(waLink(text), '_blank', 'noopener,noreferrer');
-  };
+    };
   return (
     <section id="contact" className="sec dark"><div className="wrap split">
-      <div><h2>Let's talk about your next favourite product</h2>
-        <p className="lead">Send an enquiry and we will reply on WhatsApp.</p>
+      <div><p className="eyebrow">Enquiries</p><h2>Connect with Dermaclick</h2>
+        <p className="lead">Have questions about our formulations? We're here to help on WhatsApp.</p>
         <div className="row"><WhatsAppCta location="final_cta" variant="gold" /><CallCta location="final_cta" variant="line" /></div></div>
       <form className="contact-form" onSubmit={submit} onFocus={() => { if (!started) { setStarted(true); trackFormStart(); } }}>
         <label htmlFor="n">Your name</label><input id="n" required value={name} onChange={(e) => setName(e.target.value)} autoComplete="name" />

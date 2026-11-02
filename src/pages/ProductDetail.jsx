@@ -1,13 +1,13 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import { products } from '../data/products';
 import { site } from '../config/site';
 import ProductVisual from '../components/ProductVisual';
 import { WhatsAppCta, CallCta } from '../components/Cta';
 import ProductCard from '../components/ProductCard';
-import MagneticWrapper from '../components/MagneticWrapper';
 import { useSeo } from '../hooks/useSeo';
 import { useRevealGrid } from '../hooks/useRevealGrid';
+import { revealOnce } from '../hooks/useReveal';
 import { trackProductView } from '../utils/analytics';
 
 const siteOrigin = site.url || (typeof window !== 'undefined' ? window.location.origin : '');
@@ -30,12 +30,17 @@ function BackToProducts() {
   );
 }
 
+// Benefit strings are written as "Title — explanation". Same words, split so the title leads and the explanation is quieter.
+function BenefitText({ text }) {
+  const [title, ...rest] = String(text).split(' — ');
+  if (!rest.length) return <span className="pd-benefit-text"><strong>{text}</strong></span>;
+  return <span className="pd-benefit-text"><strong>{title}</strong><span>{rest.join(' — ')}</span></span>;
+}
+
 export default function ProductDetail() {
   const { slug } = useParams();
   const p = products.find((x) => x.slug === slug);
   const relatedGridRef = useRevealGrid();
-  const [imageTransform, setImageTransform] = useState({ x: 0, y: 0, rotate: 0 });
-  const productImgRef = useRef(null);
   const benefitsRef = useRef(null);
   const ingredientsRef = useRef(null);
   const relatedProducts = p ? [
@@ -47,53 +52,10 @@ export default function ProductDetail() {
   useEffect(() => { window.scrollTo(0, 0); p && trackProductView(p); }, [p]);
 
   useEffect(() => {
-    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    if (prefersReducedMotion) return;
-
-    const productImg = productImgRef.current;
-    if (!productImg) return;
-
-    const handleMouseMove = (e) => {
-      const rect = productImg.getBoundingClientRect();
-      const x = (e.clientX - rect.left - rect.width / 2) / rect.width;
-      const y = (e.clientY - rect.top - rect.height / 2) / rect.height;
-      setImageTransform({ x: x * 15, y: y * 15, rotate: x * 5 });
-    };
-
-    const handleMouseLeave = () => {
-      setImageTransform({ x: 0, y: 0, rotate: 0 });
-    };
-
-    productImg.addEventListener('mousemove', handleMouseMove);
-    productImg.addEventListener('mouseleave', handleMouseLeave);
-
-    return () => {
-      productImg.removeEventListener('mousemove', handleMouseMove);
-      productImg.removeEventListener('mouseleave', handleMouseLeave);
-    };
-  }, []);
-
-  useEffect(() => {
-    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    if (prefersReducedMotion) return;
-
-    const benefits = benefitsRef.current;
-    const ingredients = ingredientsRef.current;
-    if (!benefits || !ingredients) return;
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('in-view');
-        }
-      });
-    }, { threshold: 0.2 });
-
-    observer.observe(benefits);
-    observer.observe(ingredients);
-
-    return () => observer.disconnect();
-  }, []);
+    // Each block reveals independently, so a product with benefits but no ingredients (or vice versa) never hides content.
+    const stops = [benefitsRef.current, ingredientsRef.current].map((el) => revealOnce(el, 'in-view', { threshold: 0.2 }));
+    return () => stops.forEach((stop) => stop());
+  }, [p?.id]);
   useSeo({
     title: p ? (p.seoTitle || `${p.name} | Dermaclick`) : 'Product not found | Dermaclick',
     description: p ? (p.seoDescription || `${p.name} from Dermaclick. ${p.description}`) : 'This product could not be found.',
@@ -135,9 +97,8 @@ export default function ProductDetail() {
     <article className="product-page">
       <section className="wrap sec pd">
         <BackToProducts />
-        <div className="pd-img" ref={productImgRef} style={{ transform: `translate(${imageTransform.x}px, ${imageTransform.y}px) rotate(${imageTransform.rotate}deg)` }}>
+        <div className="pd-img">
           <ProductVisual p={p} eager />
-          <span className="pd-image-caption">{p.category} <i /> Dermaclick</span>
         </div>
         <div className="pd-info">
           <p className="pd-category">{p.category}</p>
@@ -150,17 +111,17 @@ export default function ProductDetail() {
               {p.suitableFor?.length > 0 && <div><dt>Suitable for</dt><dd>{p.suitableFor.join(', ')}</dd></div>}
             </dl>
           )}
-          <p className="pd-price">Price: enquire for price</p>
           <div className="row pd-cta">
-            <MagneticWrapper><WhatsAppCta location="product_page" product={p}>Enquire on WhatsApp</WhatsAppCta></MagneticWrapper>
-            <MagneticWrapper><CallCta location="product_page" /></MagneticWrapper>
+            <WhatsAppCta location="product_page" product={p} variant="gold">Enquire on WhatsApp</WhatsAppCta>
+            <CallCta location="product_page" variant="line">Call us</CallCta>
           </div>
+          <p className="pd-note">Questions about this formulation? Message us and we will guide you.</p>
           <div className="pd-detail-rule" aria-hidden="true" />
         </div>
       </section>
       {(overview || p.benefits?.length > 0 || p.ingredients?.length > 0) && (
         <section className="pd-discover">
-          <div className="wrap pd-discover-inner">
+          <div className={`wrap pd-discover-inner${overview ? ' has-overview' : ''}`}>
             {overview && (
               <section className="pd-block pd-overview" aria-labelledby="product-overview">
                 <div className="pd-section-heading"><p className="eyebrow">The details</p><h2 id="product-overview">Overview</h2></div>
@@ -174,7 +135,7 @@ export default function ProductDetail() {
                   {p.benefits.map((benefit, i) => (
                     <li key={`${benefit}-${i}`}>
                       <span className="pd-benefit-number">{String(i + 1).padStart(2, '0')}</span>
-                      <span>{benefit}</span>
+                      <BenefitText text={benefit} />
                     </li>
                   ))}
                 </ol>
