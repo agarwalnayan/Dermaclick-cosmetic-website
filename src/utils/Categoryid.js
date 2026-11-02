@@ -1,0 +1,2 @@
+// Stable DOM id / hash for a category filter, e.g. "Face Care" -> "category-face-care".
+export const categoryId = (category) => `category-${String(category).toLowerCase().trim().replace(/[^a-z0-9]+/g, '-')}`;

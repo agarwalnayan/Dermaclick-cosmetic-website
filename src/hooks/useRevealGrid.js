@@ -1,32 +1,15 @@
 import { useEffect, useRef } from 'react';
+import { revealOnce } from './useReveal';
+
+// Same fail-safe reveal for a grid of .pcard items. Stagger is a CSS variable (--i) capped in CSS, so it
+// only affects the entrance and never delays hover.
 export function useRevealGrid() {
   const ref = useRef(null);
   useEffect(() => {
     const el = ref.current;
     if (!el) return undefined;
-    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    if (prefersReducedMotion || !('IntersectionObserver' in window)) {
-      el.classList.add('in');
-      const cards = el.querySelectorAll('.pcard');
-      cards.forEach((card, i) => {
-        card.style.transitionDelay = `${i * 50}ms`;
-        card.style.opacity = '1';
-        card.style.transform = 'none';
-      });
-      return undefined;
-    }
-    const io = new IntersectionObserver(([e]) => {
-      if (e.isIntersecting) {
-        el.classList.add('in');
-        const cards = el.querySelectorAll('.pcard');
-        cards.forEach((card, i) => {
-          card.style.transitionDelay = `${i * 50}ms`;
-        });
-        io.disconnect();
-      }
-    }, { threshold: 0.05, rootMargin: '0px 0px -50px 0px' });
-    io.observe(el);
-    return () => io.disconnect();
+    el.querySelectorAll('.pcard').forEach((card, i) => card.style.setProperty('--i', i));
+    return revealOnce(el, 'in');
   }, []);
   return ref;
 }

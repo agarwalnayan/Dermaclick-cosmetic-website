@@ -2,7 +2,7 @@ import { site } from '../config/site';
 
 const GA_MEASUREMENT_ID = import.meta.env.VITE_GA_MEASUREMENT_ID || site.ga4Id;
 const isDev = import.meta.env.DEV;
-const isLocalAdmin = typeof window !== 'undefined' && window.location.pathname.startsWith('/local-admin');
+const isLocalAdmin = import.meta.env.DEV && typeof window !== 'undefined' && window.location.pathname.startsWith('/local-admin');
 
 // Initialize GA4 - only in production and not on LocalAdmin
 export function initAnalytics() {
