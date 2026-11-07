@@ -4,7 +4,6 @@ import BrandValues from '../sections/BrandValues';
 import BrandPhilosophy from '../sections/BrandPhilosophy';
 import BrandRange from '../sections/BrandRange';
 import ProductSpotlight from '../sections/ProductSpotlight';
-import Collection from '../sections/Collection';
 import { Faq, FinalCta } from '../sections/Sections';
 import { useSeo } from '../hooks/useSeo';
 import { site } from '../config/site';
@@ -79,7 +78,6 @@ export default function Home() {
       <BrandRange />
       <ProductSpotlight />
       <BrandPhilosophy />
-      <Collection />
       <Faq />
       <FinalCta />
     </>
