@@ -39,7 +39,7 @@ export default function Hero() {
           <p className="hero-description">{range}built around active ingredients such as Vitamin C, Niacinamide, Kojic Acid and Hyaluronic Acid. Browse the range and enquire directly on WhatsApp.</p>
           <div className="hero-actions">
             <WhatsAppCta location="hero" variant="gold">Enquire on WhatsApp</WhatsAppCta>
-            <LinkCta to="#products" location="hero" variant="line">Explore the range</LinkCta>
+            <LinkCta to="#range" location="hero" variant="line">Explore the range</LinkCta>
           </div>
           {slides.length > 1 && (
             <div className="hero-dots" role="group" aria-label="Featured products">

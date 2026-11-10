@@ -34,7 +34,7 @@ export default function ProductSpotlight() {
       <div className="wrap reveal" ref={ref}>
         <div className="section-head">
           <div><p className="eyebrow">Featured formulations</p><h2>Selected from the collection</h2></div>
-          <a className="section-link" href="#products">View all {products.length} <span aria-hidden="true">→</span></a>
+          <a className="section-link" href="#collection">View all {products.length} <span aria-hidden="true">→</span></a>
         </div>
         <div className="featured-grid">
           <Feature p={lead} lead />
