@@ -7,11 +7,17 @@ import { useRevealGrid } from '../hooks/useRevealGrid';
 import { categoryId } from '../utils/categoryId';
 
 
-export default function Collection() {
-  const [cat, setCat] = useState('All');
+export default function Collection({ initialCategory }) {
+  const [cat, setCat] = useState(initialCategory || 'All');
   const ref = useReveal();
   const gridRef = useRevealGrid();
   const { hash } = useLocation();
+
+  useEffect(() => {
+    if (initialCategory) {
+      setCat(initialCategory);
+    }
+  }, [initialCategory]);
 
   useEffect(() => {
     const selected = categories.find((category) => `#${categoryId(category)}` === hash);

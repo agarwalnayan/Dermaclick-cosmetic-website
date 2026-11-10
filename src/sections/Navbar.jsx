@@ -64,8 +64,7 @@ export default function Navbar() {
           <div className={`nav-item${menuOpen ? ' expanded' : ''}`}>
             <button type="button" className="nav-link" aria-expanded={menuOpen} aria-controls="products-menu" onClick={(e) => { e.stopPropagation(); setMenuOpen((v) => !v); }}>Products <ChevronIcon /></button>
             <div id="products-menu" className="nav-menu">
-              {categories.map((c) => <a key={c} href={`/#${categoryId(c)}`} onClick={() => setMenuOpen(false)}>{c}</a>)}
-              <a href="/#products" onClick={() => setMenuOpen(false)}>All products</a>
+              {categories.map((c) => <Link key={c} to={`/category/${categoryId(c)}`} onClick={() => setMenuOpen(false)}>{c}</Link>)}
             </div>
           </div>
         )}

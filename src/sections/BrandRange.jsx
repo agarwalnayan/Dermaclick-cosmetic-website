@@ -17,7 +17,6 @@ export default function BrandRange() {
   const ref = useReveal();
   if (!categories.length) return null;
   const n = categories.length;
-  const filter = (category) => (e) => { e.preventDefault(); window.dispatchEvent(new CustomEvent('filterCategory', { detail: category })); };
   return (
     <section id="range" className="sec range">
       <div className="wrap reveal" ref={ref}>
@@ -28,7 +27,7 @@ export default function BrandRange() {
           </div>
           <div className="section-aside">
             <p>From daily skincare essentials to targeted treatments and hair care, choose a category to see its formulations.</p>
-            <a className="arrow-link" href="#products">View all products <span aria-hidden="true">→</span></a>
+            <a className="arrow-link" href="/#products">View all products <span aria-hidden="true">→</span></a>
           </div>
         </div>
         <div className="range-grid">
@@ -36,7 +35,7 @@ export default function BrandRange() {
             const count = inCategory(category).length;
             const cover = categoryCover(category, coverIds[category]);
             return (
-              <a key={category} href={`#${categoryId(category)}`} className="range-tile" onClick={filter(category)}>
+              <a key={category} href={`/category/${categoryId(category)}`} className="range-tile">
                 {cover && <AmbientImage p={cover} decorative className="range-media" />}
                 <div className="range-body">
                   <h3>{category}</h3>
