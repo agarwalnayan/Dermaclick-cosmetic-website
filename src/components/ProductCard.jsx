@@ -7,7 +7,7 @@ export default function ProductCard({ p }) {
   return (
     <article className="pcard">
       <Link className="pcard-link" to={`/products/${p.slug}`} onClick={() => trackSelectItem(p)} aria-label={`View ${p.name}`}>
-        <div className="pimg"><ProductVisual p={p} /></div>
+        <div className="pimg"><ProductVisual p={p} useThumbnail /></div>
         <div className="pcard-content">
           <p className="pcard-category">{p.category}{p.size ? <span> · {p.size}</span> : null}</p>
           <h3>{p.name}</h3>
