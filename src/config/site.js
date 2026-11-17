@@ -7,7 +7,7 @@ export const site = {
   email: '',
   address: '',
   socials: { instagram: '', facebook: '' },
-  ga4Id: '',
+  ga4Id: (typeof import.meta !== 'undefined' && import.meta.env?.VITE_GA_MEASUREMENT_ID) || '',
   gtmId: '',
 };
 export const waLink = (t = "Hello Dermaclick, I'd like to enquire.") =>
