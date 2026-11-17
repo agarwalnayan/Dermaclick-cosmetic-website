@@ -5,7 +5,14 @@ import { trackPageView } from './utils/analytics';
 const LocalAdmin = import.meta.env.DEV ? lazy(() => import('./pages/LocalAdmin')) : null; // dev-only, excluded from production build
 export default function App() {
   const { hash, pathname } = useLocation();
-  useEffect(() => { if (hash) setTimeout(() => document.querySelector(hash)?.scrollIntoView(), 50); }, [hash, pathname]);
+  useEffect(() => {
+    if (hash) {
+      const el = document.querySelector(hash);
+      if (el) {
+        el.scrollIntoView({ behavior: 'instant' });
+      }
+    }
+  }, [hash]);
   useEffect(() => {
     window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
   }, [pathname]);
