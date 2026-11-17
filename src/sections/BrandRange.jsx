@@ -27,7 +27,6 @@ export default function BrandRange() {
           </div>
           <div className="section-aside">
             <p>From daily skincare essentials to targeted treatments and hair care, choose a category to see its formulations.</p>
-            <a className="arrow-link" href="/#products">View all products <span aria-hidden="true">→</span></a>
           </div>
         </div>
         <div className="range-grid">
