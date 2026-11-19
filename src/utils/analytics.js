@@ -22,7 +22,17 @@ export function initAnalytics() {
   window.gtag('config', GA_MEASUREMENT_ID, {
     send_page_view: false, // We'll send page views manually for SPA
     cookie_flags: 'samesite=none;secure',
+    debug_mode: false,
+    custom_map: {
+      'custom_page_path': 'page_path',
+      'custom_page_title': 'page_title',
+    }
   });
+
+  // Google Ads conversion tracking (if configured)
+  if (site.adsConversionId) {
+    window.gtag('config', site.adsConversionId);
+  }
 }
 
 // Track page view for SPA navigation
@@ -31,6 +41,7 @@ export function trackPageView(path, title) {
   window.gtag('event', 'page_view', {
     page_path: path,
     page_title: title,
+    page_location: window.location.href,
   });
 }
 
@@ -41,6 +52,9 @@ const productParams = (p) => {
     item_id: p.id,
     item_name: p.name,
     item_category: p.category,
+    item_category2: p.size || undefined,
+    price: '0',
+    currency: 'INR',
   };
 };
 
@@ -79,7 +93,18 @@ export const trackGenerateLead = (p) => {
   if (isDev || isLocalAdmin || !GA_MEASUREMENT_ID) return;
   window.gtag('event', 'generate_lead', {
     ...productParams(p),
+    value: 0,
+    currency: 'INR',
   });
+  
+  // Google Ads conversion tracking
+  if (site.adsConversionId && site.adsConversionLabel) {
+    window.gtag('event', 'conversion', {
+      send_to: `${site.adsConversionId}/${site.adsConversionLabel}`,
+      value: 0,
+      currency: 'INR',
+    });
+  }
 };
 
 // Legacy event names for backward compatibility (deprecated, use new functions above)
@@ -99,3 +124,41 @@ export const trackFormStart = () => {
   window.gtag('event', 'form_start', { form_name: 'enquiry' });
 };
 export const trackFormSubmit = trackGenerateLead;
+
+// UTM Parameter Tracking for Ad Campaigns
+export const getUTMParameters = () => {
+  const urlParams = new URLSearchParams(window.location.search);
+  return {
+    utm_source: urlParams.get('utm_source'),
+    utm_medium: urlParams.get('utm_medium'),
+    utm_campaign: urlParams.get('utm_campaign'),
+    utm_term: urlParams.get('utm_term'),
+    utm_content: urlParams.get('utm_content'),
+  };
+};
+
+// Custom dimension tracking for customer preferences
+export const trackCustomerPreference = (preference, value) => {
+  if (isDev || isLocalAdmin || !GA_MEASUREMENT_ID) return;
+  window.gtag('event', 'customer_preference', {
+    preference_type: preference,
+    preference_value: value,
+  });
+};
+
+// Track category view for customer preference analysis
+export const trackCategoryView = (category) => {
+  if (isDev || isLocalAdmin || !GA_MEASUREMENT_ID) return;
+  window.gtag('event', 'category_view', {
+    category_name: category,
+  });
+};
+
+// Track time on page for engagement analysis
+export const trackTimeOnPage = (duration, path) => {
+  if (isDev || isLocalAdmin || !GA_MEASUREMENT_ID) return;
+  window.gtag('event', 'time_on_page', {
+    engagement_time_msec: duration,
+    page_path: path,
+  });
+};

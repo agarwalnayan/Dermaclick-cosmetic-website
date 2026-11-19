@@ -1,10 +1,12 @@
-import { Routes, Route, useLocation } from 'react-router-dom'; import { useEffect, lazy, Suspense } from 'react';
+import { Routes, Route, useLocation } from 'react-router-dom'; import { useEffect, lazy, Suspense, useRef } from 'react';
 import Navbar from './sections/Navbar'; import Footer from './sections/Footer'; import Home from './pages/Home'; import ProductDetail from './pages/ProductDetail'; import CategoryPage from './pages/CategoryPage';
 import { WhatsAppCta, CallCta } from './components/Cta';
-import { trackPageView } from './utils/analytics';
+import { trackPageView, trackTimeOnPage } from './utils/analytics';
 const LocalAdmin = import.meta.env.DEV ? lazy(() => import('./pages/LocalAdmin')) : null; // dev-only, excluded from production build
 export default function App() {
   const { hash, pathname } = useLocation();
+  const pageStartTimeRef = useRef(Date.now());
+  const previousPathRef = useRef(pathname);
   useEffect(() => {
     if (hash) {
       const el = document.querySelector(hash);
@@ -21,6 +23,17 @@ export default function App() {
     if (!(import.meta.env.DEV && pathname.startsWith('/local-admin'))) {
       const title = document.title;
       trackPageView(pathname, title);
+    }
+  }, [pathname]);
+  useEffect(() => {
+    // Track time on previous page when navigating away
+    if (previousPathRef.current !== pathname) {
+      const timeOnPage = Date.now() - pageStartTimeRef.current;
+      if (timeOnPage > 1000) { // Only track if spent more than 1 second
+        trackTimeOnPage(timeOnPage, previousPathRef.current);
+      }
+      pageStartTimeRef.current = Date.now();
+      previousPathRef.current = pathname;
     }
   }, [pathname]);
   if (import.meta.env.DEV && LocalAdmin && pathname.startsWith('/local-admin')) return <Suspense fallback={null}><LocalAdmin /></Suspense>;

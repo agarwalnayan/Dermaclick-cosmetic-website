@@ -9,6 +9,7 @@ import { useSeo } from '../hooks/useSeo';
 import { useRevealGrid } from '../hooks/useRevealGrid';
 import { revealOnce } from '../hooks/useReveal';
 import { trackProductView } from '../utils/analytics';
+import { categoryId } from '../utils/categoryId';
 
 const siteOrigin = site.url || (typeof window !== 'undefined' ? window.location.origin : '');
 
@@ -57,31 +58,75 @@ export default function ProductDetail() {
     return () => stops.forEach((stop) => stop());
   }, [p?.id]);
   useSeo({
-    title: p ? (p.seoTitle || `${p.name} | Dermaclick`) : 'Product not found | Dermaclick',
-    description: p ? (p.seoDescription || `${p.name} from Dermaclick. ${p.description}`) : 'This product could not be found.',
-    keywords: p?.seoKeywords?.length ? p.seoKeywords.join(', ') : undefined,
+    title: p ? (p.seoTitle || `${p.name} | Dermaclick - Best Skincare & Haircare in India & Nepal`) : 'Product not found | Dermaclick',
+    description: p ? (p.seoDescription || `${p.name} from Dermaclick, India's leading clinical-grade skincare and haircare brand. Formulated with active ingredients. Paraben-free, sulphate-free. Available across India and Nepal. ${p.description}`) : 'This product could not be found.',
+    keywords: p?.seoKeywords?.length ? p.seoKeywords.join(', ') : `${p.name} India, ${p.name} Nepal, buy ${p.name} online India, ${p.category} India, clinical skincare India, paraben-free skincare, sulphate-free skincare, Dermaclick, best ${p.category} products`,
     path: `/products/${slug}`,
     schema: p && {
       '@context': 'https://schema.org',
-      '@type': 'Product',
-      name: p.name,
-      category: p.category,
-      brand: { '@type': 'Brand', name: 'Dermaclick', url: siteOrigin },
-      description: p.description,
-      keywords: p.seoKeywords?.length ? p.seoKeywords : undefined,
-      url: `${siteOrigin}/products/${p.slug}`,
-      image: p.image ? `${siteOrigin}${p.image}` : undefined,
-      offers: {
-        '@type': 'Offer',
-        price: '0',
-        priceCurrency: 'INR',
-        availability: 'https://schema.org/InStock',
-        url: `${siteOrigin}/products/${p.slug}`,
-        seller: { '@type': 'Organization', name: 'Dermaclick' }
-      },
-      additionalProperty: [
-        ...(p.size ? [{ '@type': 'PropertyValue', name: 'Size', value: p.size }] : []),
-        ...(p.suitableFor?.length ? [{ '@type': 'PropertyValue', name: 'Suitable For', value: p.suitableFor.join(', ') }] : [])
+      '@graph': [
+        {
+          '@type': 'Product',
+          name: p.name,
+          category: p.category,
+          brand: { '@type': 'Brand', name: 'Dermaclick', url: siteOrigin },
+          description: p.description,
+          keywords: p.seoKeywords?.length ? p.seoKeywords : undefined,
+          url: `${siteOrigin}/products/${p.slug}`,
+          image: p.image ? `${siteOrigin}${p.image}` : undefined,
+          offers: [
+            {
+              '@type': 'Offer',
+              price: '0',
+              priceCurrency: 'INR',
+              availability: 'https://schema.org/InStock',
+              url: `${siteOrigin}/products/${p.slug}`,
+              seller: { '@type': 'Organization', name: 'Dermaclick' },
+              areaServed: { '@type': 'Country', name: 'India' }
+            },
+            {
+              '@type': 'Offer',
+              price: '0',
+              priceCurrency: 'NPR',
+              availability: 'https://schema.org/InStock',
+              url: `${siteOrigin}/products/${p.slug}`,
+              seller: { '@type': 'Organization', name: 'Dermaclick' },
+              areaServed: { '@type': 'Country', name: 'Nepal' }
+            }
+          ],
+          additionalProperty: [
+            ...(p.size ? [{ '@type': 'PropertyValue', name: 'Size', value: p.size }] : []),
+            ...(p.suitableFor?.length ? [{ '@type': 'PropertyValue', name: 'Suitable For', value: p.suitableFor.join(', ') }] : [])
+          ],
+          audience: {
+            '@type': 'Audience',
+            audienceType: 'Indian and Nepali consumers',
+            geographicArea: ['IN', 'NP']
+          }
+        },
+        {
+          '@type': 'BreadcrumbList',
+          itemListElement: [
+            {
+              '@type': 'ListItem',
+              position: 1,
+              name: 'Home',
+              item: siteOrigin
+            },
+            {
+              '@type': 'ListItem',
+              position: 2,
+              name: p.category,
+              item: `${siteOrigin}/category/${categoryId(p.category)}`
+            },
+            {
+              '@type': 'ListItem',
+              position: 3,
+              name: p.name,
+              item: `${siteOrigin}/products/${p.slug}`
+            }
+          ]
+        }
       ]
     },
   });
