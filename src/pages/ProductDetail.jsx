@@ -59,8 +59,8 @@ export default function ProductDetail() {
   }, [p?.id]);
   useSeo({
     title: p ? (p.seoTitle || `${p.name} | Dermaclick - Best Skincare & Haircare in India & Nepal`) : 'Product not found | Dermaclick',
-    description: p ? (p.seoDescription || `${p.name} from Dermaclick, India's leading clinical-grade skincare and haircare brand. Formulated with active ingredients. Paraben-free, sulphate-free. Available across India and Nepal. ${p.description}`) : 'This product could not be found.',
-    keywords: p?.seoKeywords?.length ? p.seoKeywords.join(', ') : `${p.name} India, ${p.name} Nepal, buy ${p.name} online India, ${p.category} India, clinical skincare India, paraben-free skincare, sulphate-free skincare, Dermaclick, best ${p.category} products`,
+    description: p ? (p.seoDescription || `${p.name} from Dermaclick, #1 clinical-grade skincare and haircare brand in India and Nepal. Available in Kathmandu, Pokhara, Lalitpur, and across Nepal. Formulated with active ingredients. Paraben-free, sulphate-free. ${p.description}`) : 'This product could not be found.',
+    keywords: p?.seoKeywords?.length ? p.seoKeywords.join(', ') : `${p.name} India, ${p.name} Nepal, ${p.name} Kathmandu, ${p.name} Pokhara, ${p.name} Lalitpur, buy ${p.name} online India, ${p.name} online Nepal, ${p.category} India, ${p.category} Nepal, clinical skincare India, clinical skincare Nepal, paraben-free skincare, sulphate-free skincare, Dermaclick, best ${p.category} products Nepal, skincare products Nepal, beauty products Nepal, online shopping Nepal`,
     path: `/products/${slug}`,
     schema: p && {
       '@context': 'https://schema.org',

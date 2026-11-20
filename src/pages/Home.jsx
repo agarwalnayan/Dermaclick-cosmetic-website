@@ -19,7 +19,7 @@ const schema = {
       name: 'Dermaclick',
       url: siteOrigin,
       logo: `${siteOrigin}/favicon.png`,
-      description: 'Dermaclick is India\'s leading clinical-grade Indian skincare and haircare brand offering paraben-free, sulphate-free formulations with active ingredients like Niacinamide, Vitamin C, Kojic Acid, Keratin, Argan, and Hyaluronic Acid. Products include face wash, moisturizers, serums, shampoos, sunscreens and hair masks designed for Indian and Nepali skin and hair concerns.',
+      description: 'Dermaclick is #1 clinical-grade Indian skincare and haircare brand offering paraben-free, sulphate-free formulations with active ingredients like Niacinamide, Vitamin C, Kojic Acid, Keratin, Argan, and Hyaluronic Acid. Products include face wash, moisturizers, serums, shampoos, sunscreens and hair masks designed for Indian and Nepali skin and hair concerns. Available across India and Nepal including Kathmandu, Pokhara, Lalitpur.',
       contactPoint: {
         '@type': 'ContactPoint',
         telephone: site.phone,
@@ -44,7 +44,7 @@ const schema = {
       '@type': 'WebSite',
       name: 'Dermaclick',
       url: siteOrigin,
-      description: 'India\'s leading clinical-grade skincare and haircare formulations with Niacinamide, Vitamin C, Keratin, Argan and more. Paraben-free, sulphate-free formulas designed for Indian and Nepali skin and hair concerns.',
+      description: '#1 clinical-grade skincare and haircare formulations with Niacinamide, Vitamin C, Keratin, Argan and more. Paraben-free, sulphate-free formulas designed for Indian and Nepali skin and hair concerns. Available in Kathmandu, Pokhara, Lalitpur, and across Nepal.',
       potentialAction: {
         '@type': 'SearchAction',
         target: `${siteOrigin}/?q={search_term_string}`,
@@ -55,7 +55,7 @@ const schema = {
     {
       '@type': 'LocalBusiness',
       name: 'Dermaclick',
-      description: 'India\'s leading clinical-grade skincare and haircare brand offering paraben-free and sulphate-free products formulated with active ingredients like Niacinamide, Vitamin C, Kojic Acid, Keratin, and Argan. Available across India and Nepal.',
+      description: '#1 clinical-grade skincare and haircare brand offering paraben-free and sulphate-free products formulated with active ingredients like Niacinamide, Vitamin C, Kojic Acid, Keratin, and Argan. Available across India and Nepal including Kathmandu, Pokhara, Lalitpur.',
       telephone: site.phone,
       url: siteOrigin,
       address: { '@type': 'PostalAddress', addressCountry: 'IN' },
@@ -67,6 +67,22 @@ const schema = {
         {
           '@type': 'Country',
           name: 'Nepal'
+        },
+        {
+          '@type': 'AdministrativeArea',
+          name: 'Bagmati Province',
+          addressCountry: {
+            '@type': 'Country',
+            name: 'Nepal'
+          }
+        },
+        {
+          '@type': 'AdministrativeArea',
+          name: 'Gandaki Province',
+          addressCountry: {
+            '@type': 'Country',
+            name: 'Nepal'
+          }
         }
       ],
       priceRange: '₹₹'
@@ -81,7 +97,7 @@ const schema = {
     },
     {
       '@type': 'HowTo',
-      name: 'How to Build a Skincare Routine for Indian Skin',
+      name: 'How to Build a Skincare Routine for Indian and Nepali Skin',
       description: 'Step-by-step guide to building an effective skincare routine for Indian and Nepali skin types using Dermaclick clinical-grade formulations.',
       step: [
         {
@@ -105,7 +121,7 @@ const schema = {
         {
           '@type': 'HowToStep',
           name: 'Moisturize',
-          text: 'Lock in hydration with a lightweight moisturizer suitable for Indian climate.',
+          text: 'Lock in hydration with a lightweight moisturizer suitable for Indian and Nepali climate.',
           image: `${siteOrigin}/products/dermaclick-moisturizer-1853e4e2.webp`
         },
         {
@@ -122,8 +138,8 @@ const schema = {
 export default function Home() {
   useSeo({
     title: 'Dermaclick | #1 Clinical-Grade Skincare & Haircare Brand in India & Nepal',
-    description: 'Dermaclick: India\'s #1 clinical-grade skincare and haircare brand. Best skincare for Indian and Nepali skin. Formulated with Vitamin C, Niacinamide, Kojic Acid, Keratin, and Argan. Paraben-free, sulphate-free. Order online across India and Nepal. Free shipping available.',
-    keywords: 'Dermaclick, best skincare India, best skincare Nepal, #1 skincare brand India, top skincare Nepal, haircare India, haircare Nepal, Niacinamide, Vitamin C, Keratin, Argan, face wash India, moisturizer India, serum India, shampoo India, sunscreen India, hair mask India, Indian beauty brand, Nepali beauty brand, clinical skincare, paraben-free, sulphate-free, dermatologist recommended India, skincare for Indian skin, skincare for Nepali skin, Kojic Acid, Alpha Arbutin, Hyaluronic Acid, Zinc PCA, Vitamin E, Rice Water, online skincare India, online skincare Nepal, buy skincare online India, buy skincare online Nepal, clinical-grade skincare, active ingredients skincare',
+    description: 'Dermaclick: #1 clinical-grade skincare and haircare brand in India and Nepal. Best skincare for Indian and Nepali skin. Available in Kathmandu, Pokhara, Lalitpur, and across Nepal. Formulated with Vitamin C, Niacinamide, Kojic Acid, Keratin, and Argan. Paraben-free, sulphate-free. Order online across India and Nepal. Free shipping available.',
+    keywords: 'Dermaclick, best skincare India, best skincare Nepal, #1 skincare brand India, top skincare Nepal, skincare Kathmandu, skincare Pokhara, skincare Lalitpur, haircare India, haircare Nepal, Niacinamide, Vitamin C, Keratin, Argan, face wash India, moisturizer India, serum India, shampoo India, sunscreen India, hair mask India, Indian beauty brand, Nepali beauty brand, clinical skincare, paraben-free, sulphate-free, dermatologist recommended India, dermatologist recommended Nepal, skincare for Indian skin, skincare for Nepali skin, Kojic Acid, Alpha Arbutin, Hyaluronic Acid, Zinc PCA, Vitamin E, Rice Water, online skincare India, online skincare Nepal, buy skincare online India, buy skincare online Nepal, clinical-grade skincare, active ingredients skincare, Nepal skincare brand, best skincare in Nepal, skincare products Nepal, online shopping Nepal',
     path: '/',
     schema
   });
