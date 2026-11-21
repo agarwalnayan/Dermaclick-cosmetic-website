@@ -20,32 +20,32 @@ const schema = {
       name: 'Dermaclick',
       url: siteOrigin,
       logo: `${siteOrigin}/favicon.png`,
-      description: 'Dermaclick is #1 clinical-grade Indian skincare and haircare brand offering paraben-free, sulphate-free formulations with active ingredients like Niacinamide, Vitamin C, Kojic Acid, Keratin, Argan, and Hyaluronic Acid. Products include face wash, moisturizers, serums, shampoos, sunscreens and hair masks designed for Indian and Nepali skin and hair concerns. Available across India and Nepal including Kathmandu, Pokhara, Lalitpur.',
+      description: 'Dermaclick is #1 clinical-grade skincare and haircare brand offering paraben-free, sulphate-free formulations with active ingredients like Niacinamide, Vitamin C, Kojic Acid, Keratin, Argan, and Hyaluronic Acid. Products include face wash, moisturizers, serums, shampoos, sunscreens and hair masks designed for Nepali and Indian skin and hair concerns. Available across Nepal and India including Kathmandu, Pokhara, Lalitpur.',
       contactPoint: {
         '@type': 'ContactPoint',
         telephone: site.phone,
         contactType: 'customer service',
         availableLanguage: 'English',
-        areaServed: ['IN', 'NP']
+        areaServed: ['NP', 'IN']
       },
       areaServed: [
         {
           '@type': 'Country',
-          name: 'India'
+          name: 'Nepal'
         },
         {
           '@type': 'Country',
-          name: 'Nepal'
+          name: 'India'
         }
       ],
       sameAs: [],
-      address: { '@type': 'PostalAddress', addressCountry: 'IN' }
+      address: { '@type': 'PostalAddress', addressCountry: 'NP' }
     },
     {
       '@type': 'WebSite',
       name: 'Dermaclick',
       url: siteOrigin,
-      description: '#1 clinical-grade skincare and haircare formulations with Niacinamide, Vitamin C, Keratin, Argan and more. Paraben-free, sulphate-free formulas designed for Indian and Nepali skin and hair concerns. Available in Kathmandu, Pokhara, Lalitpur, and across Nepal.',
+      description: '#1 clinical-grade skincare and haircare formulations with Niacinamide, Vitamin C, Keratin, Argan and more. Paraben-free, sulphate-free formulas designed for Nepali and Indian skin and hair concerns. Available in Kathmandu, Pokhara, Lalitpur, and across Nepal.',
       potentialAction: {
         '@type': 'SearchAction',
         target: `${siteOrigin}/?q={search_term_string}`,
@@ -56,18 +56,18 @@ const schema = {
     {
       '@type': 'LocalBusiness',
       name: 'Dermaclick',
-      description: '#1 clinical-grade skincare and haircare brand offering paraben-free and sulphate-free products formulated with active ingredients like Niacinamide, Vitamin C, Kojic Acid, Keratin, and Argan. Available across India and Nepal including Kathmandu, Pokhara, Lalitpur.',
+      description: '#1 clinical-grade skincare and haircare brand offering paraben-free and sulphate-free products formulated with active ingredients like Niacinamide, Vitamin C, Kojic Acid, Keratin, and Argan. Available across Nepal and India including Kathmandu, Pokhara, Lalitpur.',
       telephone: site.phone,
       url: siteOrigin,
-      address: { '@type': 'PostalAddress', addressCountry: 'IN' },
+      address: { '@type': 'PostalAddress', addressCountry: 'NP' },
       areaServed: [
         {
           '@type': 'Country',
-          name: 'India'
+          name: 'Nepal'
         },
         {
           '@type': 'Country',
-          name: 'Nepal'
+          name: 'India'
         },
         {
           '@type': 'AdministrativeArea',
@@ -90,37 +90,15 @@ const schema = {
     },
     {
       '@type': 'LocalBusiness',
-      name: 'Dermaclick Nepal',
-      description: '#1 clinical-grade skincare and haircare brand in Nepal. Available in Kathmandu, Pokhara, Lalitpur, and across Nepal. Paraben-free, sulphate-free products for Nepali skin and hair concerns.',
+      name: 'Dermaclick India',
+      description: '#1 clinical-grade skincare and haircare brand offering paraben-free and sulphate-free products formulated with active ingredients like Niacinamide, Vitamin C, Kojic Acid, Keratin, and Argan. Available across India.',
       telephone: site.phone,
       url: siteOrigin,
-      address: { '@type': 'PostalAddress', addressCountry: 'NP' },
-      areaServed: [
-        {
-          '@type': 'AdministrativeArea',
-          name: 'Bagmati Province',
-          addressCountry: {
-            '@type': 'Country',
-            name: 'Nepal'
-          }
-        },
-        {
-          '@type': 'AdministrativeArea',
-          name: 'Gandaki Province',
-          addressCountry: {
-            '@type': 'Country',
-            name: 'Nepal'
-          }
-        },
-        {
-          '@type': 'AdministrativeArea',
-          name: 'Province 3',
-          addressCountry: {
-            '@type': 'Country',
-            name: 'Nepal'
-          }
-        }
-      ],
+      address: { '@type': 'PostalAddress', addressCountry: 'IN' },
+      areaServed: {
+        '@type': 'Country',
+        name: 'India'
+      },
       priceRange: '₹₹'
     },
     {
@@ -133,8 +111,8 @@ const schema = {
     },
     {
       '@type': 'HowTo',
-      name: 'How to Build a Skincare Routine for Indian and Nepali Skin',
-      description: 'Step-by-step guide to building an effective skincare routine for Indian and Nepali skin types using Dermaclick clinical-grade formulations.',
+      name: 'How to Build a Skincare Routine for Nepali and Indian Skin',
+      description: 'Step-by-step guide to building an effective skincare routine for Nepali and Indian skin types using Dermaclick clinical-grade formulations.',
       step: [
         {
           '@type': 'HowToStep',
@@ -157,13 +135,13 @@ const schema = {
         {
           '@type': 'HowToStep',
           name: 'Moisturize',
-          text: 'Lock in hydration with a lightweight moisturizer suitable for Indian and Nepali climate.',
+          text: 'Lock in hydration with a lightweight moisturizer suitable for Nepali and Indian climate.',
           image: `${siteOrigin}/products/dermaclick-moisturizer-1853e4e2.webp`
         },
         {
           '@type': 'HowToStep',
           name: 'Protect',
-          text: 'Finish with sunscreen for broad-spectrum UV protection essential for Indian and Nepali sun exposure.',
+          text: 'Finish with sunscreen for broad-spectrum UV protection essential for Nepali and Indian sun exposure.',
           image: `${siteOrigin}/products/dermaclick-sunscreen-cream-b1daefb6.webp`
         }
       ]
@@ -173,9 +151,9 @@ const schema = {
 
 export default function Home() {
   useSeo({
-    title: 'Dermaclick | #1 Clinical-Grade Skincare & Haircare Brand in India & Nepal',
-    description: 'Dermaclick: #1 clinical-grade skincare and haircare brand in India and Nepal. Best skincare for Indian and Nepali skin. Available in Kathmandu, Pokhara, Lalitpur, and across Nepal. Formulated with Vitamin C, Niacinamide, Kojic Acid, Keratin, and Argan. Paraben-free, sulphate-free. Order online across India and Nepal. Free shipping available.',
-    keywords: 'Dermaclick, best skincare India, best skincare Nepal, #1 skincare brand India, top skincare Nepal, skincare Kathmandu, skincare Pokhara, skincare Lalitpur, haircare India, haircare Nepal, Niacinamide, Vitamin C, Keratin, Argan, face wash India, moisturizer India, serum India, shampoo India, sunscreen India, hair mask India, Indian beauty brand, Nepali beauty brand, clinical skincare, paraben-free, sulphate-free, dermatologist recommended India, dermatologist recommended Nepal, skincare for Indian skin, skincare for Nepali skin, Kojic Acid, Alpha Arbutin, Hyaluronic Acid, Zinc PCA, Vitamin E, Rice Water, online skincare India, online skincare Nepal, buy skincare online India, buy skincare online Nepal, clinical-grade skincare, active ingredients skincare, Nepal skincare brand, best skincare in Nepal, skincare products Nepal, online shopping Nepal',
+    title: 'Dermaclick | #1 Clinical-Grade Skincare & Haircare Brand in Nepal & India',
+    description: 'Dermaclick: #1 clinical-grade skincare and haircare brand in Nepal and India. Best skincare for Nepali and Indian skin. Available in Kathmandu, Pokhara, Lalitpur, and across Nepal. Formulated with Vitamin C, Niacinamide, Kojic Acid, Keratin, and Argan. Paraben-free, sulphate-free. Order online across Nepal and India.',
+    keywords: 'Dermaclick, best skincare Nepal, best skincare India, #1 skincare brand Nepal, top skincare India, skincare Kathmandu, skincare Pokhara, skincare Lalitpur, haircare Nepal, haircare India, Niacinamide, Vitamin C, Keratin, Argan, face wash Nepal, moisturizer Nepal, serum Nepal, shampoo Nepal, sunscreen Nepal, hair mask Nepal, Nepali beauty brand, Indian beauty brand, clinical skincare, paraben-free, sulphate-free, dermatologist recommended Nepal, dermatologist recommended India, skincare for Nepali skin, skincare for Indian skin, Kojic Acid, Alpha Arbutin, Hyaluronic Acid, Zinc PCA, Vitamin E, Rice Water, online skincare Nepal, online skincare India, buy skincare online Nepal, buy skincare online India, clinical-grade skincare, active ingredients skincare, Nepal skincare brand, best skincare in Nepal, skincare products Nepal, online shopping Nepal',
     path: '/',
     schema
   });
