@@ -8,6 +8,7 @@ import { Faq, FinalCta } from '../sections/Sections';
 import { useSeo } from '../hooks/useSeo';
 import { site } from '../config/site';
 import { faqs } from '../data/content';
+import { WhatsAppCta } from '../components/Cta';
 
 const siteOrigin = site.url || (typeof window !== 'undefined' ? window.location.origin : '');
 
@@ -88,6 +89,41 @@ const schema = {
       priceRange: '₹₹'
     },
     {
+      '@type': 'LocalBusiness',
+      name: 'Dermaclick Nepal',
+      description: '#1 clinical-grade skincare and haircare brand in Nepal. Available in Kathmandu, Pokhara, Lalitpur, and across Nepal. Paraben-free, sulphate-free products for Nepali skin and hair concerns.',
+      telephone: site.phone,
+      url: siteOrigin,
+      address: { '@type': 'PostalAddress', addressCountry: 'NP' },
+      areaServed: [
+        {
+          '@type': 'AdministrativeArea',
+          name: 'Bagmati Province',
+          addressCountry: {
+            '@type': 'Country',
+            name: 'Nepal'
+          }
+        },
+        {
+          '@type': 'AdministrativeArea',
+          name: 'Gandaki Province',
+          addressCountry: {
+            '@type': 'Country',
+            name: 'Nepal'
+          }
+        },
+        {
+          '@type': 'AdministrativeArea',
+          name: 'Province 3',
+          addressCountry: {
+            '@type': 'Country',
+            name: 'Nepal'
+          }
+        }
+      ],
+      priceRange: '₹₹'
+    },
+    {
       '@type': 'FAQPage',
       mainEntity: faqs.map((f) => ({
         '@type': 'Question',
@@ -152,6 +188,34 @@ export default function Home() {
       <BrandRange />
       <ProductSpotlight />
       <BrandPhilosophy />
+      <section className="wrap sec nepal-section">
+        <div className="nepal-content">
+          <h2>Dermaclick Nepal</h2>
+          <p className="lead">#1 Clinical-Grade Skincare & Haircare Brand in Nepal</p>
+          <p>Available in Kathmandu, Pokhara, Lalitpur, and across Nepal</p>
+          <div className="nepal-features">
+            <div className="nepal-feature">
+              <h3>✓ Available Nationwide</h3>
+              <p>We deliver across Nepal including Kathmandu, Pokhara, Lalitpur, Biratnagar, and all major cities.</p>
+            </div>
+            <div className="nepal-feature">
+              <h3>✓ Clinical-Grade Formulations</h3>
+              <p>Formulated with active ingredients like Vitamin C, Niacinamide, Kojic Acid, Keratin, and Argan for Nepali skin.</p>
+            </div>
+            <div className="nepal-feature">
+              <h3>✓ Paraben-Free & Sulphate-Free</h3>
+              <p>Safe, gentle formulations without harmful chemicals. Perfect for sensitive Nepali skin.</p>
+            </div>
+            <div className="nepal-feature">
+              <h3>✓ Suitable for Nepali Climate</h3>
+              <p>Designed for tropical weather and sun exposure common in Nepal. Provides UV protection and hydration.</p>
+            </div>
+          </div>
+          <div className="nepal-cta">
+            <WhatsAppCta location="nepal" variant="gold">Order on WhatsApp</WhatsAppCta>
+          </div>
+        </div>
+      </section>
       <Faq />
       <FinalCta />
     </>
