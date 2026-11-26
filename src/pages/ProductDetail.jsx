@@ -9,7 +9,7 @@ import { useSeo } from '../hooks/useSeo';
 import { useRevealGrid } from '../hooks/useRevealGrid';
 import { revealOnce } from '../hooks/useReveal';
 import { trackProductView } from '../utils/analytics';
-import { categoryId } from '../utils/categoryId';
+import { categorySlug } from '../utils/categorySlug';
 
 const siteOrigin = site.url || (typeof window !== 'undefined' ? window.location.origin : '');
 
@@ -58,9 +58,9 @@ export default function ProductDetail() {
     return () => stops.forEach((stop) => stop());
   }, [p?.id]);
   useSeo({
-    title: p ? (p.seoTitle || `${p.name} | Dermaclick - Best Skincare & Haircare in India & Nepal`) : 'Product not found | Dermaclick',
-    description: p ? (p.seoDescription || `${p.name} from Dermaclick, #1 clinical-grade skincare and haircare brand in India and Nepal. Available in Kathmandu, Pokhara, Lalitpur, and across Nepal. Formulated with active ingredients. Paraben-free, sulphate-free. ${p.description}`) : 'This product could not be found.',
-    keywords: p?.seoKeywords?.length ? p.seoKeywords.join(', ') : `${p.name} India, ${p.name} Nepal, ${p.name} Kathmandu, ${p.name} Pokhara, ${p.name} Lalitpur, buy ${p.name} online India, ${p.name} online Nepal, ${p.category} India, ${p.category} Nepal, clinical skincare India, clinical skincare Nepal, paraben-free skincare, sulphate-free skincare, Dermaclick, best ${p.category} products Nepal, skincare products Nepal, beauty products Nepal, online shopping Nepal`,
+    title: p ? (p.seoTitle || `${p.name} | Dermaclick - Skincare & Haircare in Nepal`) : 'Product not found | Dermaclick',
+    description: p ? (p.seoDescription || `${p.name} from Dermaclick, a clinical-grade skincare and haircare brand in Nepal. Available in Kathmandu, Pokhara, Lalitpur, and delivered across Nepal. Formulated with active ingredients. Paraben-free, sulphate-free. ${p.description}`) : 'This product could not be found.',
+    keywords: p?.seoKeywords?.length ? p.seoKeywords.join(', ') : `${p.name} Nepal, ${p.name} Kathmandu, ${p.name} Pokhara, ${p.name} Lalitpur, buy ${p.name} Nepal, ${p.name} online Nepal, ${p.category} Nepal, clinical skincare Nepal, paraben-free skincare, sulphate-free skincare, Dermaclick, best ${p.category} products Nepal, skincare products Nepal, beauty products Nepal, Dermaclick Nepal`,
     path: `/products/${slug}`,
     schema: p && {
       '@context': 'https://schema.org',
@@ -74,35 +74,10 @@ export default function ProductDetail() {
           keywords: p.seoKeywords?.length ? p.seoKeywords : undefined,
           url: `${siteOrigin}/products/${p.slug}`,
           image: p.image ? `${siteOrigin}${p.image}` : undefined,
-          offers: [
-            {
-              '@type': 'Offer',
-              price: '0',
-              priceCurrency: 'INR',
-              availability: 'https://schema.org/InStock',
-              url: `${siteOrigin}/products/${p.slug}`,
-              seller: { '@type': 'Organization', name: 'Dermaclick' },
-              areaServed: { '@type': 'Country', name: 'India' }
-            },
-            {
-              '@type': 'Offer',
-              price: '0',
-              priceCurrency: 'NPR',
-              availability: 'https://schema.org/InStock',
-              url: `${siteOrigin}/products/${p.slug}`,
-              seller: { '@type': 'Organization', name: 'Dermaclick' },
-              areaServed: { '@type': 'Country', name: 'Nepal' }
-            }
-          ],
           additionalProperty: [
             ...(p.size ? [{ '@type': 'PropertyValue', name: 'Size', value: p.size }] : []),
             ...(p.suitableFor?.length ? [{ '@type': 'PropertyValue', name: 'Suitable For', value: p.suitableFor.join(', ') }] : [])
-          ],
-          audience: {
-            '@type': 'Audience',
-            audienceType: 'Indian and Nepali consumers',
-            geographicArea: ['IN', 'NP']
-          }
+          ]
         },
         {
           '@type': 'BreadcrumbList',
@@ -117,7 +92,7 @@ export default function ProductDetail() {
               '@type': 'ListItem',
               position: 2,
               name: p.category,
-              item: `${siteOrigin}/category/${categoryId(p.category)}`
+              item: `${siteOrigin}/category/${categorySlug(p.category)}`
             },
             {
               '@type': 'ListItem',
@@ -160,7 +135,7 @@ export default function ProductDetail() {
             <WhatsAppCta location="product_page" product={p} variant="gold">Enquire on WhatsApp</WhatsAppCta>
             <CallCta location="product_page" variant="line">Call us</CallCta>
           </div>
-          <p className="pd-note">Questions about this formulation? Message us and we will guide you.</p>
+          <p className="pd-note">Questions about this formulation? Message us and we will guide you. Dermaclick delivers products across Nepal.</p>
           <div className="pd-detail-rule" aria-hidden="true" />
         </div>
       </section>

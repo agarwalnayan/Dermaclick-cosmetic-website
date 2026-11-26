@@ -53,8 +53,6 @@ const productParams = (p) => {
     item_name: p.name,
     item_category: p.category,
     item_category2: p.size || undefined,
-    price: '0',
-    currency: 'INR',
   };
 };
 

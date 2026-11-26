@@ -238,7 +238,7 @@ p { margin: 0 0 1.1rem; }
 /* Collection */
 .collection-section { background: var(--ivory); }
 .collection-heading { display: grid; grid-template-columns: 1fr minmax(250px, .65fr); align-items: end; gap: 2rem; }
-.collection-heading h2 { margin-bottom: 0; }
+.collection-heading h1 { margin-bottom: 0; font-size: clamp(2.1rem, 3.6vw, 3.3rem); letter-spacing: -.015em; }
 .collection-heading .lead { justify-self: end; margin: 0 0 .4rem; font-size: 1rem; }
 .collection-controls { display: flex; align-items: center; justify-content: space-between; gap: 1rem; margin: 1.6rem 0 clamp(1.5rem, 3vw, 2.4rem); padding-block: .9rem; border-block: 1px solid var(--line); }
 .collection-controls .chips { margin: 0; padding: 0; }

@@ -35,7 +35,7 @@ export default function Hero() {
       <div className="wrap hero-in">
         <div className="hero-copy">
           <p className="eyebrow hero-eyebrow">Skincare &amp; haircare</p>
-          <h1>Skincare and haircare, <em>formulated with purpose.</em></h1>
+          <h1>Dermaclick skincare and haircare, <em>formulated with purpose.</em></h1>
           <p className="hero-description">{range}built around active ingredients such as Vitamin C, Niacinamide, Kojic Acid and Hyaluronic Acid. Browse the range and enquire directly on WhatsApp.</p>
           <div className="hero-actions">
             <WhatsAppCta location="hero" variant="gold">Enquire on WhatsApp</WhatsAppCta>

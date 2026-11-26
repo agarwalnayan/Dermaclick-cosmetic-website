@@ -1,7 +1,7 @@
 import { products, categories } from '../data/products';
 import AmbientImage from '../components/AmbientImage';
 import { useReveal } from '../hooks/useReveal';
-import { categoryId } from '../utils/categoryId';
+import { categorySlug } from '../utils/categorySlug';
 import { inCategory, categoryCover } from '../utils/catalogueViews';
 
 const blurbs = {
@@ -34,7 +34,7 @@ export default function BrandRange() {
             const count = inCategory(category).length;
             const cover = categoryCover(category, coverIds[category]);
             return (
-              <a key={category} href={`/category/${categoryId(category)}`} className="range-tile">
+              <a key={category} href={`/category/${categorySlug(category)}`} className="range-tile">
                 {cover && <AmbientImage p={cover} decorative className="range-media" />}
                 <div className="range-body">
                   <h3>{category}</h3>

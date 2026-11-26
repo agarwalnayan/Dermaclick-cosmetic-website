@@ -1,6 +1,6 @@
 import { useParams } from 'react-router-dom';
 import { categories, products } from '../data/products';
-import { categoryId } from '../utils/categoryId';
+import { categorySlug } from '../utils/categorySlug';
 import Collection from '../sections/Collection';
 import { useSeo } from '../hooks/useSeo';
 import { site } from '../config/site';
@@ -8,10 +8,10 @@ import { trackCategoryView } from '../utils/analytics';
 import { useEffect } from 'react';
 
 export default function CategoryPage() {
-  const { categorySlug } = useParams();
+  const { categorySlug: categorySlugParam } = useParams();
 
   // Find the category from the slug
-  const category = categories.find(c => categoryId(c) === categorySlug);
+  const category = categories.find(c => categorySlug(c) === categorySlugParam);
 
   useEffect(() => {
     if (category) {
@@ -37,8 +37,8 @@ export default function CategoryPage() {
       {
         '@type': 'CollectionPage',
         name: `${category} Products - Dermaclick`,
-        description: `Browse ${category} products from Dermaclick, India's leading clinical-grade skincare and haircare brand. Formulated with active ingredients like Vitamin C, Niacinamide, Kojic Acid, Keratin, and Argan. Paraben-free, sulphate-free. Available across India and Nepal.`,
-        url: `${siteOrigin}/category/${categorySlug}`,
+        description: `Browse ${category} products from Dermaclick, a clinical-grade skincare and haircare brand in Nepal. Formulated with active ingredients like Vitamin C, Niacinamide, Kojic Acid, Keratin, and Argan. Paraben-free, sulphate-free. Available across Nepal.`,
+        url: `${siteOrigin}/category/${categorySlugParam}`,
         hasPart: categoryProducts.map(p => ({
           '@type': 'Product',
           name: p.name,
@@ -46,12 +46,7 @@ export default function CategoryPage() {
           image: p.image ? `${siteOrigin}${p.image}` : undefined,
           category: p.category,
           brand: { '@type': 'Brand', name: 'Dermaclick' }
-        })),
-        audience: {
-          '@type': 'Audience',
-          audienceType: 'Indian and Nepali consumers',
-          geographicArea: ['IN', 'NP']
-        }
+        }))
       },
       {
         '@type': 'BreadcrumbList',
@@ -66,14 +61,14 @@ export default function CategoryPage() {
             '@type': 'ListItem',
             position: 2,
             name: category,
-            item: `${siteOrigin}/category/${categorySlug}`
+            item: `${siteOrigin}/category/${categorySlugParam}`
           }
         ]
       },
       {
         '@type': 'ItemList',
         name: `${category} Products`,
-        description: `Best ${category} products for Indian and Nepali skin and hair concerns`,
+        description: `${category} products for Nepali skin and hair concerns`,
         itemListElement: categoryProducts.map((p, index) => ({
           '@type': 'ListItem',
           position: index + 1,
@@ -89,10 +84,10 @@ export default function CategoryPage() {
   };
 
   useSeo({
-    title: `${category} Products | Dermaclick - Best Skincare & Haircare in India & Nepal`,
-    description: `Buy ${category} products from Dermaclick, #1 clinical-grade skincare and haircare brand in India and Nepal. Available in Kathmandu, Pokhara, Lalitpur, and across Nepal. Formulated with active ingredients like Vitamin C, Niacinamide, Kojic Acid, Keratin, and Argan. Paraben-free, sulphate-free.`,
-    keywords: `${category} India, ${category} Nepal, ${category} Kathmandu, ${category} Pokhara, ${category} Lalitpur, best ${category} India, buy ${category} online India, ${category} products India, ${category} products Nepal, clinical ${category}, dermatologist recommended ${category}, paraben-free ${category}, sulphate-free ${category}, Dermaclick ${category}, skincare Nepal, beauty products Nepal, online shopping Nepal`,
-    path: `/category/${categorySlug}`,
+    title: `${category} Products | Dermaclick - Skincare & Haircare in Nepal`,
+    description: `Explore ${category} products from Dermaclick, a clinical-grade skincare and haircare brand in Nepal. Available in Kathmandu, Pokhara, Lalitpur, and delivered across Nepal. Formulated with active ingredients like Vitamin C, Niacinamide, Kojic Acid, Keratin, and Argan. Paraben-free, sulphate-free. Enquire on WhatsApp.`,
+    keywords: `${category} Nepal, ${category} Kathmandu, ${category} Pokhara, ${category} Lalitpur, best ${category} Nepal, ${category} products Nepal, Dermaclick ${category}, clinical ${category}, dermatologist recommended ${category}, paraben-free ${category}, sulphate-free ${category}, skincare Nepal, beauty products Nepal, Dermaclick Nepal, ${category} India`,
+    path: `/category/${categorySlugParam}`,
     schema
   });
 

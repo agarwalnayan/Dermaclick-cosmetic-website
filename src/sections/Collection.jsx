@@ -43,7 +43,7 @@ export default function Collection({ initialCategory }) {
         <div className="collection-heading">
           <div>
             <p className="eyebrow">Product Range</p>
-            <h2>The Complete Collection</h2>
+            <h1>{initialCategory ? `${initialCategory} Products` : 'The Complete Collection'}</h1>
           </div>
           <p className="lead">Explore Dermaclick's thoughtfully formulated skincare and haircare products.</p>
         </div>

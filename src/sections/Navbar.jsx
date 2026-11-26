@@ -4,7 +4,7 @@ import Logo from '../components/Logo';
 import { WhatsAppCta } from '../components/Cta';
 import { ChevronIcon } from '../components/Icons';
 import { categories } from '../data/products';
-import { categoryId } from '../utils/categoryId';
+import { categorySlug } from '../utils/categorySlug';
 const links = [['Featured', '/#featured'], ['About', '/#about'], ['Contact', '/#contact']];
 export default function Navbar() {
   const [open, setOpen] = useState(false);
@@ -64,7 +64,7 @@ export default function Navbar() {
           <div className={`nav-item${menuOpen ? ' expanded' : ''}`}>
             <button type="button" className="nav-link" aria-expanded={menuOpen} aria-controls="products-menu" onClick={(e) => { e.stopPropagation(); setMenuOpen((v) => !v); }}>Products <ChevronIcon /></button>
             <div id="products-menu" className="nav-menu">
-              {categories.map((c) => <Link key={c} to={`/category/${categoryId(c)}`} onClick={() => setMenuOpen(false)}>{c}</Link>)}
+              {categories.map((c) => <Link key={c} to={`/category/${categorySlug(c)}`} onClick={() => setMenuOpen(false)}>{c}</Link>)}
             </div>
           </div>
         )}
